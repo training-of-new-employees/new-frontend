@@ -1,5 +1,13 @@
-import { Table } from '../../components/UI/Table/Table';
+import Body from './Body/Body';
+import Footer from './Footer/Footer';
+import Header from './Header/Header';
 
 export default function Main() {
-  return <Table mode="course" />;
+  return (
+    <>
+      <Header />
+      <Body />
+      <Footer />
+    </>
+  );
 }
