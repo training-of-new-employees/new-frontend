@@ -1,5 +1,13 @@
-import { Card } from '../../components/UI/Card/Card';
+import Body from './Body/Body';
+import Footer from './Footer/Footer';
+import Header from './Header/Header';
 
 export default function Main() {
-  return <Card mode="role" />;
+  return (
+    <>
+      <Header />
+      <Body />
+      <Footer />
+    </>
+  );
 }
