@@ -3,7 +3,7 @@ import { CardMenu } from '../../../utils/constants';
 
 export const DropDown: FC = () => {
   return (
-    <div className="absolute top-[40px] pt-[6px] pb-[10px] bg-white right-0 w-[236px] rounded-[16px] shadow-[1px_1px_1.5px_1.5px_rgba(47,48,46,0.08)]">
+    <div className="z-10 absolute top-[40px] pt-[6px] pb-[10px] bg-white right-0 w-[236px] rounded-[16px] shadow-[1px_1px_1.5px_1.5px_rgba(47,48,46,0.08)]">
       {CardMenu.map((i) => {
         return (
           <button

@@ -10,7 +10,7 @@ export const Card: FC<ICard> = ({ mode }) => {
         {isMenuOpened ? <DropDown /> : ''}
         <h3 className="text-h3 pb-[12px]">Культура и ценности компании</h3>
         <button
-          onClick={() => setMenuOpened(!isMenuOpened)}
+          onClick={() => setMenuOpened((prev) => !prev)}
           className="min-w-[40px] h-[40px] bg-card-menu bg-[length:20px_20px] bg-center bg-no-repeat"
         />
       </div>
