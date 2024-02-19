@@ -1,10 +1,12 @@
 import { FC, useState } from 'react';
 import { ITableLine } from './TableLineTypes';
+import { DropDown } from '../DropDown/DropDown';
 
 export const TableLine: FC<ITableLine> = ({ name, job, status }) => {
   const [isMenuOpened, setMenuOpened] = useState(false);
   return (
-    <div className="flex w-[100%] text-fontColor bg-white border-b-[1px] border-borderDisabledInput border-solid">
+    <div className="flex w-[100%] text-fontColor bg-white border-b-[1px] border-borderDisabledInput border-solid relative">
+      {isMenuOpened ? <DropDown /> : ''}
       <h4 className="truncate text-h4 pt-[7px] pb-[8px] inline-block w-[calc(100%-32%-32%-40px)] pl-[10px] border-r-[1px] border-borderDisabledInput border-solid">
         {name}
       </h4>
