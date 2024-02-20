@@ -3,7 +3,7 @@ import RootStories from '../../store/RootStores';
 
 export const RootStoriesContext = createContext<RootStories | null>(null);
 
-export const useStoures = () => {
+export const useStores = () => {
   const context = useContext(RootStoriesContext);
 
   if (context === null) {
