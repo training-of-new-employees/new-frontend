@@ -1,4 +1,4 @@
-import { makeAutoObservable, runInAction } from 'mobx';
+import { makeAutoObservable } from 'mobx';
 import { IPromiseBasedObservable, fromPromise } from 'mobx-utils';
 import { getProfileMe } from '../utils/api/profileApi';
 
