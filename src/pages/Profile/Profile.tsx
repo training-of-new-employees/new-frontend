@@ -1,5 +1,6 @@
-function Profile() {
-  return <div>Profile</div>;
-}
+import { FC } from 'react';
+import { SideBar } from '../../components/UI/SideBar/SideBar';
 
-export default Profile;
+export const Profile: FC = () => {
+  return <SideBar role="admin" />;
+};
