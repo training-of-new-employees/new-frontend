@@ -4,7 +4,7 @@ import Courses from '../pages/Courses/Courses';
 import Login from '../pages/Login/Login';
 import Main from '../pages/Main/Main';
 import Positions from '../pages/Positions/Positions';
-import Profile from '../pages/Profile/Profile';
+import { Profile } from '../pages/Profile/Profile';
 import Regestration from '../pages/Registration/Regestration';
 
 const router = createBrowserRouter([
