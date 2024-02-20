@@ -110,7 +110,7 @@ export const SIDEBAR_MENU_ADMIN: {
     id: 2,
     text: 'Пользователи',
     image: Users,
-    link: '/employees',
+    link: '/users',
   },
   {
     id: 3,
