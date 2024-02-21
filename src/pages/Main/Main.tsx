@@ -1,3 +1,13 @@
+import Body from './Body/Body';
+import Footer from './Footer/Footer';
+import Header from './Header/Header';
+
 export default function Main() {
-  return <div>Main</div>;
+  return (
+    <>
+      <Header />
+      <Body />
+      <Footer />
+    </>
+  );
 }
