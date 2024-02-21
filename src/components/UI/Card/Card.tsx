@@ -1,5 +1,6 @@
 import { FC, useState } from 'react';
 import { ICard } from './CardTypes';
+import { CardMenu } from '../../../utils/constants';
 import { DropDown } from '../DropDown/DropDown';
 
 export const Card: FC<ICard> = ({ mode }) => {
@@ -7,7 +8,7 @@ export const Card: FC<ICard> = ({ mode }) => {
   return (
     <div className="bg-sidebarHoveredBtn max-w-[383px] min-w-[316px] rounded-[16px] p-[20px]">
       <div className="flex gap-[10px] relative">
-        {isMenuOpened ? <DropDown /> : ''}
+        {isMenuOpened ? <DropDown menu={CardMenu} /> : ''}
         <h3 className="text-h3 pb-[12px]">Культура и ценности компании</h3>
         <button
           onClick={() => setMenuOpened((prev) => !prev)}

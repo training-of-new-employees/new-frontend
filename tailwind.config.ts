@@ -31,6 +31,8 @@ const config: Config = {
       },
       backgroundImage: {
         'card-menu': "url('./src/images/UI/CardMenu.svg')",
+        'logo-header': "url('./src/images/Landing/logo.svg')",
+        'profile-avatar': "url('./src/images/UI/Profile-logo.svg')",
       },
     },
   },
