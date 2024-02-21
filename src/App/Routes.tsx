@@ -7,6 +7,7 @@ import Main from '../pages/Main/Main';
 import Positions from '../pages/Positions/Positions';
 import { Profile } from '../pages/Profile/Profile';
 import Regestration from '../pages/Registration/Regestration';
+import Test from '../pages/Test/Test.tsx';
 import Users from '../pages/Users/Users';
 
 const router = createBrowserRouter([
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
   {
     path: paths.registration,
     element: <Regestration />,
+  },
+  {
+    path: '/test',
+    element: <Test />,
   },
 ]);
 
