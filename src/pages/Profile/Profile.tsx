@@ -1,5 +1,5 @@
-function Profile() {
-  return <div>Profile</div>;
-}
+import { FC } from 'react';
 
-export default Profile;
+export const Profile: FC = () => {
+  return <>какой-то текст</>;
+};
