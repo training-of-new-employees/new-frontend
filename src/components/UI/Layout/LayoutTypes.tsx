@@ -1,3 +1,3 @@
-export interface ISideBar {
+export interface ILayout {
   role: 'admin' | 'user';
 }

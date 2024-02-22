@@ -1,6 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
 import { paths } from './paths';
-import { SideBar } from '../components/UI/SideBar/SideBar';
+import { Layout } from '../components/UI/Layout/Layout';
 import Courses from '../pages/Courses/Courses';
 import Login from '../pages/Login/Login';
 import Main from '../pages/Main/Main';
@@ -16,7 +16,7 @@ const router = createBrowserRouter([
     element: <Main />,
   },
   {
-    element: <SideBar role="admin" />,
+    element: <Layout role="user" />,
     children: [
       {
         path: paths.profile,
