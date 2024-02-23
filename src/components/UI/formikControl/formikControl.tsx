@@ -1,5 +1,5 @@
-import Input from '../input/input.tsx';
 import { ReactNode } from 'react';
+import Input from '../input/input.tsx';
 
 type FormikControlProps = {
   control: ReactNode;
