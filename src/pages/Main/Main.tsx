@@ -1,9 +1,13 @@
-import { coursesForPosition } from '../../utils/axios/Admin/positions/coursesForPosition';
+import Body from './Body/Body';
+import Footer from './Footer/Footer';
+import Header from './Header/Header';
 
 export default function Main() {
-  coursesForPosition('14').then((res) => {
-    console.log(res);
-  });
-
-  return <div>Main</div>;
+  return (
+    <>
+      <Header />
+      <Body />
+      <Footer />
+    </>
+  );
 }
