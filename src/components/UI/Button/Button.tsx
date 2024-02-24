@@ -5,7 +5,7 @@ type TButtonProps = {
 
 function Button({ type, children }: TButtonProps) {
   return (
-    <button className="mb-7" type={type}>
+    <button className="mb-7 bg-green-300" type={type}>
       {children}
     </button>
   );

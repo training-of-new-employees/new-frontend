@@ -1,25 +1,19 @@
-import RememberMe from '../RememberMe/RememberMe.tsx';
-import FormikContainer from '../UI/FormikContainer/FormikContainer.tsx';
-import FormikControl from '../UI/FormikControl/FormikControl.tsx';
+import FormikContainer from '../../UI/FormikContainer/FormikContainer.tsx';
+import FormikControl from '../../UI/FormikControl/FormikControl.tsx';
 
 interface ValuesTypes {
   [key: string]: string | string[];
 }
 
-function LoginForm() {
+function PasswordRecoveryForm() {
   const InitialValues = {
     email: '',
-    password: '',
-    rememberMe: '',
   };
 
   const Validation = (values: ValuesTypes) => {
     const errors: ValuesTypes = {};
     if (!values.email) {
       errors.email = 'Required';
-    }
-    if (!values.password) {
-      errors.password = 'Required';
     }
     return errors;
   };
@@ -30,7 +24,7 @@ function LoginForm() {
       InitialValues={InitialValues}
       Validation={Validation}
       onSubmit={onSubmit}
-      buttonText="Войти"
+      buttonText="Отправить новый пароль"
     >
       <FormikControl
         control="input"
@@ -39,16 +33,8 @@ function LoginForm() {
         placeholder="E-mail"
         options={[]}
       />
-      <FormikControl
-        control="input"
-        type="password"
-        inputName="password"
-        placeholder="Пароль"
-        options={[]}
-      />
-      <RememberMe />
     </FormikContainer>
   );
 }
 
-export default LoginForm;
+export default PasswordRecoveryForm;

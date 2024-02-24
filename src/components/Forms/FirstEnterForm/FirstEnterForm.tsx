@@ -1,15 +1,16 @@
-import RememberMe from '../RememberMe/RememberMe.tsx';
-import FormikContainer from '../UI/FormikContainer/FormikContainer.tsx';
-import FormikControl from '../UI/FormikControl/FormikControl.tsx';
+// @TODO Взять почту для InitialValues из ссылки.
+// @TODO Всю реализацию входа можно взять из прошлого репозитория, она работает
+import RememberMe from '../../RememberMe/RememberMe.tsx';
+import FormikContainer from '../../UI/FormikContainer/FormikContainer.tsx';
+import FormikControl from '../../UI/FormikControl/FormikControl.tsx';
 
 interface ValuesTypes {
   [key: string]: string | string[];
 }
 
-function RegisterForm() {
+function FirstEnterForm() {
   const InitialValues = {
-    company: '',
-    email: '',
+    email: 'test@mail.com',
     password: '',
     repeatPassword: '',
     rememberMe: '',
@@ -17,11 +18,8 @@ function RegisterForm() {
 
   const Validation = (values: ValuesTypes) => {
     const errors: ValuesTypes = {};
-    if (!values.email) {
-      errors.email = 'Required';
-    }
     if (!values.password) {
-      errors.password = 'Required';
+      errors.text = 'Required';
     }
     return errors;
   };
@@ -36,17 +34,11 @@ function RegisterForm() {
     >
       <FormikControl
         control="input"
-        type="text"
-        inputName="company"
-        placeholder="Компания"
-        options={[]}
-      />
-      <FormikControl
-        control="input"
         type="email"
         inputName="email"
         placeholder="E-mail"
         options={[]}
+        disabled
       />
       <FormikControl
         control="input"
@@ -67,4 +59,4 @@ function RegisterForm() {
   );
 }
 
-export default RegisterForm;
+export default FirstEnterForm;

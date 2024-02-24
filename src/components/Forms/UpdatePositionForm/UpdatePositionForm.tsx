@@ -1,19 +1,19 @@
-import FormikContainer from '../UI/FormikContainer/FormikContainer.tsx';
-import FormikControl from '../UI/FormikControl/FormikControl.tsx';
+import FormikContainer from '../../UI/FormikContainer/FormikContainer.tsx';
+import FormikControl from '../../UI/FormikControl/FormikControl.tsx';
 
 interface ValuesTypes {
   [key: string]: string | string[];
 }
 
-function PasswordRecoveryForm() {
+function UpdatePositionForm() {
   const InitialValues = {
-    email: '',
+    position: '',
   };
 
   const Validation = (values: ValuesTypes) => {
     const errors: ValuesTypes = {};
-    if (!values.email) {
-      errors.email = 'Required';
+    if (!values.position) {
+      errors.position = 'Required';
     }
     return errors;
   };
@@ -24,17 +24,17 @@ function PasswordRecoveryForm() {
       InitialValues={InitialValues}
       Validation={Validation}
       onSubmit={onSubmit}
-      buttonText="Отправить новый пароль"
+      buttonText="Сохранить изменения"
     >
       <FormikControl
         control="input"
-        type="email"
-        inputName="email"
-        placeholder="E-mail"
+        type="text"
+        inputName="position"
+        placeholder="Введите название должности"
         options={[]}
       />
     </FormikContainer>
   );
 }
 
-export default PasswordRecoveryForm;
+export default UpdatePositionForm;

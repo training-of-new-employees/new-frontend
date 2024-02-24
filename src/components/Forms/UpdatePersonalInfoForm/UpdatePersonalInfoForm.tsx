@@ -1,5 +1,5 @@
-import FormikContainer from '../UI/FormikContainer/FormikContainer.tsx';
-import FormikControl from '../UI/FormikControl/FormikControl.tsx';
+import FormikContainer from '../../UI/FormikContainer/FormikContainer.tsx';
+import FormikControl from '../../UI/FormikControl/FormikControl.tsx';
 
 interface ValuesTypes {
   [key: string]: string | string[];
@@ -9,7 +9,7 @@ function UpdatePersonalInfoForm() {
   const InitialValues = {
     name: '',
     surname: '',
-    patronimic: '',
+    patronymic: '',
     company: '',
     email: '',
   };
@@ -34,31 +34,35 @@ function UpdatePersonalInfoForm() {
         control="input"
         type="text"
         inputName="surname"
-        placeholder="Фамилия"
+        label="Фамилия"
+        placeholder="Введите фамилию"
         options={[]}
       />
-      <FormikControl control="input" type="text" inputName="name" placeholder="Имя" options={[]} />
       <FormikControl
         control="input"
         type="text"
-        inputName="patronimic"
-        placeholder="Отчество"
+        inputName="name"
+        label="Имя"
+        placeholder="Введите имя"
+        options={[]}
+      />
+      <FormikControl
+        control="input"
+        type="text"
+        inputName="patronymic"
+        label="Отчество"
+        placeholder="Введите отчество"
         options={[]}
       />
       <FormikControl
         control="input"
         type="text"
         inputName="company"
-        placeholder="Компания"
+        label="Компания"
+        placeholder="Введите название компании"
         options={[]}
       />
-      <FormikControl
-        control="input"
-        type="email"
-        inputName="email"
-        placeholder="E-mail"
-        options={[]}
-      />
+      <FormikControl control="input" type="email" inputName="email" label="E-mail" options={[]} />
     </FormikContainer>
   );
 }
