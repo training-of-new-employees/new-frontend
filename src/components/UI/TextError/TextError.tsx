@@ -1,5 +1,3 @@
-// @TODO переделать типизацию
-
 import { ReactNode } from 'react';
 
 interface TextErrorProps {
@@ -7,7 +5,7 @@ interface TextErrorProps {
 }
 
 function TextError({ children }: TextErrorProps) {
-  return <div>{children}</div>;
+  return <div className="text-red">{children}</div>;
 }
 
 export default TextError;
