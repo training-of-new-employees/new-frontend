@@ -1,7 +1,8 @@
 import axios from 'axios';
+import { urlByEnvVar } from '../constantsUrl';
 import { getToken } from '../tokenActions/getToken';
 
-export const apiBaseUrl: string = import.meta.env.VITE_APP_BASE_URL;
+export const apiBaseUrl: string = urlByEnvVar.development;
 
 export const apiGateway = axios.create({
   baseURL: apiBaseUrl,

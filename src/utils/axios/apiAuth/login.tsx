@@ -1,5 +1,5 @@
-import { IAuth } from './type';
 import { apiGateway } from '../axiosApi';
+import { IAuth } from '../types/typeAuth';
 
 export const login = async ({ email, password }: IAuth) => {
   try {

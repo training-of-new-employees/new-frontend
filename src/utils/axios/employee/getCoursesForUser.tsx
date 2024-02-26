@@ -1,5 +1,5 @@
 import { apiGateway } from '../axiosApi';
-export const getCoursesForUser = async () => {
+export const getCoursesForEmployee = async () => {
   const res = await apiGateway.get(`/api/v1/users/courses`);
   try {
     return res.data;

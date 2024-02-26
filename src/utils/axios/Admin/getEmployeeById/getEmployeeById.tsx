@@ -1,6 +1,6 @@
 import { apiGateway } from '../../axiosApi';
-export const getUsers = async () => {
-  const res = await apiGateway.get('/api/v1/users');
+export const getEmployeeById = async (id: string) => {
+  const res = await apiGateway.get(`/api/v1/users/${id}`);
   try {
     return res.data;
   } catch (error) {

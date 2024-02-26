@@ -1,11 +1,11 @@
-import { ICreateCourses } from './coursesType';
 import { apiGateway } from '../../axiosApi';
+import { ICourses } from '../../types/coursesType';
 
-export const createCourses = async ({ name, discripition }: ICreateCourses) => {
+export const createCourse = async ({ name, description }: ICourses) => {
   try {
-    const res = await apiGateway.post(' /api/v1/admin/courses', {
+    const res = await apiGateway.post('/api/v1/admin/courses', {
       name,
-      discripition,
+      description,
     });
     return res.data;
   } catch (error) {
