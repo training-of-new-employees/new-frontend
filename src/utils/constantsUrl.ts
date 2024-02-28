@@ -14,7 +14,7 @@ const paths = {
 // pass: Ivan42_Maria
 // login: sir.jul@yandex.ru
 
-const urlByEnvVar = {
+export const urlByEnvVar = {
   development: 'https://quickon.acceleratorpracticum.ru',
 };
 
