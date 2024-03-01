@@ -26,7 +26,9 @@ function RegisterForm() {
     return errors;
   };
 
-  const onSubmit = (values: object) => console.log('Form data', values);
+  const onSubmit = (values: ValuesTypes) => {
+    console.log('Form data', values);
+  };
   return (
     <FormikContainer
       InitialValues={InitialValues}

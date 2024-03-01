@@ -36,6 +36,7 @@ function FormikControl({
           inputName={inputName}
           placeholder={placeholder}
           disabled={disabled}
+          type={type}
           {...rest}
         />
       );
