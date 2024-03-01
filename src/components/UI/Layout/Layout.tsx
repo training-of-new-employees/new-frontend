@@ -7,8 +7,8 @@ import { SideBar } from '../SideBar/SideBar';
 export const Layout: FC<ILayout> = ({ role }) => {
   return (
     <>
-      <Header role={role} />
-      <div className="flex">
+      <Header />
+      <div className="flex bg-backgrnd ">
         <SideBar role={role} />
         <Outlet />
       </div>

@@ -8,7 +8,7 @@ export const SideBar: FC<ISideBar> = ({ role }) => {
   const [activeMenu, setActiveMenu] = useState(0);
   const SideBarMenu = role === 'admin' ? SIDEBAR_MENU_ADMIN : SIDEBAR_MENU_PERSONAL;
   return (
-    <div className="min-w-[300px] h-screen border-borderDisabledInput border-r-[1px]">
+    <div className=" bg-white min-w-[300px] h-screen border-borderDisabledInput border-r-[1px]">
       <NavLink
         to="/profile"
         className={

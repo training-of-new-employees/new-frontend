@@ -34,6 +34,7 @@ const config: Config = {
         'logo-header': "url('./src/images/Landing/logo.svg')",
         'profile-avatar': "url('./src/images/UI/Profile-logo.svg')",
         'exit-icon': "url('./src/images/UI/exit-icon.svg')",
+        'profile-exitbtn': "url('./src/images/UI/ProfileExitBtn.svg')",
       },
     },
   },
