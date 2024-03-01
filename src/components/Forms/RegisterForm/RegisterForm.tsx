@@ -1,4 +1,3 @@
-import { registration } from '../../../utils/axios/apiAuth/registrationAdmin.tsx';
 import RememberMe from '../../RememberMe/RememberMe.tsx';
 import FormikContainer from '../../UI/FormikContainer/FormikContainer.tsx';
 import FormikControl from '../../UI/FormikControl/FormikControl.tsx';
@@ -29,11 +28,6 @@ function RegisterForm() {
 
   const onSubmit = (values: ValuesTypes) => {
     console.log('Form data', values);
-    registration({
-      email: values.email,
-      password: values.password,
-      company_name: values.company,
-    }).then((r) => console.log(r));
   };
   return (
     <FormikContainer
