@@ -23,6 +23,6 @@ export const LoginSchema = z
         regexPassword,
         'Пароль должен содержать большую букву, маленькую букву, цифру и спец-символ'
       ),
-    rememberMe: z.boolean(),
+    rememberMe: z.boolean().optional(),
   })
   .required({ email: true, password: true });

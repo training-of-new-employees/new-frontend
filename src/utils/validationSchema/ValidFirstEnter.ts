@@ -27,7 +27,7 @@ export const FirstEnterSchema = z
         required_error: 'Это поле обязательно',
       })
       .trim(),
-    rememberMe: z.boolean(),
+    rememberMe: z.boolean().optional(),
   })
   .required({ email: true, password: true, repeatPassword: true })
   .refine((data) => data.password === data.repeatPassword, {
