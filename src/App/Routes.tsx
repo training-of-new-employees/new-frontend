@@ -1,6 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 import { paths } from './paths';
 import { Layout } from '../components/UI/Layout/Layout';
+import { LayoutAuth } from '../components/UI/LayoutAuth/LayoutAuth.tsx';
 import Courses from '../pages/Courses/Courses';
 import Login from '../pages/Login/Login';
 import Main from '../pages/Main/Main';
@@ -37,12 +38,17 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: paths.login,
-    element: <Login />,
-  },
-  {
-    path: paths.registration,
-    element: <Regestration />,
+    element: <LayoutAuth />,
+    children: [
+      {
+        path: paths.registration,
+        element: <Regestration />,
+      },
+      {
+        path: paths.login,
+        element: <Login />,
+      },
+    ],
   },
   {
     path: '/test',

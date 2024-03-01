@@ -6,9 +6,10 @@ interface InputProps {
   inputName: string;
   placeholder?: string;
   disabled?: boolean;
+  type?: string;
 }
 
-function Input({ label, inputName, disabled, ...rest }: InputProps) {
+function Input({ label, inputName, disabled, type, ...rest }: InputProps) {
   return (
     <div className="m-3">
       <label htmlFor={inputName}>{label}</label>
@@ -17,6 +18,7 @@ function Input({ label, inputName, disabled, ...rest }: InputProps) {
         id={inputName}
         name={inputName}
         disabled={disabled}
+        type={type}
         {...rest}
       />
       <ErrorMessage name={inputName} component={TextError} />

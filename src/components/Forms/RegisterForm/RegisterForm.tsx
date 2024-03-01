@@ -13,6 +13,7 @@ function RegisterForm() {
   };
 
   const onSubmit = (values: object) => console.log('Form data', values);
+
   return (
     <FormikContainer
       Schema={RegisterSchema}
