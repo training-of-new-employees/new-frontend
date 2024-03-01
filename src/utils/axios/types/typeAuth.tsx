@@ -1,5 +1,5 @@
 export interface IAuth {
-  email?: string;
-  password?: string;
-  company_name?: string;
+  email?: string | string[];
+  password?: string | string[];
+  company_name?: string | string[];
 }
