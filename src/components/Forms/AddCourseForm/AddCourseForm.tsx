@@ -1,3 +1,4 @@
+import { AddCourseSchema } from '../../../utils/validationSchema/ValidAddCourse.ts';
 import FormikContainer from '../../UI/FormikContainer/FormikContainer.tsx';
 import FormikControl from '../../UI/FormikControl/FormikControl.tsx';
 
@@ -11,19 +12,11 @@ function AddCourseForm() {
     description: '',
   };
 
-  const Validation = (values: ValuesTypes) => {
-    const errors: ValuesTypes = {};
-    if (!values.name) {
-      errors.name = 'Required';
-    }
-    return errors;
-  };
-
   const onSubmit = (values: object) => console.log('Form data', values);
   return (
     <FormikContainer
       InitialValues={InitialValues}
-      Validation={Validation}
+      Schema={AddCourseSchema}
       onSubmit={onSubmit}
       buttonText="Добавить курс"
     >

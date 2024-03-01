@@ -1,3 +1,4 @@
+import { LoginSchema } from '../../../utils/validationSchema/ValidLoginSchemta.ts';
 import RememberMe from '../../RememberMe/RememberMe.tsx';
 import FormikContainer from '../../UI/FormikContainer/FormikContainer.tsx';
 import FormikControl from '../../UI/FormikControl/FormikControl.tsx';
@@ -31,6 +32,7 @@ function LoginForm() {
       Validation={Validation}
       onSubmit={onSubmit}
       buttonText="Войти"
+      Schema={LoginSchema}
     >
       <FormikControl
         control="input"

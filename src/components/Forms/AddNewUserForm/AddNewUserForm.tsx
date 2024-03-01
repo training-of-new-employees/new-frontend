@@ -1,9 +1,6 @@
+import { AddNewUserSchema } from '../../../utils/validationSchema/ValidAddNewUser.ts';
 import FormikContainer from '../../UI/FormikContainer/FormikContainer.tsx';
 import FormikControl from '../../UI/FormikControl/FormikControl.tsx';
-
-interface ValuesTypes {
-  [key: string]: string | string[];
-}
 
 function AddNewUserForm() {
   const InitialValues = {
@@ -12,14 +9,6 @@ function AddNewUserForm() {
     patronymic: '',
     position: '',
     email: '',
-  };
-
-  const Validation = (values: ValuesTypes) => {
-    const errors: ValuesTypes = {};
-    if (!values.email) {
-      errors.email = 'Required';
-    }
-    return errors;
   };
 
   const options = [
@@ -45,7 +34,7 @@ function AddNewUserForm() {
   return (
     <FormikContainer
       InitialValues={InitialValues}
-      Validation={Validation}
+      Schema={AddNewUserSchema}
       onSubmit={onSubmit}
       buttonText="Добавить пользователя"
     >

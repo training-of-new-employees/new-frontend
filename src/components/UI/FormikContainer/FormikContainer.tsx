@@ -2,6 +2,7 @@
 
 import { ReactNode } from 'react';
 import { Formik, Form } from 'formik';
+import { toFormikValidationSchema } from 'zod-formik-adapter';
 import Button from '../Button/Button.tsx';
 
 interface ValuesTypes {
@@ -10,10 +11,11 @@ interface ValuesTypes {
 
 interface IFormikContainer {
   InitialValues: ValuesTypes;
-  Validation: (arg: ValuesTypes) => void;
+  Validation?: (arg: ValuesTypes) => void;
   onSubmit: (arg: ValuesTypes) => void;
   children: ReactNode;
   buttonText: string;
+  Schema?: any;
 }
 
 function FormikContainer({
@@ -22,6 +24,7 @@ function FormikContainer({
   onSubmit,
   buttonText,
   children,
+  Schema,
 }: IFormikContainer) {
   return (
     <Formik
@@ -29,6 +32,7 @@ function FormikContainer({
       initialValues={InitialValues}
       validate={Validation}
       onSubmit={onSubmit}
+      validationSchema={toFormikValidationSchema(Schema)}
     >
       {() => (
         <Form>

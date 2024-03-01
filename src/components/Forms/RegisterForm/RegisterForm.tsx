@@ -1,3 +1,4 @@
+import { RegisterSchema } from '../../../utils/validationSchema/ValidRegisterSchemta.ts';
 import RememberMe from '../../RememberMe/RememberMe.tsx';
 import FormikContainer from '../../UI/FormikContainer/FormikContainer.tsx';
 import FormikControl from '../../UI/FormikControl/FormikControl.tsx';
@@ -29,6 +30,7 @@ function RegisterForm() {
   const onSubmit = (values: object) => console.log('Form data', values);
   return (
     <FormikContainer
+      Schema={RegisterSchema}
       InitialValues={InitialValues}
       Validation={Validation}
       onSubmit={onSubmit}
