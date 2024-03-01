@@ -2,10 +2,6 @@ import { AddLessonSchema } from '../../../utils/validationSchema/ValidAddLesson.
 import FormikContainer from '../../UI/FormikContainer/FormikContainer.tsx';
 import FormikControl from '../../UI/FormikControl/FormikControl.tsx';
 
-interface ValuesTypes {
-  [key: string]: string | string[];
-}
-
 function AddLessonForm() {
   const InitialValues = {
     name: '',

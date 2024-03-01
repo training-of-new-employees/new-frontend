@@ -2,10 +2,6 @@ import { RecoveryPasswordSchema } from '../../../utils/validationSchema/ValidRec
 import FormikContainer from '../../UI/FormikContainer/FormikContainer.tsx';
 import FormikControl from '../../UI/FormikControl/FormikControl.tsx';
 
-interface ValuesTypes {
-  [key: string]: string | string[];
-}
-
 function PasswordRecoveryForm() {
   const InitialValues = {
     email: '',

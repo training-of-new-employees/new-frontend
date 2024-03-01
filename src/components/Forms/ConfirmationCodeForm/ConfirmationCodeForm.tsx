@@ -2,10 +2,6 @@ import { ConfimCodeSchema } from '../../../utils/validationSchema/ValidConfimCod
 import FormikContainer from '../../UI/FormikContainer/FormikContainer.tsx';
 import FormikControl from '../../UI/FormikControl/FormikControl.tsx';
 
-interface ValuesTypes {
-  [key: string]: string | string[];
-}
-
 function ConfirmationCodeForm() {
   const InitialValues = {
     number1: '',

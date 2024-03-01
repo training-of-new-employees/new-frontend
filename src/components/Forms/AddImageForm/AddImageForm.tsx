@@ -2,10 +2,6 @@ import { AddImageSchema } from '../../../utils/validationSchema/ValidAddImage.ts
 import FormikContainer from '../../UI/FormikContainer/FormikContainer.tsx';
 import FormikControl from '../../UI/FormikControl/FormikControl.tsx';
 
-interface ValuesTypes {
-  [key: string]: string | string[];
-}
-
 function AddImageForm() {
   const InitialValues = {
     link: '',

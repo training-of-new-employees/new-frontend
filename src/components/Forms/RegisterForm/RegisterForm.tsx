@@ -3,10 +3,6 @@ import RememberMe from '../../RememberMe/RememberMe.tsx';
 import FormikContainer from '../../UI/FormikContainer/FormikContainer.tsx';
 import FormikControl from '../../UI/FormikControl/FormikControl.tsx';
 
-interface ValuesTypes {
-  [key: string]: string | string[];
-}
-
 function RegisterForm() {
   const InitialValues = {
     company: '',
@@ -16,23 +12,11 @@ function RegisterForm() {
     rememberMe: '',
   };
 
-  const Validation = (values: ValuesTypes) => {
-    const errors: ValuesTypes = {};
-    if (!values.email) {
-      errors.email = 'Required';
-    }
-    if (!values.password) {
-      errors.password = 'Required';
-    }
-    return errors;
-  };
-
   const onSubmit = (values: object) => console.log('Form data', values);
   return (
     <FormikContainer
       Schema={RegisterSchema}
       InitialValues={InitialValues}
-      Validation={Validation}
       onSubmit={onSubmit}
       buttonText="Войти"
     >

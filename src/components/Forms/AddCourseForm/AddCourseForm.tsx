@@ -2,10 +2,6 @@ import { AddCourseSchema } from '../../../utils/validationSchema/ValidAddCourse.
 import FormikContainer from '../../UI/FormikContainer/FormikContainer.tsx';
 import FormikControl from '../../UI/FormikControl/FormikControl.tsx';
 
-interface ValuesTypes {
-  [key: string]: string | string[];
-}
-
 function AddCourseForm() {
   const InitialValues = {
     name: '',
