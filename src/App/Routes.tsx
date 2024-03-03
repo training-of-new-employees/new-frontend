@@ -11,6 +11,7 @@ import { Profile } from '../pages/Profile/Profile';
 import Regestration from '../pages/Registration/Regestration';
 import Test from '../pages/Test/Test.tsx';
 import Users from '../pages/Users/Users';
+import EditCourse from '../pages/Courses/EditCourse/EditCourse.tsx';
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: paths.newcourse,
         element: <CreateCourse />,
+      },
+      {
+        path: paths.editcourse,
+        element: <EditCourse />,
       },
       {
         path: paths.users,
