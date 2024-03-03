@@ -11,7 +11,8 @@ class CoursesStore {
   }
 
   getCoursesAction = () => {
-    this.courses = fromPromise(fetchCourses());
+    const request = fromPromise(fetchCourses());
+    this.courses = request.value;
   };
 }
 

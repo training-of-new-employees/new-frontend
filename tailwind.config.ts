@@ -31,6 +31,9 @@ const config: Config = {
         colorWhite: '#fff',
       },
       backgroundImage: {
+        'icon-edit': 'url(./src/assets/icon/IconEdit.svg)',
+        'admin-pic': 'url(./src/assets/Admin.svg)',
+        'admin-image': 'url(./src/assets/AdminImage.svg)',
         whiteIconButton: "url('./src/assets/icon/Icon.svg')",
         greenIconButton: "url('./src/assets/icon/Icon-green.svg')",
         backIconButton: "url('./src/assets/icon/Back-Icon.svg')",

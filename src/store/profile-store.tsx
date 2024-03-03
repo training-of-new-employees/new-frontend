@@ -1,6 +1,7 @@
 import { makeAutoObservable } from 'mobx';
 import { IPromiseBasedObservable, fromPromise } from 'mobx-utils';
 import { getProfileMe } from '../utils/api/profileApi';
+import { IUser } from '../utils/axios/types/IUser';
 
 class ProfileStore {
   //TODO: Написать типизацию для профиля
@@ -12,7 +13,7 @@ class ProfileStore {
 
   getProfileAction = () => {
     //TODO: Внутри fromPromise Тот же самый try/catch
-    this.profile = fromPromise(getProfileMe());
+    const request = fromPromise(getProfileMe());
     //     try {
     //       this.isLoading = true;
     //       const res = await getProfileMe();
@@ -24,6 +25,7 @@ class ProfileStore {
     //       this.isLoading = false;
     //       console.log('ошибка загрузки профиля');
     //     }
+    this.profile = request;
   };
 }
 
