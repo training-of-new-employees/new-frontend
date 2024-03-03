@@ -3,6 +3,7 @@ import { paths } from './paths';
 import { Layout } from '../components/UI/Layout/Layout';
 import { LayoutAuth } from '../components/UI/LayoutAuth/LayoutAuth.tsx';
 import Courses from '../pages/Courses/Courses';
+import CreateCourse from '../pages/Courses/CreateCourse/CreateCourse.tsx';
 import Login from '../pages/Login/Login';
 import Main from '../pages/Main/Main';
 import Positions from '../pages/Positions/Positions';
@@ -10,7 +11,6 @@ import { Profile } from '../pages/Profile/Profile';
 import Regestration from '../pages/Registration/Regestration';
 import Test from '../pages/Test/Test.tsx';
 import Users from '../pages/Users/Users';
-import CreateCourse from '../pages/Courses/CreateCourse/CreateCourse.tsx';
 
 const router = createBrowserRouter([
   {

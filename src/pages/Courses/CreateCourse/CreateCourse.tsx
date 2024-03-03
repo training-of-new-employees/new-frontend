@@ -1,4 +1,3 @@
-import React from 'react';
 import AddCourseForm from '../../../components/Forms/AddCourseForm/AddCourseForm';
 
 export default function CreateCourse() {
