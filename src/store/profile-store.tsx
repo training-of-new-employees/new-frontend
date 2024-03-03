@@ -5,7 +5,7 @@ import { IUser } from '../utils/axios/types/IUser';
 
 class ProfileStore {
   //TODO: Написать типизацию для профиля
-  profile?: IPromiseBasedObservable<any>;
+  profile?: IPromiseBasedObservable<IUser>;
   isLoading = false;
   constructor() {
     makeAutoObservable(this);
