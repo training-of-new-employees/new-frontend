@@ -1,14 +1,9 @@
 import { makeAutoObservable } from 'mobx';
 import { IPromiseBasedObservable, fromPromise } from 'mobx-utils';
-import { createCourse } from '../utils/axios/Admin/coursesAdmin/createCourse';
-import { editCourses } from '../utils/axios/Admin/coursesAdmin/editCourses';
-import { getCourseByIdForAdmin } from '../utils/axios/Admin/coursesAdmin/getCourseById';
 import { editLessonsForEmployee } from '../utils/axios/employee/editLessonsForEmployee';
-import { getCoursesForEmployee } from '../utils/axios/employee/getCoursesForUser';
-import { getLessonsForEmployee } from '../utils/axios/employee/getLessonsForEmployee';
-import { ICourses } from '../utils/axios/types/coursesType';
-import { IEditLessons } from '../utils/axios/types/lessonsType';
 import { getDataLessonsByIdForEmployee } from '../utils/axios/employee/getLessonsDataForEmployee';
+import { getLessonsForEmployee } from '../utils/axios/employee/getLessonsForEmployee';
+import { IEditLessons } from '../utils/axios/types/lessonsType';
 
 class LessonsStore {
   lessons?: IPromiseBasedObservable<any[]>;
