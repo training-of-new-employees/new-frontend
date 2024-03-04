@@ -1,15 +1,14 @@
 import { FC } from 'react';
 import { Outlet } from 'react-router-dom';
-import { ILayout } from './LayoutTypes';
 import { Header } from '../Header/Header';
 import { SideBar } from '../SideBar/SideBar';
 
-export const Layout: FC<ILayout> = ({ role }) => {
+export const Layout: FC = () => {
   return (
     <>
       <Header />
       <div className="flex bg-backgrnd ">
-        <SideBar role={role} />
+        <SideBar />
         <Outlet />
       </div>
     </>
