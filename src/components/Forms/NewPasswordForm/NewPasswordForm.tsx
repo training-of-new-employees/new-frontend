@@ -1,29 +1,26 @@
 // import { useState } from 'react';
-import RememberMe from '../../RememberMe/RememberMe.tsx';
 import FormikContainer from '../../UI/FormikContainer/FormikContainer.tsx';
 import FormikControl from '../../UI/FormikControl/FormikControl.tsx';
-import LinkComp from '../../UI/LinkComp/LinkComp.tsx';
 
 interface ValuesTypes {
   [key: string]: string | string[];
 }
 
-function LoginForm() {
-  // const [serverError, setServerError] = useState('sample of server error');
+function NewPasswordForm() {
+  // const [serverError, setServerError] = useState('');
 
   const InitialValues = {
-    emailLogin: '',
-    passwordLogin: '',
-    rememberMe: '',
+    emailNewPass: '',
+    passwordNewPass: '',
   };
 
   const Validation = (values: ValuesTypes) => {
     const errors: ValuesTypes = {};
-    if (!values.emailLogin) {
-      errors.emailLogin = 'Required';
+    if (!values.emailNewPass) {
+      errors.emailNewPass = 'Required';
     }
-    if (!values.passwordLogin) {
-      errors.passwordLogin = 'Required';
+    if (!values.passwordNewPass) {
+      errors.passwordNewPass = 'Required';
     }
     return errors;
   };
@@ -33,30 +30,26 @@ function LoginForm() {
       InitialValues={InitialValues}
       Validation={Validation}
       onSubmit={onSubmit}
-      formName="PasswordRecovery"
+      formName="NewPassword"
     >
       <FormikControl
         control="input"
         type="email"
-        inputName="emailLogin"
+        inputName="emaiNewPass"
         placeholder="E-mail"
         options={[]}
       />
       <FormikControl
         control="input"
         type="passwordLogin"
-        inputName="passwordLogin"
+        inputName="passwordNewPass"
         placeholder="Пароль"
         isPassword
         options={[]}
       />
       {/*<p className="text-error mx-auto">{serverError}</p>*/}
-      <div className="flex flex-row justify-between mt-[26px] mb-[10px]">
-        <RememberMe />
-        <LinkComp direction="/recovery">Забыли пароль?</LinkComp>
-      </div>
     </FormikContainer>
   );
 }
 
-export default LoginForm;
+export default NewPasswordForm;

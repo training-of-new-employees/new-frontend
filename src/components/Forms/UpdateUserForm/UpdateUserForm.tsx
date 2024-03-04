@@ -52,25 +52,16 @@ function UpdateUserForm() {
       <FormikControl
         control="input"
         type="text"
-        inputName="surname"
+        inputName="surnameUpdate"
         label="Фамилия"
-        placeholder="Введите фамилию"
         options={[]}
       />
-      <FormikControl
-        control="input"
-        type="text"
-        inputName="name"
-        label="Имя"
-        placeholder="Введите имя"
-        options={[]}
-      />
+      <FormikControl control="input" type="text" inputName="name" label="Имя" options={[]} />
       <FormikControl
         control="input"
         type="text"
         inputName="patronymic"
         label="Отчество"
-        placeholder="Введите отчество"
         options={[]}
       />
       <FormikControl
@@ -80,19 +71,11 @@ function UpdateUserForm() {
         label="Должность"
         options={options}
       />
-      <FormikControl
-        control="input"
-        type="email"
-        inputName="email"
-        label="E-mail"
-        placeholder="Введите email"
-        options={[]}
-      />
+      <FormikControl control="input" type="email" inputName="email" label="E-mail" options={[]} />
       <FormikControl
         control="input"
         type="link"
         inputName="link"
-        placeholder="https://"
         label="Пригласительная ссылка"
         options={[]}
       />

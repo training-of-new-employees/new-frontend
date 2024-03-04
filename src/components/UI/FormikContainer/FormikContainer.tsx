@@ -1,39 +1,40 @@
 // @TODO заменить свойство validate на ValidationSchema при использовании YUP
 
-import { ReactNode } from 'react';
+import { Children, cloneElement, ReactNode, isValidElement } from 'react';
 import { Formik, Form } from 'formik';
-import Button from '../Button/Button.tsx';
 
 interface ValuesTypes {
   [key: string]: string | string[];
 }
-
+// тип any прописан для child в методе cloneElement
 interface IFormikContainer {
   InitialValues: ValuesTypes;
   Validation: (arg: ValuesTypes) => void;
   onSubmit: (arg: ValuesTypes) => void;
-  children: ReactNode;
-  buttonText: string;
+  children: ReactNode[] | ReactNode;
+  formName: string;
 }
 
 function FormikContainer({
   InitialValues,
   Validation,
   onSubmit,
-  buttonText,
+  formName,
   children,
 }: IFormikContainer) {
   return (
-    <Formik
-      className="m-10"
-      initialValues={InitialValues}
-      validate={Validation}
-      onSubmit={onSubmit}
-    >
-      {() => (
-        <Form>
-          {children}
-          <Button type="submit">{buttonText}</Button>
+    <Formik initialValues={InitialValues} validate={Validation} onSubmit={onSubmit}>
+      {({ errors, touched }) => (
+        <Form id={formName} className="w-[100%] flex flex-col gap-[12px] mb-[20px]">
+          {Children?.map(children, (child) => {
+            if (isValidElement(child)) {
+              return cloneElement(child, {
+                ...child.props,
+                errors,
+                touched,
+              });
+            }
+          })}
         </Form>
       )}
     </Formik>

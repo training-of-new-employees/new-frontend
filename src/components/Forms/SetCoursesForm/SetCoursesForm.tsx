@@ -15,11 +15,7 @@ const courses = [
 ];
 
 function SetCoursesForm() {
-  const InitialValues = {
-    email: '',
-    password: '',
-    rememberMe: '',
-  };
+  const InitialValues = {};
 
   const Validation = () => {
     const errors: ValuesTypes = {};

@@ -29,7 +29,7 @@ function AddNewPositionForm() {
       <FormikControl
         control="input"
         type="text"
-        inputName="position"
+        inputName="positionNew"
         placeholder="Введите название должности"
         options={[]}
       />

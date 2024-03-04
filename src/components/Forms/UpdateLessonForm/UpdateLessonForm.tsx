@@ -30,19 +30,11 @@ function UpdateLessonForm() {
       onSubmit={onSubmit}
       buttonText="Сохранить изменения"
     >
-      <FormikControl
-        control="input"
-        type="text"
-        inputName="name"
-        placeholder="Название урока"
-        label="Название"
-        options={[]}
-      />
+      <FormikControl control="input" type="text" inputName="name" label="Название" options={[]} />
       <FormikControl
         control="textarea"
         type="text"
         inputName="description"
-        placeholder="Содержание урока"
         label="Текст"
         options={[]}
       />
@@ -50,7 +42,6 @@ function UpdateLessonForm() {
         control="input"
         type="link"
         inputName="link"
-        placeholder="https://"
         label="Изображение"
         options={[]}
       />

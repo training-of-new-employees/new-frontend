@@ -30,28 +30,13 @@ function UpdatePersonalInfoForm() {
       onSubmit={onSubmit}
       buttonText="Сохранить изменения"
     >
-      <FormikControl
-        control="input"
-        type="text"
-        inputName="surname"
-        label="Фамилия"
-        placeholder="Введите фамилию"
-        options={[]}
-      />
-      <FormikControl
-        control="input"
-        type="text"
-        inputName="name"
-        label="Имя"
-        placeholder="Введите имя"
-        options={[]}
-      />
+      <FormikControl control="input" type="text" inputName="surname" label="Фамилия" options={[]} />
+      <FormikControl control="input" type="text" inputName="name" label="Имя" options={[]} />
       <FormikControl
         control="input"
         type="text"
         inputName="patronymic"
         label="Отчество"
-        placeholder="Введите отчество"
         options={[]}
       />
       <FormikControl
@@ -59,7 +44,6 @@ function UpdatePersonalInfoForm() {
         type="text"
         inputName="company"
         label="Компания"
-        placeholder="Введите название компании"
         options={[]}
       />
       <FormikControl control="input" type="email" inputName="email" label="E-mail" options={[]} />

@@ -11,6 +11,8 @@ type FormikControlProps = {
   placeholder?: string;
   options: TOptionsType[];
   disabled?: boolean;
+  isPassword?: boolean;
+  errors?: string;
 };
 
 type TOptionsType = {
@@ -26,6 +28,8 @@ function FormikControl({
   placeholder,
   options,
   disabled,
+  isPassword,
+  errors,
   ...rest
 }: FormikControlProps) {
   switch (control) {
@@ -37,6 +41,8 @@ function FormikControl({
           placeholder={placeholder}
           disabled={disabled}
           type={type}
+          isPassword={isPassword}
+          errors={errors}
           {...rest}
         />
       );

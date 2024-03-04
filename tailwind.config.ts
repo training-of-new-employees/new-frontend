@@ -39,6 +39,8 @@ const config: Config = {
         'profile-avatar': "url('./src/images/UI/Profile-logo.svg')",
         'exit-icon': "url('./src/images/UI/exit-icon.svg')",
         'profile-exitbtn': "url('./src/images/UI/ProfileExitBtn.svg')",
+        'close-pass': "url('./src/images/UI/closePass.svg')",
+        'open-pass': "url('./src/images/UI/openPass.svg')",
       },
     },
   },

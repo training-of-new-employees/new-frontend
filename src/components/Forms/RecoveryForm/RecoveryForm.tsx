@@ -1,40 +1,42 @@
+// import { useState } from 'react';
 import FormikContainer from '../../UI/FormikContainer/FormikContainer.tsx';
 import FormikControl from '../../UI/FormikControl/FormikControl.tsx';
-
 interface ValuesTypes {
   [key: string]: string | string[];
 }
 
-function PasswordRecoveryForm() {
+function RecoveryForm() {
+  // const [serverError, setServerError] = useState('');
+
   const InitialValues = {
-    email: '',
+    emailRecovery: '',
   };
 
   const Validation = (values: ValuesTypes) => {
     const errors: ValuesTypes = {};
-    if (!values.email) {
-      errors.email = 'Required';
+    if (!values.emailRecovery) {
+      errors.emailRecovery = 'Required';
     }
     return errors;
   };
-
-  const onSubmit = (values: object) => console.log('Form data', values);
+  const onSubmit = (values: object) => console.log('Form data', values, 'test');
   return (
     <FormikContainer
       InitialValues={InitialValues}
       Validation={Validation}
       onSubmit={onSubmit}
-      buttonText="Отправить новый пароль"
+      formName="PasswordRecovery"
     >
       <FormikControl
         control="input"
         type="email"
-        inputName="email"
+        inputName="emailRecovery"
         placeholder="E-mail"
         options={[]}
       />
+      {/*<p className="text-error mx-auto">{serverError}</p>*/}
     </FormikContainer>
   );
 }
 
-export default PasswordRecoveryForm;
+export default RecoveryForm;

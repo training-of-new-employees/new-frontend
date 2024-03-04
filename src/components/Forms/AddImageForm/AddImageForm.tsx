@@ -7,13 +7,13 @@ interface ValuesTypes {
 
 function AddImageForm() {
   const InitialValues = {
-    link: '',
+    linkAdd: '',
   };
 
   const Validation = (values: ValuesTypes) => {
     const errors: ValuesTypes = {};
-    if (!values.link) {
-      errors.link = 'Required';
+    if (!values.linkAdd) {
+      errors.linkAdd = 'Required';
     }
     return errors;
   };
@@ -28,7 +28,7 @@ function AddImageForm() {
     >
       <FormikControl
         control="input"
-        type="link"
+        type="linkAdd"
         inputName="link"
         placeholder="https://"
         options={[]}

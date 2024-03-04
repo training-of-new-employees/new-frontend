@@ -10,16 +10,16 @@ interface ValuesTypes {
 
 function FirstEnterForm() {
   const InitialValues = {
-    email: 'test@mail.com',
-    password: '',
-    repeatPassword: '',
+    emailFirstEnter: 'test@mail.com',
+    passwordFirstEnter: '',
+    repeatPasswordFirstEnter: '',
     rememberMe: '',
   };
 
   const Validation = (values: ValuesTypes) => {
     const errors: ValuesTypes = {};
-    if (!values.password) {
-      errors.text = 'Required';
+    if (!values.passwordFirstEnter) {
+      errors.passwordFirstEnter = 'Required';
     }
     return errors;
   };
@@ -30,31 +30,34 @@ function FirstEnterForm() {
       InitialValues={InitialValues}
       Validation={Validation}
       onSubmit={onSubmit}
-      buttonText="Войти"
+      formName="FirstEnter"
     >
       <FormikControl
         control="input"
         type="email"
-        inputName="email"
-        placeholder="E-mail"
+        inputName="emailFirstEnter"
         options={[]}
         disabled
       />
       <FormikControl
         control="input"
-        type="password"
+        type="passwordFirstEnter"
         inputName="password"
         placeholder="Пароль"
+        isPassword
         options={[]}
       />
       <FormikControl
         control="input"
         type="password"
-        inputName="repeatPassword"
+        inputName="repeatPasswordFirstEnter"
         placeholder="Повторите пароль"
+        isPassword
         options={[]}
       />
-      <RememberMe />
+      <div className="flex flex-row justify-between mt-[26px] mb-[10px]">
+        <RememberMe />
+      </div>
     </FormikContainer>
   );
 }

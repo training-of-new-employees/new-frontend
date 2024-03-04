@@ -7,14 +7,14 @@ interface ValuesTypes {
 
 function AddCourseForm() {
   const InitialValues = {
-    name: '',
-    description: '',
+    nameAddCourse: '',
+    descriptionAddCourse: '',
   };
 
   const Validation = (values: ValuesTypes) => {
     const errors: ValuesTypes = {};
-    if (!values.name) {
-      errors.name = 'Required';
+    if (!values.nameAddCourse) {
+      errors.nameAddCourse = 'Required';
     }
     return errors;
   };
@@ -30,7 +30,7 @@ function AddCourseForm() {
       <FormikControl
         control="input"
         type="text"
-        inputName="name"
+        inputName="nameAddCourse"
         placeholder="Добавьте название"
         label="Название*"
         options={[]}
@@ -38,7 +38,7 @@ function AddCourseForm() {
       <FormikControl
         control="textarea"
         type="text"
-        inputName="description"
+        inputName="descriptionAddCourse"
         placeholder="Добавьте описание"
         label="Описание"
         options={[]}

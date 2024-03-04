@@ -5,7 +5,7 @@ interface TextErrorProps {
 }
 
 function TextError({ children }: TextErrorProps) {
-  return <div className="text-red">{children}</div>;
+  return <p className="text-error mx-[18px]">{children}</p>;
 }
 
 export default TextError;

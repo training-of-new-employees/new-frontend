@@ -52,7 +52,7 @@ function AddNewUserForm() {
       <FormikControl
         control="input"
         type="text"
-        inputName="surname"
+        inputName="surnameUser"
         label="Фамилия"
         placeholder="Введите фамилию"
         options={[]}
@@ -68,7 +68,7 @@ function AddNewUserForm() {
       <FormikControl
         control="input"
         type="text"
-        inputName="patronymic"
+        inputName="patronymicUser"
         label="Отчество"
         placeholder="Введите отчество"
         options={[]}
@@ -76,7 +76,7 @@ function AddNewUserForm() {
       <FormikControl
         control="select"
         type="select"
-        inputName="position"
+        inputName="positionUser"
         placeholder="Должность"
         options={options}
       />

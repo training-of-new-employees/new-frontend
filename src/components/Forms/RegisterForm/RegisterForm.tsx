@@ -1,12 +1,15 @@
+// import { useState } from 'react';
 import RememberMe from '../../RememberMe/RememberMe.tsx';
 import FormikContainer from '../../UI/FormikContainer/FormikContainer.tsx';
 import FormikControl from '../../UI/FormikControl/FormikControl.tsx';
+import LinkComp from '../../UI/LinkComp/LinkComp.tsx';
 
 interface ValuesTypes {
   [key: string]: string | string[];
 }
 
 function RegisterForm() {
+  // const [serverError, setServerError] = useState('sample of server error');
   const InitialValues = {
     company: '',
     email: '',
@@ -34,7 +37,7 @@ function RegisterForm() {
       InitialValues={InitialValues}
       Validation={Validation}
       onSubmit={onSubmit}
-      buttonText="Войти"
+      formName="Register"
     >
       <FormikControl
         control="input"
@@ -55,6 +58,7 @@ function RegisterForm() {
         type="password"
         inputName="password"
         placeholder="Пароль"
+        isPassword
         options={[]}
       />
       <FormikControl
@@ -62,9 +66,14 @@ function RegisterForm() {
         type="password"
         inputName="repeatPassword"
         placeholder="Повторите пароль"
+        isPassword
         options={[]}
       />
-      <RememberMe />
+      {/*<p className="text-error mx-auto">{serverError}</p>*/}
+      <div className="flex flex-row justify-between mt-[26px] mb-[10px]">
+        <RememberMe />
+        <LinkComp direction="/recovery">Забыли пароль?</LinkComp>
+      </div>
     </FormikContainer>
   );
 }

@@ -6,7 +6,7 @@ import AddNewUserForm from '../../components/Forms/AddNewUserForm/AddNewUserForm
 import ConfirmationCodeForm from '../../components/Forms/ConfirmationCodeForm/ConfirmationCodeForm.tsx';
 import FirstEnterForm from '../../components/Forms/FirstEnterForm/FirstEnterForm.tsx';
 import LoginForm from '../../components/Forms/LoginForm/LoginForm.tsx';
-import PasswordRecoveryForm from '../../components/Forms/PasswordRecoveryForm/PasswordRecoveryForm.tsx';
+import RecoveryForm from '../../components/Forms/RecoveryForm/RecoveryForm.tsx';
 import RegisterForm from '../../components/Forms/RegisterForm/RegisterForm.tsx';
 import SetCoursesForm from '../../components/Forms/SetCoursesForm/SetCoursesForm.tsx';
 import UpdateCourseForm from '../../components/Forms/UpdateCourseForm/UpdateCourseForm.tsx';
@@ -26,7 +26,7 @@ function Test() {
       <p>3) Первый вход пользователя</p>
       <FirstEnterForm />
       <p>4) Восстановление пароля</p>
-      <PasswordRecoveryForm />
+      <RecoveryForm />
       <p>5) Код подтверждения</p>
       <ConfirmationCodeForm />
       <p>6) Обновление профиля</p>

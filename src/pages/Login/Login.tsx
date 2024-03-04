@@ -1,9 +1,17 @@
+import LoginForm from '../../components/Forms/LoginForm/LoginForm.tsx';
+import Button from '../../components/UI/Button/Button.tsx';
+import FormsHeader from '../../components/UI/FormsHeader/FormsHeader.tsx';
+import OrAction from '../../components/UI/OrAction/OrAction.tsx';
+
 export default function Login() {
   return (
-    <section className="w-[620px] mx-auto">
-      <div className="h-auto bg-white pt-[40px] pb-[60px] px-[102px]  rounded-[24px] flex flex-col items-center">
-        Login
-      </div>
-    </section>
+    <>
+      <FormsHeader title="Войти" subtitle="Введите e-mail и пароль, чтобы войти" />
+      <LoginForm />
+      <Button variant="primary" formName="PasswordRecovery" type="submit">
+        Войти
+      </Button>
+      <OrAction direction="/registration">Зарегистрироваться</OrAction>
+    </>
   );
 }

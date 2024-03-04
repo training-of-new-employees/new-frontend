@@ -26,13 +26,7 @@ function UpdatePositionForm() {
       onSubmit={onSubmit}
       buttonText="Сохранить изменения"
     >
-      <FormikControl
-        control="input"
-        type="text"
-        inputName="position"
-        placeholder="Введите название должности"
-        options={[]}
-      />
+      <FormikControl control="input" type="text" inputName="positionUpdate" options={[]} />
     </FormikContainer>
   );
 }
