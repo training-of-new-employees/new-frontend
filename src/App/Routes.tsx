@@ -10,6 +10,7 @@ import { Profile } from '../pages/Profile/Profile';
 import Regestration from '../pages/Registration/Regestration';
 import Test from '../pages/Test/Test.tsx';
 import Users from '../pages/Users/Users';
+import { NotFound } from '../pages/NotFound/NotFound.tsx';
 
 const router = createBrowserRouter([
   {
@@ -53,6 +54,10 @@ const router = createBrowserRouter([
   {
     path: '/test',
     element: <Test />,
+  },
+  {
+    path: '*',
+    element: <NotFound />,
   },
 ]);
 
