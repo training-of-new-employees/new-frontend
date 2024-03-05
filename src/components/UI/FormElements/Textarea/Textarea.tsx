@@ -1,5 +1,5 @@
 import { Field, ErrorMessage } from 'formik';
-import TextError from '../TextError/TextError';
+import TextError from '../TextError/TextError.tsx';
 
 interface InputProps {
   label?: string;

@@ -10,7 +10,7 @@ export const paths = {
   firstenter: '/first-enter',
   recovery: '/recovery',
   newpass: 'new-password',
-  code: 'code',
+  otp: '/otp',
   admin: '/admin',
   employeeReg: '/first-login?',
 };

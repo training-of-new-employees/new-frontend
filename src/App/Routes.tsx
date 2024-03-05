@@ -65,7 +65,7 @@ const router = createBrowserRouter([
         element: <NewPassword />,
       },
       {
-        path: paths.code,
+        path: paths.otp,
         element: <ConfirmationCode />,
       },
     ],

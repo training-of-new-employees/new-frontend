@@ -1,7 +1,7 @@
 import { FC, useState } from 'react';
 import { ITableLine } from './TableLineTypes';
 import { CardMenu } from '../../../utils/constants';
-import { DropDown } from '../DropDown/DropDown';
+import { DropDown } from '../FormElements/DropDown/DropDown';
 
 export const TableLine: FC<ITableLine> = ({ name, job, status }) => {
   const [isMenuOpened, setMenuOpened] = useState(false);

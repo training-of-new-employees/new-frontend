@@ -1,5 +1,5 @@
-import Checkbox from '../../UI/Checkbox/Checkbox.tsx';
-import FormikContainer from '../../UI/FormikContainer/FormikContainer.tsx';
+import Checkbox from '../../UI/FormElements/Checkbox/Checkbox.tsx';
+import FormikContainer from '../../UI/FormElements/FormikContainer/FormikContainer.tsx';
 
 interface ValuesTypes {
   [key: string]: string | string[];

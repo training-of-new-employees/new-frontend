@@ -1,6 +1,6 @@
 import { FC, useState } from 'react';
-import { IDropDown } from './DropDownTypes';
-import { PopupExitAccount } from '../../PopupExitAccount/PopupExitAccount';
+import { IDropDown } from './DropDownTypes.tsx';
+import { PopupExitAccount } from '../../../PopupExitAccount/PopupExitAccount.tsx';
 
 export const DropDown: FC<IDropDown> = ({ menu }) => {
   const [isPopupOpened, setIsPopupOpened] = useState(false);

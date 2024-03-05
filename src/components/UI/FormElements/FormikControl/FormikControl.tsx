@@ -7,7 +7,7 @@ type FormikControlProps = {
   control: ReactNode;
   label?: string;
   inputName: string;
-  type: string;
+  type?: string;
   placeholder?: string;
   options: TOptionsType[];
   disabled?: boolean;

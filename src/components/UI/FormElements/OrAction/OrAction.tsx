@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import LinkComp from '../LinkComp/LinkComp.tsx';
+import LinkComp from '../../LinkComp/LinkComp.tsx';
 
 interface ILinkProps {
   children: ReactNode;

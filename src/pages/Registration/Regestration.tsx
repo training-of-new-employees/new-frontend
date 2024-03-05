@@ -1,7 +1,7 @@
 import RegisterForm from '../../components/Forms/RegisterForm/RegisterForm.tsx';
 import Button from '../../components/UI/Button/Button.tsx';
-import FormsHeader from '../../components/UI/FormsHeader/FormsHeader.tsx';
-import OrAction from '../../components/UI/OrAction/OrAction.tsx';
+import FormsHeader from '../../components/UI/FormElements/FormsHeader/FormsHeader.tsx';
+import OrAction from '../../components/UI/FormElements/OrAction/OrAction.tsx';
 
 export default function Regestration() {
   return (

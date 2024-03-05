@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Field, ErrorMessage } from 'formik';
-import TextError from '../TextError/TextError';
+import TextError from '../TextError/TextError.tsx';
 
 interface InputProps {
   label?: string;
@@ -13,7 +13,7 @@ interface InputProps {
   touched: ValuesTypes;
 }
 interface ValuesTypes {
-  [key: string]: string | string[];
+  [key: string]: string;
 }
 
 function Input({
@@ -37,7 +37,7 @@ function Input({
       <label htmlFor={inputName}>{label}</label>
       <div className="relative">
         <Field
-          className={`w-[100%] h-[60px] px-[18px] pt-[7px] touched:border-green-800 border-solid ${touched[inputName] && errors[inputName] && 'border-error'} outline-none invalid:border-error rounded-[12px] border-2 peer placeholder-transparent disabled:bg-borderDisabledInput disabled:text-addFontColor`}
+          className={`w-[100%] h-[60px] px-[18px] pt-[7px] border-solid ${touched[inputName] && errors[inputName] && 'border-error'} outline-none invalid:border-error rounded-[12px] border-2 peer placeholder-transparent disabled:bg-borderDisabledInput disabled:text-addFontColor`}
           id={inputName}
           name={inputName}
           disabled={disabled}

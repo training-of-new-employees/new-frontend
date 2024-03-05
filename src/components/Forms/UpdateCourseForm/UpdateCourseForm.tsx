@@ -1,7 +1,7 @@
 // @TODO прокинуть значения в initial values при клике на конкретный урок
 
-import FormikContainer from '../../UI/FormikContainer/FormikContainer.tsx';
-import FormikControl from '../../UI/FormikControl/FormikControl.tsx';
+import FormikContainer from '../../UI/FormElements/FormikContainer/FormikContainer.tsx';
+import FormikControl from '../../UI/FormElements/FormikControl/FormikControl.tsx';
 
 interface ValuesTypes {
   [key: string]: string | string[];

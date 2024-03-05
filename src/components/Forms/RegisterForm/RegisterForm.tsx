@@ -1,7 +1,7 @@
 // import { useState } from 'react';
 import RememberMe from '../../RememberMe/RememberMe.tsx';
-import FormikContainer from '../../UI/FormikContainer/FormikContainer.tsx';
-import FormikControl from '../../UI/FormikControl/FormikControl.tsx';
+import FormikContainer from '../../UI/FormElements/FormikContainer/FormikContainer.tsx';
+import FormikControl from '../../UI/FormElements/FormikControl/FormikControl.tsx';
 import LinkComp from '../../UI/LinkComp/LinkComp.tsx';
 
 interface ValuesTypes {

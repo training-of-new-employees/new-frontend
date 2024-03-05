@@ -1,8 +1,8 @@
 // @TODO Взять почту для InitialValues из ссылки.
 // @TODO Всю реализацию входа можно взять из прошлого репозитория, она работает
 import RememberMe from '../../RememberMe/RememberMe.tsx';
-import FormikContainer from '../../UI/FormikContainer/FormikContainer.tsx';
-import FormikControl from '../../UI/FormikControl/FormikControl.tsx';
+import FormikContainer from '../../UI/FormElements/FormikContainer/FormikContainer.tsx';
+import FormikControl from '../../UI/FormElements/FormikControl/FormikControl.tsx';
 
 interface ValuesTypes {
   [key: string]: string | string[];
