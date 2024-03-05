@@ -5,6 +5,7 @@ import { LayoutAuth } from '../components/UI/LayoutAuth/LayoutAuth.tsx';
 import Courses from '../pages/Courses/Courses';
 import Login from '../pages/Login/Login';
 import Main from '../pages/Main/Main';
+import { NotFound } from '../pages/NotFound/NotFound.tsx';
 import Positions from '../pages/Positions/Positions';
 import { Profile } from '../pages/Profile/Profile';
 import Regestration from '../pages/Registration/Regestration';
@@ -17,7 +18,7 @@ const router = createBrowserRouter([
     element: <Main />,
   },
   {
-    element: <Layout role="user" />,
+    element: <Layout />,
     children: [
       {
         path: paths.profile,
@@ -53,6 +54,10 @@ const router = createBrowserRouter([
   {
     path: '/test',
     element: <Test />,
+  },
+  {
+    path: '*',
+    element: <NotFound />,
   },
 ]);
 
