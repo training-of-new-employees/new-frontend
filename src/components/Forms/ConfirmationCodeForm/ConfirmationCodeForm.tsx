@@ -1,9 +1,6 @@
+import { ConfimCodeSchema } from '../../../utils/validationSchema/ValidConfimCode.ts';
 import FormikContainer from '../../UI/FormikContainer/FormikContainer.tsx';
 import FormikControl from '../../UI/FormikControl/FormikControl.tsx';
-
-interface ValuesTypes {
-  [key: string]: string | string[];
-}
 
 function ConfirmationCodeForm() {
   const InitialValues = {
@@ -13,21 +10,13 @@ function ConfirmationCodeForm() {
     number4: '',
   };
 
-  const Validation = (values: ValuesTypes) => {
-    const errors: ValuesTypes = {};
-    if (!values.number1) {
-      errors.email = 'Required';
-    }
-    return errors;
-  };
-
   const onSubmit = (values: object) => console.log('Form data', values);
   return (
     <FormikContainer
       InitialValues={InitialValues}
-      Validation={Validation}
       onSubmit={onSubmit}
       buttonText="Отправить новый пароль"
+      Schema={ConfimCodeSchema}
     >
       <FormikControl control="input" type="text" inputName="number1" placeholder="1" options={[]} />
       <FormikControl control="input" type="text" inputName="number2" placeholder="2" options={[]} />

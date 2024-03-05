@@ -1,11 +1,7 @@
 // @TODO прокинуть значения в initial values при клике на конкретный урок
-
+import { AddCourseSchema } from '../../../utils/validationSchema/ValidAddCourse.ts';
 import FormikContainer from '../../UI/FormikContainer/FormikContainer.tsx';
 import FormikControl from '../../UI/FormikControl/FormikControl.tsx';
-
-interface ValuesTypes {
-  [key: string]: string | string[];
-}
 
 function UpdateCourseForm() {
   const InitialValues = {
@@ -13,19 +9,11 @@ function UpdateCourseForm() {
     description: 'Some text',
   };
 
-  const Validation = (values: ValuesTypes) => {
-    const errors: ValuesTypes = {};
-    if (!values.name) {
-      errors.name = 'Required';
-    }
-    return errors;
-  };
-
   const onSubmit = (values: object) => console.log('Form data', values);
   return (
     <FormikContainer
       InitialValues={InitialValues}
-      Validation={Validation}
+      Schema={AddCourseSchema}
       onSubmit={onSubmit}
       buttonText="Сохранить изменения"
     >

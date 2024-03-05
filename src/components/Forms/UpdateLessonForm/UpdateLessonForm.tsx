@@ -1,11 +1,8 @@
 // @TODO прокинуть значения в initial values при клике на конкретный урок, поле для ссылки отображать только если нет картинок
 
+import { UpdateLessonSchema } from '../../../utils/validationSchema/ValidUpdateLesson.ts';
 import FormikContainer from '../../UI/FormikContainer/FormikContainer.tsx';
 import FormikControl from '../../UI/FormikControl/FormikControl.tsx';
-
-interface ValuesTypes {
-  [key: string]: string | string[];
-}
 
 function UpdateLessonForm() {
   const InitialValues = {
@@ -14,19 +11,11 @@ function UpdateLessonForm() {
     link: '',
   };
 
-  const Validation = (values: ValuesTypes) => {
-    const errors: ValuesTypes = {};
-    if (!values.name) {
-      errors.name = 'Required';
-    }
-    return errors;
-  };
-
   const onSubmit = (values: object) => console.log('Form data', values);
   return (
     <FormikContainer
       InitialValues={InitialValues}
-      Validation={Validation}
+      Schema={UpdateLessonSchema}
       onSubmit={onSubmit}
       buttonText="Сохранить изменения"
     >

@@ -1,5 +1,6 @@
 // @TODO Взять почту для InitialValues из ссылки.
 // @TODO Всю реализацию входа можно взять из прошлого репозитория, она работает
+import { FirstEnterSchema } from '../../../utils/validationSchema/ValidFirstEnter.ts';
 import RememberMe from '../../RememberMe/RememberMe.tsx';
 import FormikContainer from '../../UI/FormikContainer/FormikContainer.tsx';
 import FormikControl from '../../UI/FormikControl/FormikControl.tsx';
@@ -31,6 +32,7 @@ function FirstEnterForm() {
       Validation={Validation}
       onSubmit={onSubmit}
       buttonText="Войти"
+      Schema={FirstEnterSchema}
     >
       <FormikControl
         control="input"

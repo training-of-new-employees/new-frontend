@@ -1,28 +1,17 @@
+import { AddImageSchema } from '../../../utils/validationSchema/ValidAddImage.ts';
 import FormikContainer from '../../UI/FormikContainer/FormikContainer.tsx';
 import FormikControl from '../../UI/FormikControl/FormikControl.tsx';
-
-interface ValuesTypes {
-  [key: string]: string | string[];
-}
 
 function AddImageForm() {
   const InitialValues = {
     link: '',
   };
 
-  const Validation = (values: ValuesTypes) => {
-    const errors: ValuesTypes = {};
-    if (!values.link) {
-      errors.link = 'Required';
-    }
-    return errors;
-  };
-
   const onSubmit = (values: object) => console.log('Form data', values);
   return (
     <FormikContainer
       InitialValues={InitialValues}
-      Validation={Validation}
+      Schema={AddImageSchema}
       onSubmit={onSubmit}
       buttonText="Загрузить изображение"
     >

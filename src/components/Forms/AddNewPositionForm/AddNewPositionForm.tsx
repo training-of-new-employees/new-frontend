@@ -1,28 +1,17 @@
+import { AddNewPositionSchema } from '../../../utils/validationSchema/ValidAddNewPosition.ts';
 import FormikContainer from '../../UI/FormikContainer/FormikContainer.tsx';
 import FormikControl from '../../UI/FormikControl/FormikControl.tsx';
-
-interface ValuesTypes {
-  [key: string]: string | string[];
-}
 
 function AddNewPositionForm() {
   const InitialValues = {
     position: '',
   };
 
-  const Validation = (values: ValuesTypes) => {
-    const errors: ValuesTypes = {};
-    if (!values.position) {
-      errors.position = 'Required';
-    }
-    return errors;
-  };
-
   const onSubmit = (values: object) => console.log('Form data', values);
   return (
     <FormikContainer
       InitialValues={InitialValues}
-      Validation={Validation}
+      Schema={AddNewPositionSchema}
       onSubmit={onSubmit}
       buttonText="Добавить должность"
     >
