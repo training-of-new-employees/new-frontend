@@ -47,18 +47,18 @@ function UpdateUserForm() {
       InitialValues={InitialValues}
       Validation={Validation}
       onSubmit={onSubmit}
-      buttonText="Сохранить изменения"
+      formName="updateUser"
     >
       <FormikControl
-        control="input"
+        control="inputClassic"
         type="text"
         inputName="surnameUpdate"
         label="Фамилия"
         options={[]}
       />
-      <FormikControl control="input" type="text" inputName="name" label="Имя" options={[]} />
+      <FormikControl control="inputClassic" type="text" inputName="name" label="Имя" options={[]} />
       <FormikControl
-        control="input"
+        control="inputClassic"
         type="text"
         inputName="patronymic"
         label="Отчество"
@@ -71,9 +71,15 @@ function UpdateUserForm() {
         label="Должность"
         options={options}
       />
-      <FormikControl control="input" type="email" inputName="email" label="E-mail" options={[]} />
       <FormikControl
-        control="input"
+        control="inputClassic"
+        type="email"
+        inputName="email"
+        label="E-mail"
+        options={[]}
+      />
+      <FormikControl
+        control="inputClassic"
         type="link"
         inputName="link"
         label="Пригласительная ссылка"

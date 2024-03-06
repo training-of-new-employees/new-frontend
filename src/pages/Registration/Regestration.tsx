@@ -11,7 +11,7 @@ export default function Regestration() {
         subtitle="Введите e-mail и пароль, чтобы зарегистрироваться"
       />
       <RegisterForm />
-      <Button variant="primary" formName="Registration" type="submit">
+      <Button variant="primary" formName="Register" type="submit">
         Зарегистрироваться
       </Button>
       <OrAction direction="/login">Войти</OrAction>

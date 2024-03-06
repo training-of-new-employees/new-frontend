@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import Input from '../Input/Input.tsx';
+import InputClassic from '../InputClassic/InputClassic.tsx';
 import Select from '../Select/Select.tsx';
 import Textarea from '../Textarea/Textarea.tsx';
 
@@ -12,13 +13,20 @@ type FormikControlProps = {
   options: TOptionsType[];
   disabled?: boolean;
   isPassword?: boolean;
-  errors?: string;
+  errors?: ValuesTypes;
+  touched?: ValuesTypes;
+  isCopyLink?: boolean;
+  small?: boolean;
 };
 
 type TOptionsType = {
   key: string;
   value: string;
 };
+
+interface ValuesTypes {
+  [key: string]: string;
+}
 
 function FormikControl({
   control,
@@ -29,7 +37,10 @@ function FormikControl({
   options,
   disabled,
   isPassword,
+  isCopyLink,
   errors,
+  touched,
+  small,
   ...rest
 }: FormikControlProps) {
   switch (control) {
@@ -43,6 +54,22 @@ function FormikControl({
           type={type}
           isPassword={isPassword}
           errors={errors}
+          touched={touched}
+          {...rest}
+        />
+      );
+    case 'inputClassic':
+      return (
+        <InputClassic
+          label={label}
+          inputName={inputName}
+          placeholder={placeholder}
+          disabled={disabled}
+          type={type}
+          isCopyLink={isCopyLink}
+          errors={errors}
+          touched={touched}
+          small={small}
           {...rest}
         />
       );

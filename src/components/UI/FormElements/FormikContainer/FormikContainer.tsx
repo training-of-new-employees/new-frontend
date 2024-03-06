@@ -25,7 +25,10 @@ function FormikContainer({
   return (
     <Formik initialValues={InitialValues} validate={Validation} onSubmit={onSubmit}>
       {({ errors, touched }) => (
-        <Form id={formName} className="w-[100%] flex flex-col gap-[12px] mb-[20px]">
+        <Form
+          id={formName}
+          className="w-[100%] flex flex-row flex-wrap gap-y-[12px] gap-x-[5px] mb-[20px]"
+        >
           {Children?.map(children, (child) => {
             if (isValidElement(child)) {
               return cloneElement(child, {
