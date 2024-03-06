@@ -14,10 +14,12 @@ import UpdateLessonForm from '../../components/Forms/UpdateLessonForm/UpdateLess
 import UpdatePersonalInfoForm from '../../components/Forms/UpdatePersonalInfoForm/UpdatePersonalInfoForm.tsx';
 import UpdatePositionForm from '../../components/Forms/UpdatePositionForm/UpdatePositionForm.tsx';
 import UpdateUserForm from '../../components/Forms/UpdateUserForm/UpdateUserForm.tsx';
+import { PreloaderProfile } from '../../components/PreloaderProfile/PreloaderProfile.tsx';
 
 function Test() {
   return (
     <div>
+      <PreloaderProfile />
       <h1>Testing page</h1>
       <p>1) Регистрация</p>
       <RegisterForm />
