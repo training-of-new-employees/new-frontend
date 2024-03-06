@@ -5,17 +5,26 @@ interface InputProps {
   label?: string;
   inputName: string;
   placeholder?: string;
+  errors?: ValuesTypes;
+  touched?: ValuesTypes;
 }
 
-function Textarea({ label, inputName, ...rest }: InputProps) {
+interface ValuesTypes {
+  [key: string]: string;
+}
+
+function Textarea({ label, inputName, placeholder, errors, touched, ...rest }: InputProps) {
   return (
-    <div>
-      <label htmlFor={inputName}>{label}</label>
+    <div className="w-[100%] flex flex-col gap-[8px]">
+      <label htmlFor={inputName} className="font-[500]">
+        {label}
+      </label>
       <Field
-        className="border-solid border-2 border-green-800"
+        className={`w-[100%] px-[12px] py-[15px] border-solid ${(touched ? touched[inputName] : null) && (errors ? errors[inputName] : null) && 'border-error'} outline-none invalid:border-error rounded-[12px] border-2 placeholder-addFontColor disabled:bg-borderDisabledInput disabled:text-addFontColor`}
         as="textarea"
         id={inputName}
         name={inputName}
+        placeholder={placeholder}
         {...rest}
       />
       <ErrorMessage name={inputName} component={TextError} />

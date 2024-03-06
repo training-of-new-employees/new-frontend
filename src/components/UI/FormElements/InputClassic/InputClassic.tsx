@@ -11,7 +11,7 @@ interface InputProps {
   isCopyLink?: boolean;
   errors?: ValuesTypes;
   touched?: ValuesTypes;
-  small?: boolean;
+  width?: string;
 }
 interface ValuesTypes {
   [key: string]: string;
@@ -26,7 +26,7 @@ function InputClassic({
   placeholder,
   errors,
   touched,
-  small,
+  width,
   ...rest
 }: InputProps) {
   const copyToClipboard = () => {
@@ -35,7 +35,7 @@ function InputClassic({
     }
   };
   return (
-    <div className={`${small ? `w-[244px]` : 'w-[100%]'} flex flex-col gap-[8px]`}>
+    <div className={`${width ? width : 'w-[100%]'} flex flex-col gap-[8px]`}>
       <label htmlFor={inputName} className="font-[500]">
         {label}
       </label>

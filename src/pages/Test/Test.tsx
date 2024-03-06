@@ -1,8 +1,4 @@
-// import AddCourseForm from '../../components/Forms/AddCourseForm/AddCourseForm.tsx';
 // import AddImageForm from '../../components/Forms/AddImageForm/AddImageForm.tsx';
-// import AddLessonForm from '../../components/Forms/AddLessonForm/AddLessonForm.tsx';
-// import AddNewPositionForm from '../../components/Forms/AddNewPositionForm/AddNewPositionForm.tsx';
-// import AddNewUserForm from '../../components/Forms/AddNewUserForm/AddNewUserForm.tsx';
 // import ConfirmationCodeForm from '../../components/Forms/ConfirmationCodeForm/ConfirmationCodeForm.tsx';
 // import FirstEnterForm from '../../components/Forms/FirstEnterForm/FirstEnterForm.tsx';
 // import LoginForm from '../../components/Forms/LoginForm/LoginForm.tsx';
@@ -11,9 +7,15 @@
 // import SetCoursesForm from '../../components/Forms/SetCoursesForm/SetCoursesForm.tsx';
 // import UpdateCourseForm from '../../components/Forms/UpdateCourseForm/UpdateCourseForm.tsx';
 // import UpdateLessonForm from '../../components/Forms/UpdateLessonForm/UpdateLessonForm.tsx';
+import AddCourse from '../../widgets/AddCourse/AddCourse.tsx';
+import AddLesson from '../../widgets/AddLesson/AddLesson.tsx';
+import AddNewUser from '../../widgets/AddNewUser/AddNewUser.tsx';
+import AddRole from '../../widgets/AddRole/AddRole.tsx';
+import UpdateCourse from '../../widgets/UpdateCourse/UpdateCourse.tsx';
+import UpdateLesson from '../../widgets/UpdateLesson/UpdateLesson.tsx';
 import UpdatePersonalInfo from '../../widgets/UpdatePersonalInfo/UpdatePersonalInfo.tsx';
-// import UpdatePositionForm from '../../components/Forms/UpdatePositionForm/UpdatePositionForm.tsx';
-// import UpdateUserForm from '../../components/Forms/UpdateUserForm/UpdateUserForm.tsx';
+import UpdateRole from '../../widgets/UpdateRole/UpdateRole.tsx';
+import UpdateUser from '../../widgets/UpdateUser/UpdateUser.tsx';
 
 function Test() {
   return (
@@ -33,26 +35,42 @@ function Test() {
       <div className="w-[748px]">
         <UpdatePersonalInfo />
       </div>
-      {/*<p>7) Добавить курс</p>*/}
-      {/*<AddCourseForm />*/}
-      {/*<p>8) Обновить курс</p>F*/}
-      {/*<UpdateCourseForm />*/}
-      {/*<p>9) Добавить урок</p>*/}
-      {/*<AddLessonForm />*/}
+      <p>7) Добавить курс</p>
+      <div className="w-[820px]">
+        <AddCourse />
+      </div>
+      <p>8) Обновить курс</p>
+      <div className="w-[740px]">
+        <UpdateCourse />
+      </div>
+      <p>9) Добавить урок</p>
+      <div className="w-[820px]">
+        <AddLesson />
+      </div>
       {/*<p>10) Добавить фото</p>*/}
       {/*<AddImageForm />*/}
-      {/*<p>11) Обновить урок</p>*/}
-      {/*<UpdateLessonForm />*/}
-      {/*<p>12) Добавить пользователя</p>*/}
-      {/*<AddNewUserForm />*/}
-      {/*<p>13) Обновить пользователя</p>*/}
-      {/*<UpdateUserForm />*/}
-      {/*<p>14) Добавить роль</p>*/}
-      {/*<AddNewPositionForm />*/}
+      <p>11) Обновить урок</p>
+      <div className="w-[820px]">
+        <UpdateLesson />
+      </div>
+      <p>12) Добавить пользователя</p>
+      <div className="w-[780px]">
+        <AddNewUser />
+      </div>
+      <p>13) Обновить пользователя</p>
+      <div className="w-[780px]">
+        <UpdateUser />
+      </div>
+      <p>14) Добавить роль</p>
+      <div className="w-[780px]">
+        <AddRole />
+      </div>
       {/*<p>15) Назначить курсы на роль</p>*/}
       {/*<SetCoursesForm />*/}
-      {/*<p>16) Обновить роль</p>*/}
-      {/*<UpdatePositionForm />*/}
+      <p>16) Обновить роль</p>
+      <div className="w-[780px]">
+        <UpdateRole />
+      </div>
     </div>
   );
 }

@@ -1,3 +1,4 @@
+// import { useState } from 'react';
 import FormikContainer from '../../UI/FormElements/FormikContainer/FormikContainer.tsx';
 import FormikControl from '../../UI/FormElements/FormikControl/FormikControl.tsx';
 
@@ -6,6 +7,8 @@ interface ValuesTypes {
 }
 
 function AddCourseForm() {
+  // const [serverError, setServerError] = useState('sample of server error');
+
   const InitialValues = {
     nameAddCourse: '',
     descriptionAddCourse: '',
@@ -25,10 +28,10 @@ function AddCourseForm() {
       InitialValues={InitialValues}
       Validation={Validation}
       onSubmit={onSubmit}
-      buttonText="Добавить курс"
+      formName="addCourse"
     >
       <FormikControl
-        control="input"
+        control="inputClassic"
         type="text"
         inputName="nameAddCourse"
         placeholder="Добавьте название"
@@ -43,6 +46,7 @@ function AddCourseForm() {
         label="Описание"
         options={[]}
       />
+      {/*<p className="text-error mx-auto">{serverError}</p>*/}
     </FormikContainer>
   );
 }

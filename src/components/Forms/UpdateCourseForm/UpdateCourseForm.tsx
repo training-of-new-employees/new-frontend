@@ -1,4 +1,5 @@
 // @TODO прокинуть значения в initial values при клике на конкретный урок
+// import { useState } from 'react';
 
 import FormikContainer from '../../UI/FormElements/FormikContainer/FormikContainer.tsx';
 import FormikControl from '../../UI/FormElements/FormikControl/FormikControl.tsx';
@@ -8,15 +9,16 @@ interface ValuesTypes {
 }
 
 function UpdateCourseForm() {
+  // const [serverError, setServerError] = useState('sample of server error');
   const InitialValues = {
-    name: 'Some name',
-    description: 'Some text',
+    nameCourseUpdate: 'Some name',
+    descriptionCourseUpdate: 'Some text',
   };
 
   const Validation = (values: ValuesTypes) => {
     const errors: ValuesTypes = {};
-    if (!values.name) {
-      errors.name = 'Required';
+    if (!values.nameCourseUpdate) {
+      errors.nameCourseUpdate = 'Required';
     }
     return errors;
   };
@@ -27,16 +29,25 @@ function UpdateCourseForm() {
       InitialValues={InitialValues}
       Validation={Validation}
       onSubmit={onSubmit}
-      buttonText="Сохранить изменения"
+      formName="updateCourse"
     >
-      <FormikControl control="input" type="text" inputName="name" label="Название*" options={[]} />
+      <FormikControl
+        control="inputClassic"
+        type="text"
+        inputName="nameCourseUpdate"
+        label="Название*"
+        placeholder="Добавьте название"
+        options={[]}
+      />
       <FormikControl
         control="textarea"
         type="text"
-        inputName="description"
+        inputName="descriptionCourseUpdate"
         label="Описание"
+        placeholder="Добавьте описание"
         options={[]}
       />
+      {/*<p className="text-error mx-auto">{serverError}</p>*/}
     </FormikContainer>
   );
 }

@@ -42,7 +42,7 @@ function UpdatePersonalInfoForm() {
         inputName="surname"
         label="Фамилия"
         placeholder="Введите фамилию"
-        small
+        width="w-[240px]"
         options={[]}
       />
       <FormikControl
@@ -51,7 +51,7 @@ function UpdatePersonalInfoForm() {
         inputName="name"
         label="Имя"
         placeholder="Введите имя"
-        small
+        width="w-[240px]"
         options={[]}
       />
       <FormikControl
@@ -60,7 +60,7 @@ function UpdatePersonalInfoForm() {
         inputName="patronymic"
         label="Отчество"
         placeholder="Введите отчество"
-        small
+        width="w-[240px]"
         options={[]}
       />
       <FormikControl

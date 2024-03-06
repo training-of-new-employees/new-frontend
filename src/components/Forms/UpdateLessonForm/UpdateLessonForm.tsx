@@ -1,5 +1,6 @@
 // @TODO прокинуть значения в initial values при клике на конкретный урок, поле для ссылки отображать только если нет картинок
 
+// import { useState } from 'react';
 import FormikContainer from '../../UI/FormElements/FormikContainer/FormikContainer.tsx';
 import FormikControl from '../../UI/FormElements/FormikControl/FormikControl.tsx';
 
@@ -9,15 +10,15 @@ interface ValuesTypes {
 
 function UpdateLessonForm() {
   const InitialValues = {
-    name: '',
-    description: '',
-    link: '',
+    nameUpdateLesson: '',
+    descriptionUpdateLesson: '',
   };
 
   const Validation = (values: ValuesTypes) => {
+    // const [serverError, setServerError] = useState('sample of server error');
     const errors: ValuesTypes = {};
-    if (!values.name) {
-      errors.name = 'Required';
+    if (!values.nameUpdateLesson) {
+      errors.nameUpdateLesson = 'Required';
     }
     return errors;
   };
@@ -28,23 +29,25 @@ function UpdateLessonForm() {
       InitialValues={InitialValues}
       Validation={Validation}
       onSubmit={onSubmit}
-      buttonText="Сохранить изменения"
+      formName="updateLesson"
     >
-      <FormikControl control="input" type="text" inputName="name" label="Название" options={[]} />
+      <FormikControl
+        control="inputClassic"
+        type="text"
+        inputName="nameUpdateLesson"
+        label="Название"
+        placeholder="Название урока"
+        options={[]}
+      />
       <FormikControl
         control="textarea"
         type="text"
-        inputName="description"
+        inputName="descriptionUpdateLesson"
+        placeholder="Содержание урока"
         label="Текст"
         options={[]}
       />
-      <FormikControl
-        control="input"
-        type="link"
-        inputName="link"
-        label="Изображение"
-        options={[]}
-      />
+      {/*<p className="text-error mx-auto">{serverError}</p>*/}
     </FormikContainer>
   );
 }

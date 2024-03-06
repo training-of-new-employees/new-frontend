@@ -1,3 +1,4 @@
+// import { useState } from 'react';
 import FormikContainer from '../../UI/FormElements/FormikContainer/FormikContainer.tsx';
 import FormikControl from '../../UI/FormElements/FormikControl/FormikControl.tsx';
 
@@ -6,14 +7,15 @@ interface ValuesTypes {
 }
 
 function UpdatePositionForm() {
+  // const [serverError, setServerError] = useState('sample of server error');
   const InitialValues = {
-    position: '',
+    positionUpdate: '',
   };
 
   const Validation = (values: ValuesTypes) => {
     const errors: ValuesTypes = {};
-    if (!values.position) {
-      errors.position = 'Required';
+    if (!values.positionUpdate) {
+      errors.positionUpdate = 'Required';
     }
     return errors;
   };
@@ -24,9 +26,16 @@ function UpdatePositionForm() {
       InitialValues={InitialValues}
       Validation={Validation}
       onSubmit={onSubmit}
-      buttonText="Сохранить изменения"
+      formName="updateRole"
     >
-      <FormikControl control="input" type="text" inputName="positionUpdate" options={[]} />
+      <FormikControl
+        control="inputClassic"
+        type="text"
+        inputName="positionUpdate"
+        placeholder="Введите название должности"
+        options={[]}
+      />
+      {/*<p className="text-error mx-auto">{serverError}</p>*/}
     </FormikContainer>
   );
 }

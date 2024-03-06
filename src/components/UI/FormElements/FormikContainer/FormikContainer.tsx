@@ -27,7 +27,7 @@ function FormikContainer({
       {({ errors, touched }) => (
         <Form
           id={formName}
-          className="w-[100%] flex flex-row flex-wrap gap-y-[12px] gap-x-[5px] mb-[20px]"
+          className="w-[100%] flex flex-row flex-wrap gap-y-[12px] justify-between mb-[20px]"
         >
           {Children?.map(children, (child) => {
             if (isValidElement(child)) {

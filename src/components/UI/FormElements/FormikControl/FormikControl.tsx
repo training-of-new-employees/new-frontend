@@ -16,7 +16,7 @@ type FormikControlProps = {
   errors?: ValuesTypes;
   touched?: ValuesTypes;
   isCopyLink?: boolean;
-  small?: boolean;
+  width?: string;
 };
 
 type TOptionsType = {
@@ -40,7 +40,7 @@ function FormikControl({
   isCopyLink,
   errors,
   touched,
-  small,
+  width,
   ...rest
 }: FormikControlProps) {
   switch (control) {
@@ -69,7 +69,7 @@ function FormikControl({
           isCopyLink={isCopyLink}
           errors={errors}
           touched={touched}
-          small={small}
+          width={width}
           {...rest}
         />
       );
