@@ -2,9 +2,20 @@ import { FC } from 'react';
 import { IPopup } from './PopupTypes';
 
 export const Popup: FC<IPopup> = ({ children, isOpened, setIsOpened }) => {
+  const handleOverlayClick: React.MouseEventHandler<HTMLDivElement> = (evt) => {
+    if (evt.target === evt.currentTarget) {
+      setIsOpened(false);
+    }
+  };
+  const handleEscClick = (evt: KeyboardEvent) => {
+    if (evt.key === 'Escape') {
+      setIsOpened(false);
+    }
+  };
+  document.addEventListener('keydown', handleEscClick);
   return (
     <div
-      onClick={() => setIsOpened(false)}
+      onClick={handleOverlayClick}
       className={
         isOpened
           ? 'visible fixed items-center justify-center flex z-15 h-[100vh] w-[100vw] bg-[#2C2E2C66] top-0 left-0'
