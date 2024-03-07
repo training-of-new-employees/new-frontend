@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import { IPopup } from './PopupTypes';
 
 export const Popup: FC<IPopup> = ({ children, isOpened, setIsOpened }) => {
@@ -7,12 +7,17 @@ export const Popup: FC<IPopup> = ({ children, isOpened, setIsOpened }) => {
       setIsOpened(false);
     }
   };
-  const handleEscClick = (evt: KeyboardEvent) => {
-    if (evt.key === 'Escape') {
-      setIsOpened(false);
-    }
-  };
-  document.addEventListener('keydown', handleEscClick);
+  useEffect(() => {
+    const handleEscClick = (evt: KeyboardEvent) => {
+      if (evt.key === 'Escape') {
+        setIsOpened(false);
+      }
+    };
+
+    document.addEventListener('keydown', handleEscClick);
+
+    return () => document.removeEventListener('keydown', handleEscClick);
+  }, []);
   return (
     <div
       onClick={handleOverlayClick}
