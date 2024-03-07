@@ -4,6 +4,7 @@ import { IPopup } from './PopupTypes';
 export const Popup: FC<IPopup> = ({ children, isOpened, setIsOpened }) => {
   return (
     <div
+      onClick={() => setIsOpened(false)}
       className={
         isOpened
           ? 'visible fixed items-center justify-center flex z-15 h-[100vh] w-[100vw] bg-[#2C2E2C66] top-0 left-0'
