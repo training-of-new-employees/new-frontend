@@ -27,15 +27,15 @@ export const TableLine: FC<ITableLine> = ({ name, job, status, id }) => {
       <h4 className="truncate text-h4 pt-[7px] pb-[8px] inline-block w-[calc(100%-32%-32%-40px)] pl-[10px] border-r-[1px] border-borderDisabledInput border-solid">
         {name}
       </h4>
-      <h4 className="truncate text-h4 pt-[7px] pb-[8px]  inline-block w-[352px] w-[32%] pl-[10px] border-r-[1px] border-borderDisabledInput border-solid">
+      <h4 className="truncate text-h4 pt-[7px] pb-[8px]  inline-block w-[32%] pl-[10px] border-r-[1px] border-borderDisabledInput border-solid">
         {job}
       </h4>
-      <h4 className="truncate text-h4 pt-[7px] pb-[8px]  inline-block w-[352px] w-[32%] pl-[10px] border-r-[1px] border-borderDisabledInput border-solid">
+      <h4 className="truncate text-h4 pt-[7px] pb-[8px]  inline-block w-[32%] pl-[10px] border-r-[1px] border-borderDisabledInput border-solid">
         {status}
       </h4>
       <button
         onClick={() => setMenuOpened(true)}
-        className="min-w-[40px] bg-card-menu bg-[length:20px_20px] bg-center bg-no-repeat"
+        className="min-w-[40px] max-w-[40px] bg-card-menu bg-[length:20px_20px] bg-center bg-no-repeat"
       />
     </div>
   );
