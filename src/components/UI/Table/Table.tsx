@@ -23,7 +23,7 @@ export const Table: FC<ITable> = ({ mode }) => {
         {TableData.map((i) => {
           return (
             <li key={i.id}>
-              <TableLine name={i.name} job={i.job} status={i.status} />
+              <TableLine id={i.id} name={i.name} job={i.job} status={i.status} />
             </li>
           );
         })}
