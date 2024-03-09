@@ -55,7 +55,7 @@ function RegisterForm() {
         options={[]}
       />
       {/*<p className="text-error mx-auto">{serverError}</p>*/}
-      <div className="w-[416px] flex flex-row justify-between mt-[26px] mb-[10px]">
+      <div className="w-[100%] flex flex-row justify-between my-[16px] pr-[20px]">
         <RememberMe />
         <LinkComp direction="/recovery">Забыли пароль?</LinkComp>
       </div>

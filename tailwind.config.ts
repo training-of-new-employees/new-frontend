@@ -4,7 +4,8 @@ const config: Config = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     fontFamily: {
-      sans: ['Rubik', 'Arial', 'sans-serif'],
+      rubik: ['Rubik', 'Arial', 'Helvetica', 'sans-serif'],
+      exo: ['Exo', 'Arial', 'Helvetica', 'sans-serif'],
     },
     fontSize: {
       h1: ['40px', '150%'],

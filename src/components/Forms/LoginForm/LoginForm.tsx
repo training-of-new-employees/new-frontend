@@ -1,5 +1,4 @@
 // import { useState } from 'react';
-import { toFormikValidationSchema } from 'zod-formik-adapter';
 import { LoginSchema } from '../../../utils/validationSchema/ValidLogin.ts';
 import RememberMe from '../../RememberMe/RememberMe.tsx';
 import FormikContainer from '../../UI/FormElements/FormikContainer/FormikContainer.tsx';
@@ -20,7 +19,7 @@ function LoginForm() {
       InitialValues={InitialValues}
       onSubmit={onSubmit}
       formName="PasswordRecovery"
-      Schema={toFormikValidationSchema(LoginSchema)}
+      Schema={LoginSchema}
     >
       <FormikControl
         control="input"
@@ -38,7 +37,7 @@ function LoginForm() {
         options={[]}
       />
       {/*<p className="text-error mx-auto">{serverError}</p>*/}
-      <div className="w-[416px] flex flex-row justify-between mt-[26px] mb-[10px]">
+      <div className="w-[100%] flex flex-row justify-between my-[16px] pr-[20px]">
         <RememberMe />
         <LinkComp direction="/recovery">Забыли пароль?</LinkComp>
       </div>

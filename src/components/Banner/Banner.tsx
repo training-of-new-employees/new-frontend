@@ -4,8 +4,8 @@ import rocket from '../../images/UI/rocket.svg';
 
 const Banner = () => {
   return (
-    <section className="w-1/2 flex justify-center align-middle">
-      <div className="w-[560px] m-auto flex flex-col justify-center items-center">
+    <section className="w-[45%] flex justify-center align-middle">
+      <div className="w-[560px] m-auto flex flex-col justify-center items-center overflow-hidden">
         <div className="flex flex-col justify-center items-center gap-[12px]">
           <Link to="/">
             <img
@@ -20,7 +20,9 @@ const Banner = () => {
             нужно именно вам
           </p>
         </div>
-        <img className="" src={rocket} alt="ракета" />
+        <div className="w-[100%] overflow-hidden h-[400px]">
+          <img src={rocket} alt="ракета" className="object-cover" />
+        </div>
       </div>
     </section>
   );
