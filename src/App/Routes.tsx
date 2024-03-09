@@ -4,6 +4,8 @@ import { LayoutAuth } from '../components/UI/FormElements/LayoutAuth/LayoutAuth.
 import { Layout } from '../components/UI/Layout/Layout';
 import ConfirmationCode from '../pages/ConfirmationCode/ConfirmationCode.tsx';
 import Courses from '../pages/Courses/Courses';
+import CreateCourse from '../pages/Courses/CreateCourse/CreateCourse.tsx';
+import EditCourse from '../pages/Courses/EditCourse/EditCourse.tsx';
 import FirstEnter from '../pages/FirstEnter/FirstEnter.tsx';
 import Login from '../pages/Login/Login';
 import Main from '../pages/Main/Main';
@@ -31,6 +33,14 @@ const router = createBrowserRouter([
       {
         path: paths.courses,
         element: <Courses />,
+      },
+      {
+        path: paths.newcourse,
+        element: <CreateCourse />,
+      },
+      {
+        path: paths.editcourse,
+        element: <EditCourse />,
       },
       {
         path: paths.users,
