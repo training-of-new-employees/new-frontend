@@ -1,7 +1,7 @@
 import { FC, useState } from 'react';
 import { ICard } from './CardTypes';
 import { CardMenu } from '../../../utils/constants';
-import { DropDown } from '../DropDown/DropDown';
+import { DropDown } from '../FormElements/DropDown/DropDown';
 
 export const Card: FC<ICard> = ({ mode }) => {
   const [isMenuOpened, setMenuOpened] = useState(false);

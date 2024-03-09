@@ -13,7 +13,7 @@ type ButtonStylesVariant = {
 };
 
 export const defaultStyles =
-  'flex w-[260px] h-[52px] justify-center items-center gap-2 shrink-0 text-center cursor-pointer px-5 py-3 rounded-[12px]';
+  'flex w-[100%] h-[52px] justify-center items-center gap-2 shrink-0 text-center cursor-pointer px-5 py-3 rounded-[12px]';
 export const iconStyles: ButtonStylesIcon = {
   white: `@apply bg-whiteIconButton bg-cover w-[13px] h-[13px]`,
   green: `@apply bg-greenIconButton w-[13px] h-[13px] opacity-80 bg-center mr-2`,
@@ -23,7 +23,7 @@ export const buttonStyles: ButtonStylesVariant = {
   primary:
     'text-white disabled:bg-borderDisabledInput disabled:border-borderDisabledInput disabled:color-addFontColor active:bg-pressedBtn active:border-pressedBtn bg-defaultBtn border-defaultBtn hover:bg-hoveredBtn hover:border-hoveredBtn',
   emptyBorder:
-    'disabled:color-addFontColor border-borderDisabledInput active:color-pressedBtn border-pressedBtn bg-colorWhite rounded-[12px] border-defaultBtn border-[2px] color-defaultBtn hover:border-hoveredBtn hover:color-hoveredBtn',
+    ' disabled:color-addFontColor border-borderDisabledInput active:color-pressedBtn border-pressedBtn bg-colorWhite rounded-[12px] border-defaultBtn border-[2px] color-defaultBtn hover:border-hoveredBtn hover:color-hoveredBtn',
   empty:
     'border-none color-defaultBtn bg-transparent hover:color-hoveredBtn active:color-pressedBtn disabled:color-addFontColor',
 };

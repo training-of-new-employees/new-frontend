@@ -1,35 +1,24 @@
+import { RecoveryPasswordSchema } from '../../../utils/validationSchema/ValidRecoveryPassword.ts';
 import FormikContainer from '../../UI/FormikContainer/FormikContainer.tsx';
 import FormikControl from '../../UI/FormikControl/FormikControl.tsx';
 
-interface ValuesTypes {
-  [key: string]: string | string[];
-}
-
 function PasswordRecoveryForm() {
   const InitialValues = {
-    email: '',
-  };
-
-  const Validation = (values: ValuesTypes) => {
-    const errors: ValuesTypes = {};
-    if (!values.email) {
-      errors.email = 'Required';
-    }
-    return errors;
+    emailRecovery: '',
   };
 
   const onSubmit = (values: object) => console.log('Form data', values);
   return (
     <FormikContainer
       InitialValues={InitialValues}
-      Validation={Validation}
       onSubmit={onSubmit}
       buttonText="Отправить новый пароль"
+      Schema={RecoveryPasswordSchema}
     >
       <FormikControl
         control="input"
         type="email"
-        inputName="email"
+        inputName="emailRecovery"
         placeholder="E-mail"
         options={[]}
       />

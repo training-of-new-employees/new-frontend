@@ -1,36 +1,28 @@
-import FormikContainer from '../../UI/FormikContainer/FormikContainer.tsx';
-import FormikControl from '../../UI/FormikControl/FormikControl.tsx';
-
-interface ValuesTypes {
-  [key: string]: string | string[];
-}
+// import { useState } from 'react';
+import { AddCourseSchema } from '../../../utils/validationSchema/ValidAddCourse.ts';
+import FormikContainer from '../../UI/FormElements/FormikContainer/FormikContainer.tsx';
+import FormikControl from '../../UI/FormElements/FormikControl/FormikControl.tsx';
 
 function AddCourseForm() {
-  const InitialValues = {
-    name: '',
-    description: '',
-  };
+  // const [serverError, setServerError] = useState('sample of server error');
 
-  const Validation = (values: ValuesTypes) => {
-    const errors: ValuesTypes = {};
-    if (!values.name) {
-      errors.name = 'Required';
-    }
-    return errors;
+  const InitialValues = {
+    nameCourse: '',
+    descriptionCourse: '',
   };
 
   const onSubmit = (values: object) => console.log('Form data', values);
   return (
     <FormikContainer
       InitialValues={InitialValues}
-      Validation={Validation}
+      Schema={AddCourseSchema}
       onSubmit={onSubmit}
-      buttonText="Добавить курс"
+      formName="addCourse"
     >
       <FormikControl
-        control="input"
+        control="inputClassic"
         type="text"
-        inputName="name"
+        inputName="nameCourse"
         placeholder="Добавьте название"
         label="Название*"
         options={[]}
@@ -38,11 +30,12 @@ function AddCourseForm() {
       <FormikControl
         control="textarea"
         type="text"
-        inputName="description"
+        inputName="descriptionCourse"
         placeholder="Добавьте описание"
         label="Описание"
         options={[]}
       />
+      {/*<p className="text-error mx-auto">{serverError}</p>*/}
     </FormikContainer>
   );
 }

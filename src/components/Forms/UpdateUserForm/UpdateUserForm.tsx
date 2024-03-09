@@ -1,25 +1,17 @@
-import FormikContainer from '../../UI/FormikContainer/FormikContainer.tsx';
-import FormikControl from '../../UI/FormikControl/FormikControl.tsx';
-
-interface ValuesTypes {
-  [key: string]: string | string[];
-}
+// import { useState } from 'react';
+import { UpdateUserSchema } from '../../../utils/validationSchema/ValidUpdateUser.ts';
+import FormikContainer from '../../UI/FormElements/FormikContainer/FormikContainer.tsx';
+import FormikControl from '../../UI/FormElements/FormikControl/FormikControl.tsx';
 
 function UpdateUserForm() {
+  // const [serverError, setServerError] = useState('sample of server error');
   const InitialValues = {
-    name: '',
-    surname: '',
-    patronymic: '',
-    position: '',
-    email: '',
-  };
-
-  const Validation = (values: ValuesTypes) => {
-    const errors: ValuesTypes = {};
-    if (!values.email) {
-      errors.email = 'Required';
-    }
-    return errors;
+    nameUserUpdate: '',
+    surnameUserUpdate: '',
+    patronymicUserUpdate: '',
+    positionUserUpdate: '',
+    emailUserUpdate: '',
+    linkUserUpdate: '',
   };
 
   const options = [
@@ -45,57 +37,62 @@ function UpdateUserForm() {
   return (
     <FormikContainer
       InitialValues={InitialValues}
-      Validation={Validation}
+      Schema={UpdateUserSchema}
       onSubmit={onSubmit}
-      buttonText="Сохранить изменения"
+      formName="updateUser"
     >
       <FormikControl
-        control="input"
+        control="inputClassic"
         type="text"
-        inputName="surname"
+        inputName="surnameUserUpdate"
         label="Фамилия"
         placeholder="Введите фамилию"
+        width="w-[254px]"
         options={[]}
       />
       <FormikControl
-        control="input"
+        control="inputClassic"
         type="text"
-        inputName="name"
+        inputName="nameUserUpdate"
         label="Имя"
         placeholder="Введите имя"
+        width="w-[254px]"
         options={[]}
       />
       <FormikControl
-        control="input"
+        control="inputClassic"
         type="text"
-        inputName="patronymic"
+        inputName="patronymicUserUpdate"
         label="Отчество"
         placeholder="Введите отчество"
+        width="w-[254px]"
         options={[]}
       />
       <FormikControl
         control="select"
         type="select"
-        inputName="position"
+        inputName="positionUserUpdate"
         label="Должность"
+        placeholder="Должность"
         options={options}
       />
       <FormikControl
-        control="input"
-        type="email"
-        inputName="email"
+        control="inputClassic"
+        type="emailUser"
+        inputName="emailUserUpdate"
         label="E-mail"
         placeholder="Введите email"
         options={[]}
       />
       <FormikControl
-        control="input"
+        control="inputClassic"
         type="link"
-        inputName="link"
-        placeholder="https://"
+        inputName="linkUserUpdate"
         label="Пригласительная ссылка"
+        isCopyLink
         options={[]}
       />
+      {/*<p className="text-error mx-auto">{serverError}</p>*/}
     </FormikContainer>
   );
 }

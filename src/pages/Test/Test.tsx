@@ -1,56 +1,78 @@
-import AddCourseForm from '../../components/Forms/AddCourseForm/AddCourseForm.tsx';
-import AddImageForm from '../../components/Forms/AddImageForm/AddImageForm.tsx';
-import AddLessonForm from '../../components/Forms/AddLessonForm/AddLessonForm.tsx';
-import AddNewPositionForm from '../../components/Forms/AddNewPositionForm/AddNewPositionForm.tsx';
-import AddNewUserForm from '../../components/Forms/AddNewUserForm/AddNewUserForm.tsx';
-import ConfirmationCodeForm from '../../components/Forms/ConfirmationCodeForm/ConfirmationCodeForm.tsx';
-import FirstEnterForm from '../../components/Forms/FirstEnterForm/FirstEnterForm.tsx';
-import LoginForm from '../../components/Forms/LoginForm/LoginForm.tsx';
-import PasswordRecoveryForm from '../../components/Forms/PasswordRecoveryForm/PasswordRecoveryForm.tsx';
-import RegisterForm from '../../components/Forms/RegisterForm/RegisterForm.tsx';
-import SetCoursesForm from '../../components/Forms/SetCoursesForm/SetCoursesForm.tsx';
-import UpdateCourseForm from '../../components/Forms/UpdateCourseForm/UpdateCourseForm.tsx';
-import UpdateLessonForm from '../../components/Forms/UpdateLessonForm/UpdateLessonForm.tsx';
-import UpdatePersonalInfoForm from '../../components/Forms/UpdatePersonalInfoForm/UpdatePersonalInfoForm.tsx';
-import UpdatePositionForm from '../../components/Forms/UpdatePositionForm/UpdatePositionForm.tsx';
-import UpdateUserForm from '../../components/Forms/UpdateUserForm/UpdateUserForm.tsx';
+// import AddImageForm from '../../components/Forms/AddImageForm/AddImageForm.tsx';
+// import ConfirmationCodeForm from '../../components/Forms/ConfirmationCodeForm/ConfirmationCodeForm.tsx';
+// import FirstEnterForm from '../../components/Forms/FirstEnterForm/FirstEnterForm.tsx';
+// import LoginForm from '../../components/Forms/LoginForm/LoginForm.tsx';
+// import RecoveryForm from '../../components/Forms/RecoveryForm/RecoveryForm.tsx';
+// import RegisterForm from '../../components/Forms/RegisterForm/RegisterForm.tsx';
+// import SetCoursesForm from '../../components/Forms/SetCoursesForm/SetCoursesForm.tsx';
+// import UpdateCourseForm from '../../components/Forms/UpdateCourseForm/UpdateCourseForm.tsx';
+// import UpdateLessonForm from '../../components/Forms/UpdateLessonForm/UpdateLessonForm.tsx';
+import { PreloaderProfile } from '../../components/PreloaderProfile/PreloaderProfile.tsx';
+import AddCourse from '../../widgets/AddCourse/AddCourse.tsx';
+import AddLesson from '../../widgets/AddLesson/AddLesson.tsx';
+import AddNewUser from '../../widgets/AddNewUser/AddNewUser.tsx';
+import AddRole from '../../widgets/AddRole/AddRole.tsx';
+import UpdateCourse from '../../widgets/UpdateCourse/UpdateCourse.tsx';
+import UpdateLesson from '../../widgets/UpdateLesson/UpdateLesson.tsx';
+import UpdatePersonalInfo from '../../widgets/UpdatePersonalInfo/UpdatePersonalInfo.tsx';
+import UpdateRole from '../../widgets/UpdateRole/UpdateRole.tsx';
+import UpdateUser from '../../widgets/UpdateUser/UpdateUser.tsx';
 
 function Test() {
   return (
     <div>
+      <PreloaderProfile />
       <h1>Testing page</h1>
-      <p>1) Регистрация</p>
-      <RegisterForm />
-      <p>2) Логин</p>
-      <LoginForm />
-      <p>3) Первый вход пользователя</p>
-      <FirstEnterForm />
-      <p>4) Восстановление пароля</p>
-      <PasswordRecoveryForm />
-      <p>5) Код подтверждения</p>
-      <ConfirmationCodeForm />
+      {/*<p>1) Регистрация</p>*/}
+      {/*<RegisterForm />*/}
+      {/*<p>2) Логин</p>*/}
+      {/*<LoginForm />*/}
+      {/*<p>3) Первый вход пользователя</p>*/}
+      {/*<FirstEnterForm />*/}
+      {/*<p>4) Восстановление пароля</p>*/}
+      {/*<RecoveryForm />*/}
+      {/*<p>5) Код подтверждения</p>*/}
+      {/*<ConfirmationCodeForm />*/}
       <p>6) Обновление профиля</p>
-      <UpdatePersonalInfoForm />
+      <div className="w-[748px]">
+        <UpdatePersonalInfo />
+      </div>
       <p>7) Добавить курс</p>
-      <AddCourseForm />
-      <p>8) Обновить курс</p>F
-      <UpdateCourseForm />
+      <div className="w-[820px]">
+        <AddCourse />
+      </div>
+      <p>8) Обновить курс</p>
+      <div className="w-[740px]">
+        <UpdateCourse />
+      </div>
       <p>9) Добавить урок</p>
-      <AddLessonForm />
-      <p>10) Добавить фото</p>
-      <AddImageForm />
+      <div className="w-[820px]">
+        <AddLesson />
+      </div>
+      {/*<p>10) Добавить фото</p>*/}
+      {/*<AddImageForm />*/}
       <p>11) Обновить урок</p>
-      <UpdateLessonForm />
+      <div className="w-[820px]">
+        <UpdateLesson />
+      </div>
       <p>12) Добавить пользователя</p>
-      <AddNewUserForm />
+      <div className="w-[780px]">
+        <AddNewUser />
+      </div>
       <p>13) Обновить пользователя</p>
-      <UpdateUserForm />
+      <div className="w-[780px]">
+        <UpdateUser />
+      </div>
       <p>14) Добавить роль</p>
-      <AddNewPositionForm />
-      <p>15) Назначить курсы на роль</p>
-      <SetCoursesForm />
+      <div className="w-[780px]">
+        <AddRole />
+      </div>
+      {/*<p>15) Назначить курсы на роль</p>*/}
+      {/*<SetCoursesForm />*/}
       <p>16) Обновить роль</p>
-      <UpdatePositionForm />
+      <div className="w-[780px]">
+        <UpdateRole />
+      </div>
     </div>
   );
 }

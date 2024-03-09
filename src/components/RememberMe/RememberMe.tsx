@@ -4,8 +4,13 @@ import { Field } from 'formik';
 
 function RememberMe() {
   return (
-    <div>
-      <Field type="checkbox" id="rememberMe" name="rememberMe" className="w-[20px] h-[20px]" />
+    <div className="flex items-center gap-[10px]">
+      <Field
+        type="checkbox"
+        id="rememberMe"
+        name="rememberMe"
+        className="w-[18px] h-[18px] rounded-[2px]"
+      />
       <label htmlFor="rememberMe">Запомнить меня</label>
     </div>
   );

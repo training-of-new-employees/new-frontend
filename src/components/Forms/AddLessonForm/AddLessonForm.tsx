@@ -1,34 +1,25 @@
-import FormikContainer from '../../UI/FormikContainer/FormikContainer.tsx';
-import FormikControl from '../../UI/FormikControl/FormikControl.tsx';
-
-interface ValuesTypes {
-  [key: string]: string | string[];
-}
+// import { useState } from 'react';
+import { AddLessonSchema } from '../../../utils/validationSchema/ValidAddLesson.ts';
+import FormikContainer from '../../UI/FormElements/FormikContainer/FormikContainer.tsx';
+import FormikControl from '../../UI/FormElements/FormikControl/FormikControl.tsx';
 
 function AddLessonForm() {
+  // const [serverError, setServerError] = useState('sample of server error');
   const InitialValues = {
     name: '',
     description: '',
-  };
-
-  const Validation = (values: ValuesTypes) => {
-    const errors: ValuesTypes = {};
-    if (!values.name) {
-      errors.name = 'Required';
-    }
-    return errors;
   };
 
   const onSubmit = (values: object) => console.log('Form data', values);
   return (
     <FormikContainer
       InitialValues={InitialValues}
-      Validation={Validation}
+      Schema={AddLessonSchema}
       onSubmit={onSubmit}
-      buttonText="Добавить урок"
+      formName="addLesson"
     >
       <FormikControl
-        control="input"
+        control="inputClassic"
         type="text"
         inputName="name"
         placeholder="Название урока"
@@ -43,6 +34,7 @@ function AddLessonForm() {
         label="Текст"
         options={[]}
       />
+      {/*<p className="text-error mx-auto">{serverError}</p>*/}
     </FormikContainer>
   );
 }
