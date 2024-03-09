@@ -1,14 +1,14 @@
 import { FC, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { ISideBar } from './SideBarTypes';
 import ProfileLogo from '../../../images/UI/Profile-logo.svg';
 import { SIDEBAR_MENU_ADMIN, SIDEBAR_MENU_PERSONAL } from '../../../utils/constants';
 
-export const SideBar: FC<ISideBar> = ({ role }) => {
+export const SideBar: FC = () => {
   const [activeMenu, setActiveMenu] = useState(0);
-  const SideBarMenu = role === 'admin' ? SIDEBAR_MENU_ADMIN : SIDEBAR_MENU_PERSONAL;
+  const isAdmin = localStorage.getItem('role') === 'ADMIN';
+  const SideBarMenu = isAdmin ? SIDEBAR_MENU_ADMIN : SIDEBAR_MENU_PERSONAL;
   return (
-    <div className=" bg-white min-w-[300px] h-screen border-borderDisabledInput border-r-[1px]">
+    <div className=" bg-white min-w-[300px] h-[calc(100vh-72px)] border-borderDisabledInput">
       <NavLink
         to="/profile"
         className={
@@ -26,7 +26,7 @@ export const SideBar: FC<ISideBar> = ({ role }) => {
         <div className="flex flex-col gap-[5px]">
           <h4 className="text-h4 font-medium">Имя пользователя</h4>
           <p className="self-start text-bodyMedium font-sans">
-            {role === 'admin' ? 'Администратор' : 'Сотрудник'}
+            {isAdmin ? 'Администратор' : 'Сотрудник'}
           </p>
         </div>
       </NavLink>

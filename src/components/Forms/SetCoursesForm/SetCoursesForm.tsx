@@ -1,10 +1,6 @@
 import Checkbox from '../../UI/FormElements/Checkbox/Checkbox.tsx';
 import FormikContainer from '../../UI/FormElements/FormikContainer/FormikContainer.tsx';
 
-interface ValuesTypes {
-  [key: string]: string | string[];
-}
-
 const courses = [
   { id: '1', label: 'Course 1' },
   { id: '2', label: 'Course 2' },
@@ -17,19 +13,9 @@ const courses = [
 function SetCoursesForm() {
   const InitialValues = {};
 
-  const Validation = () => {
-    const errors: ValuesTypes = {};
-    return errors;
-  };
-
   const onSubmit = (values: object) => console.log('Form data', values);
   return (
-    <FormikContainer
-      InitialValues={InitialValues}
-      Validation={Validation}
-      onSubmit={onSubmit}
-      buttonText="Отрыть доступ"
-    >
+    <FormikContainer InitialValues={InitialValues} onSubmit={onSubmit} formName="setCourses">
       <div role="group" aria-labelledby="setCourses">
         {courses.map((course) => (
           <Checkbox

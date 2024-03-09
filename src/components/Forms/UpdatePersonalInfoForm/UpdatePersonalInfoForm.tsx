@@ -1,10 +1,7 @@
 // import { useState } from 'react';
+import { UpdatePersonalSchema } from '../../../utils/validationSchema/ValidUpdatePersonalInfo.ts';
 import FormikContainer from '../../UI/FormElements/FormikContainer/FormikContainer.tsx';
 import FormikControl from '../../UI/FormElements/FormikControl/FormikControl.tsx';
-
-interface ValuesTypes {
-  [key: string]: string | string[];
-}
 
 function UpdatePersonalInfoForm() {
   // const [serverError, setServerError] = useState('sample of server error');
@@ -16,23 +13,11 @@ function UpdatePersonalInfoForm() {
     company: '',
     email: '',
   };
-
-  const Validation = (values: ValuesTypes) => {
-    const errors: ValuesTypes = {};
-    if (!values.email) {
-      errors.email = 'Required';
-    }
-    if (!values.name) {
-      errors.name = 'Required';
-    }
-    return errors;
-  };
-
   const onSubmit = (values: object) => console.log('Form data', values);
   return (
     <FormikContainer
       InitialValues={InitialValues}
-      Validation={Validation}
+      Schema={UpdatePersonalSchema}
       onSubmit={onSubmit}
       formName="updatePersonalInfo"
     >

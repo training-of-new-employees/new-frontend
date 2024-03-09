@@ -2,6 +2,7 @@
 
 import { Children, cloneElement, ReactNode, isValidElement } from 'react';
 import { Formik, Form } from 'formik';
+import { toFormikValidationSchema } from 'zod-formik-adapter';
 
 interface ValuesTypes {
   [key: string]: string | string[];
@@ -9,21 +10,25 @@ interface ValuesTypes {
 // тип any прописан для child в методе cloneElement
 interface IFormikContainer {
   InitialValues: ValuesTypes;
-  Validation: (arg: ValuesTypes) => void;
   onSubmit: (arg: ValuesTypes) => void;
   children: ReactNode[] | ReactNode;
   formName: string;
+  Schema?: any;
 }
 
 function FormikContainer({
   InitialValues,
-  Validation,
   onSubmit,
   formName,
   children,
+  Schema,
 }: IFormikContainer) {
   return (
-    <Formik initialValues={InitialValues} validate={Validation} onSubmit={onSubmit}>
+    <Formik
+      initialValues={InitialValues}
+      onSubmit={onSubmit}
+      validationSchema={toFormikValidationSchema(Schema)}
+    >
       {({ errors, touched }) => (
         <Form
           id={formName}

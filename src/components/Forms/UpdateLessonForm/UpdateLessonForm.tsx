@@ -1,33 +1,22 @@
 // @TODO прокинуть значения в initial values при клике на конкретный урок, поле для ссылки отображать только если нет картинок
 
 // import { useState } from 'react';
+import { UpdateLessonSchema } from '../../../utils/validationSchema/ValidUpdateLesson.ts';
 import FormikContainer from '../../UI/FormElements/FormikContainer/FormikContainer.tsx';
 import FormikControl from '../../UI/FormElements/FormikControl/FormikControl.tsx';
 
-interface ValuesTypes {
-  [key: string]: string | string[];
-}
-
 function UpdateLessonForm() {
+  // const [serverError, setServerError] = useState('sample of server error');
   const InitialValues = {
     nameUpdateLesson: '',
     descriptionUpdateLesson: '',
-  };
-
-  const Validation = (values: ValuesTypes) => {
-    // const [serverError, setServerError] = useState('sample of server error');
-    const errors: ValuesTypes = {};
-    if (!values.nameUpdateLesson) {
-      errors.nameUpdateLesson = 'Required';
-    }
-    return errors;
   };
 
   const onSubmit = (values: object) => console.log('Form data', values);
   return (
     <FormikContainer
       InitialValues={InitialValues}
-      Validation={Validation}
+      Schema={UpdateLessonSchema}
       onSubmit={onSubmit}
       formName="updateLesson"
     >

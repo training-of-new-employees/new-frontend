@@ -8,12 +8,13 @@ import FirstEnter from '../pages/FirstEnter/FirstEnter.tsx';
 import Login from '../pages/Login/Login';
 import Main from '../pages/Main/Main';
 import NewPassword from '../pages/NewPassword/NewPassword.tsx';
+import { NotFound } from '../pages/NotFound/NotFound.tsx';
 import PasswordRecovery from '../pages/PasswordRecovery/PasswordRecovery.tsx';
 import Positions from '../pages/Positions/Positions';
 import { Profile } from '../pages/Profile/Profile';
 import Regestration from '../pages/Registration/Regestration';
 import Test from '../pages/Test/Test.tsx';
-import Users from '../pages/Users/Users';
+import { Users } from '../pages/Users/Users';
 
 const router = createBrowserRouter([
   {
@@ -21,7 +22,7 @@ const router = createBrowserRouter([
     element: <Main />,
   },
   {
-    element: <Layout role="user" />,
+    element: <Layout />,
     children: [
       {
         path: paths.profile,
@@ -73,6 +74,10 @@ const router = createBrowserRouter([
   {
     path: '/test',
     element: <Test />,
+  },
+  {
+    path: '*',
+    element: <NotFound />,
   },
 ]);
 

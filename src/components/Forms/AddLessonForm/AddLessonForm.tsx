@@ -1,31 +1,20 @@
 // import { useState } from 'react';
+import { AddLessonSchema } from '../../../utils/validationSchema/ValidAddLesson.ts';
 import FormikContainer from '../../UI/FormElements/FormikContainer/FormikContainer.tsx';
 import FormikControl from '../../UI/FormElements/FormikControl/FormikControl.tsx';
 
-interface ValuesTypes {
-  [key: string]: string | string[];
-}
-
 function AddLessonForm() {
+  // const [serverError, setServerError] = useState('sample of server error');
   const InitialValues = {
     name: '',
     description: '',
-  };
-
-  const Validation = (values: ValuesTypes) => {
-    // const [serverError, setServerError] = useState('sample of server error');
-    const errors: ValuesTypes = {};
-    if (!values.name) {
-      errors.name = 'Required';
-    }
-    return errors;
   };
 
   const onSubmit = (values: object) => console.log('Form data', values);
   return (
     <FormikContainer
       InitialValues={InitialValues}
-      Validation={Validation}
+      Schema={AddLessonSchema}
       onSubmit={onSubmit}
       formName="addLesson"
     >

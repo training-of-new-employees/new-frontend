@@ -7,6 +7,7 @@
 // import SetCoursesForm from '../../components/Forms/SetCoursesForm/SetCoursesForm.tsx';
 // import UpdateCourseForm from '../../components/Forms/UpdateCourseForm/UpdateCourseForm.tsx';
 // import UpdateLessonForm from '../../components/Forms/UpdateLessonForm/UpdateLessonForm.tsx';
+import { PreloaderProfile } from '../../components/PreloaderProfile/PreloaderProfile.tsx';
 import AddCourse from '../../widgets/AddCourse/AddCourse.tsx';
 import AddLesson from '../../widgets/AddLesson/AddLesson.tsx';
 import AddNewUser from '../../widgets/AddNewUser/AddNewUser.tsx';
@@ -20,6 +21,7 @@ import UpdateUser from '../../widgets/UpdateUser/UpdateUser.tsx';
 function Test() {
   return (
     <div>
+      <PreloaderProfile />
       <h1>Testing page</h1>
       {/*<p>1) Регистрация</p>*/}
       {/*<RegisterForm />*/}

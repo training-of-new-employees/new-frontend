@@ -1,12 +1,9 @@
 // @TODO Взять почту для InitialValues из ссылки.
 // @TODO Всю реализацию входа можно взять из прошлого репозитория, она работает
+import { FirstEnterSchema } from '../../../utils/validationSchema/ValidFirstEnter.ts';
 import RememberMe from '../../RememberMe/RememberMe.tsx';
 import FormikContainer from '../../UI/FormElements/FormikContainer/FormikContainer.tsx';
 import FormikControl from '../../UI/FormElements/FormikControl/FormikControl.tsx';
-
-interface ValuesTypes {
-  [key: string]: string | string[];
-}
 
 function FirstEnterForm() {
   const InitialValues = {
@@ -16,21 +13,13 @@ function FirstEnterForm() {
     rememberMe: '',
   };
 
-  const Validation = (values: ValuesTypes) => {
-    const errors: ValuesTypes = {};
-    if (!values.passwordFirstEnter) {
-      errors.passwordFirstEnter = 'Required';
-    }
-    return errors;
-  };
-
   const onSubmit = (values: object) => console.log('Form data', values);
   return (
     <FormikContainer
       InitialValues={InitialValues}
-      Validation={Validation}
       onSubmit={onSubmit}
       formName="FirstEnter"
+      Schema={FirstEnterSchema}
     >
       <FormikControl
         control="input"

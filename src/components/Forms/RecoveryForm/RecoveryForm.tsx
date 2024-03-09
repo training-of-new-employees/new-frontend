@@ -1,9 +1,7 @@
 // import { useState } from 'react';
+import { RecoveryPasswordSchema } from '../../../utils/validationSchema/ValidRecoveryPassword.ts';
 import FormikContainer from '../../UI/FormElements/FormikContainer/FormikContainer.tsx';
 import FormikControl from '../../UI/FormElements/FormikControl/FormikControl.tsx';
-interface ValuesTypes {
-  [key: string]: string | string[];
-}
 
 function RecoveryForm() {
   // const [serverError, setServerError] = useState('');
@@ -12,19 +10,12 @@ function RecoveryForm() {
     emailRecovery: '',
   };
 
-  const Validation = (values: ValuesTypes) => {
-    const errors: ValuesTypes = {};
-    if (!values.emailRecovery) {
-      errors.emailRecovery = 'Required';
-    }
-    return errors;
-  };
   const onSubmit = (values: object) => console.log('Form data', values, 'test');
   return (
     <FormikContainer
       InitialValues={InitialValues}
-      Validation={Validation}
       onSubmit={onSubmit}
+      Schema={RecoveryPasswordSchema}
       formName="PasswordRecovery"
     >
       <FormikControl

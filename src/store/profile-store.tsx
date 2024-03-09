@@ -1,10 +1,12 @@
 import { makeAutoObservable } from 'mobx';
 import { IPromiseBasedObservable, fromPromise } from 'mobx-utils';
 import { getProfileMe } from '../utils/api/profileApi';
+import { editAdminInfo } from '../utils/axios/Admin/editAdminInfo/editAdminInfo';
+import { IUser } from '../utils/axios/types/IUser';
 
 class ProfileStore {
   //TODO: Написать типизацию для профиля
-  profile?: IPromiseBasedObservable<any>;
+  profile?: IPromiseBasedObservable<IUser>;
   isLoading = false;
   constructor() {
     makeAutoObservable(this);
@@ -24,6 +26,11 @@ class ProfileStore {
     //       this.isLoading = false;
     //       console.log('ошибка загрузки профиля');
     //     }
+  };
+  postEditProfileAction = ({ company_name, email, name, patronymic, surname, id }: IUser) => {
+    this.profile = fromPromise(
+      editAdminInfo({ company_name, email, name, patronymic, surname, id })
+    );
   };
 }
 

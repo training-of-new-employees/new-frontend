@@ -1,10 +1,7 @@
 // import { useState } from 'react';
+import { UpdateUserSchema } from '../../../utils/validationSchema/ValidUpdateUser.ts';
 import FormikContainer from '../../UI/FormElements/FormikContainer/FormikContainer.tsx';
 import FormikControl from '../../UI/FormElements/FormikControl/FormikControl.tsx';
-
-interface ValuesTypes {
-  [key: string]: string | string[];
-}
 
 function UpdateUserForm() {
   // const [serverError, setServerError] = useState('sample of server error');
@@ -15,14 +12,6 @@ function UpdateUserForm() {
     positionUserUpdate: '',
     emailUserUpdate: '',
     linkUserUpdate: '',
-  };
-
-  const Validation = (values: ValuesTypes) => {
-    const errors: ValuesTypes = {};
-    if (!values.email) {
-      errors.email = 'Required';
-    }
-    return errors;
   };
 
   const options = [
@@ -48,7 +37,7 @@ function UpdateUserForm() {
   return (
     <FormikContainer
       InitialValues={InitialValues}
-      Validation={Validation}
+      Schema={UpdateUserSchema}
       onSubmit={onSubmit}
       formName="updateUser"
     >

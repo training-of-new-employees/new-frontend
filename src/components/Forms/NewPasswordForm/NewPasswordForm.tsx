@@ -1,10 +1,7 @@
 // import { useState } from 'react';
+import { FirstEnterSchema } from '../../../utils/validationSchema/ValidFirstEnter.ts';
 import FormikContainer from '../../UI/FormElements/FormikContainer/FormikContainer.tsx';
 import FormikControl from '../../UI/FormElements/FormikControl/FormikControl.tsx';
-
-interface ValuesTypes {
-  [key: string]: string | string[];
-}
 
 function NewPasswordForm() {
   // const [serverError, setServerError] = useState('');
@@ -14,21 +11,11 @@ function NewPasswordForm() {
     passwordNewPass: '',
   };
 
-  const Validation = (values: ValuesTypes) => {
-    const errors: ValuesTypes = {};
-    if (!values.emailNewPass) {
-      errors.emailNewPass = 'Required';
-    }
-    if (!values.passwordNewPass) {
-      errors.passwordNewPass = 'Required';
-    }
-    return errors;
-  };
   const onSubmit = (values: object) => console.log('Form data', values, 'test');
   return (
     <FormikContainer
       InitialValues={InitialValues}
-      Validation={Validation}
+      Schema={FirstEnterSchema}
       onSubmit={onSubmit}
       formName="NewPassword"
     >

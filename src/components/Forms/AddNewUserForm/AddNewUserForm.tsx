@@ -1,10 +1,7 @@
 // import { useState } from 'react';
+import { AddNewUserSchema } from '../../../utils/validationSchema/ValidAddNewUser.ts';
 import FormikContainer from '../../UI/FormElements/FormikContainer/FormikContainer.tsx';
 import FormikControl from '../../UI/FormElements/FormikControl/FormikControl.tsx';
-
-interface ValuesTypes {
-  [key: string]: string | string[];
-}
 
 function AddNewUserForm() {
   // const [serverError, setServerError] = useState('sample of server error');
@@ -14,14 +11,6 @@ function AddNewUserForm() {
     patronymicUser: '',
     positionUser: '',
     emailUser: '',
-  };
-
-  const Validation = (values: ValuesTypes) => {
-    const errors: ValuesTypes = {};
-    if (!values.emailUser) {
-      errors.emailUser = 'Required';
-    }
-    return errors;
   };
 
   const options = [
@@ -47,7 +36,7 @@ function AddNewUserForm() {
   return (
     <FormikContainer
       InitialValues={InitialValues}
-      Validation={Validation}
+      Schema={AddNewUserSchema}
       onSubmit={onSubmit}
       formName="addNewUser"
     >

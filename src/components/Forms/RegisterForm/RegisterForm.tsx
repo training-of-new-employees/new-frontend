@@ -1,12 +1,9 @@
 // import { useState } from 'react';
+import { RegisterSchema } from '../../../utils/validationSchema/ValidRegister.ts';
 import RememberMe from '../../RememberMe/RememberMe.tsx';
 import FormikContainer from '../../UI/FormElements/FormikContainer/FormikContainer.tsx';
 import FormikControl from '../../UI/FormElements/FormikControl/FormikControl.tsx';
 import LinkComp from '../../UI/LinkComp/LinkComp.tsx';
-
-interface ValuesTypes {
-  [key: string]: string | string[];
-}
 
 function RegisterForm() {
   // const [serverError, setServerError] = useState('sample of server error');
@@ -18,24 +15,12 @@ function RegisterForm() {
     rememberMe: '',
   };
 
-  const Validation = (values: ValuesTypes) => {
-    const errors: ValuesTypes = {};
-    if (!values.email) {
-      errors.email = 'Required';
-    }
-    if (!values.password) {
-      errors.password = 'Required';
-    }
-    return errors;
-  };
+  const onSubmit = (values: object) => console.log('Form data', values);
 
-  const onSubmit = (values: ValuesTypes) => {
-    console.log('Form data', values);
-  };
   return (
     <FormikContainer
+      Schema={RegisterSchema}
       InitialValues={InitialValues}
-      Validation={Validation}
       onSubmit={onSubmit}
       formName="Register"
     >
