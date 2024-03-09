@@ -3,7 +3,7 @@ import { regexEmail, regexName } from './ValidRegex';
 
 export const UpdateUserSchema = z
   .object({
-    name: z
+    nameUserUpdate: z
       .string({
         required_error: 'Заполните это поле',
       })
@@ -11,7 +11,7 @@ export const UpdateUserSchema = z
       .min(1, 'Заполните это поле')
       .max(128, 'Поле должно содержать не более 128 символов')
       .regex(regexName, 'Введите имя как в паспорте'),
-    surname: z
+    surnameUserUpdate: z
       .string({
         required_error: 'Заполните это поле',
       })
@@ -19,7 +19,7 @@ export const UpdateUserSchema = z
       .min(1, 'Заполните это поле')
       .max(128, 'Поле должно содержать не более 128 символов')
       .regex(regexName, 'Введите фамилию как в паспорте'),
-    patronymic: z
+    patronymicUserUpdate: z
       .string({
         required_error: 'Заполните это поле',
       })
@@ -30,7 +30,7 @@ export const UpdateUserSchema = z
       .optional()
       .or(z.literal('')),
 
-    email: z
+    emailUserUpdate: z
       .string({
         required_error: 'Это поле обязательно',
       })
@@ -41,7 +41,7 @@ export const UpdateUserSchema = z
       .regex(regexEmail, 'Это поле тип почты: you@email.ru')
       .max(50, 'E-mail должен содержать не более 50 символов')
       .min(7, 'E-mail должен содержать не менее 7 символов'),
-    position: z
+    positionUserUpdate: z
       .string({
         required_error: 'Это поле обязательно',
       })
@@ -49,4 +49,9 @@ export const UpdateUserSchema = z
       .regex(regexName, 'Символы *, # не допускаются')
       .max(256, 'Поле должно содержать не более 256 символов'),
   })
-  .required({ name: true, surname: true, email: true, position: true });
+  .required({
+    nameUserUpdate: true,
+    surnameUserUpdate: true,
+    emailUserUpdate: true,
+    positionUserUpdate: true,
+  });

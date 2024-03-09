@@ -3,7 +3,7 @@ import { regexEmail } from './ValidRegex';
 
 export const RecoveryPasswordSchema = z
   .object({
-    email: z
+    emailRecovery: z
       .string({
         required_error: 'Это поле обязательно',
       })
@@ -15,4 +15,4 @@ export const RecoveryPasswordSchema = z
       .max(50, 'E-mail должен содержать не более 50 символов')
       .min(7, 'E-mail должен содержать не менее 7 символов'),
   })
-  .required({ email: true });
+  .required({ emailRecovery: true });

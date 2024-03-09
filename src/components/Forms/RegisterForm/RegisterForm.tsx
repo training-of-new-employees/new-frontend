@@ -1,9 +1,12 @@
-import { RegisterSchema } from '../../../utils/validationSchema/ValidRegisterSchemta.ts';
+// import { useState } from 'react';
+import { RegisterSchema } from '../../../utils/validationSchema/ValidRegister.ts';
 import RememberMe from '../../RememberMe/RememberMe.tsx';
-import FormikContainer from '../../UI/FormikContainer/FormikContainer.tsx';
-import FormikControl from '../../UI/FormikControl/FormikControl.tsx';
+import FormikContainer from '../../UI/FormElements/FormikContainer/FormikContainer.tsx';
+import FormikControl from '../../UI/FormElements/FormikControl/FormikControl.tsx';
+import LinkComp from '../../UI/LinkComp/LinkComp.tsx';
 
 function RegisterForm() {
+  // const [serverError, setServerError] = useState('sample of server error');
   const InitialValues = {
     company: '',
     email: '',
@@ -19,7 +22,7 @@ function RegisterForm() {
       Schema={RegisterSchema}
       InitialValues={InitialValues}
       onSubmit={onSubmit}
-      buttonText="Войти"
+      formName="Register"
     >
       <FormikControl
         control="input"
@@ -40,6 +43,7 @@ function RegisterForm() {
         type="password"
         inputName="password"
         placeholder="Пароль"
+        isPassword
         options={[]}
       />
       <FormikControl
@@ -47,9 +51,14 @@ function RegisterForm() {
         type="password"
         inputName="repeatPassword"
         placeholder="Повторите пароль"
+        isPassword
         options={[]}
       />
-      <RememberMe />
+      {/*<p className="text-error mx-auto">{serverError}</p>*/}
+      <div className="w-[100%] flex flex-row justify-between my-[16px] pr-[20px]">
+        <RememberMe />
+        <LinkComp direction="/recovery">Забыли пароль?</LinkComp>
+      </div>
     </FormikContainer>
   );
 }

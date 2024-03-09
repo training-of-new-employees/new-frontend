@@ -1,9 +1,9 @@
 import { FC, useEffect, useRef, useState } from 'react';
 import { ITableLine } from './TableLineTypes';
 import { PERSONAL_MENU } from '../../../utils/constants';
-import { DropDown } from '../DropDown/DropDown';
+import { DropDown } from '../FormElements/DropDown/DropDown';
 
-export const TableLine: FC<ITableLine> = ({ name, job, status, id }) => {
+export const TableLine: FC<ITableLine> = ({ name, job, status }) => {
   const wrapRef = useRef<HTMLInputElement>(null);
   const handleClick = (event: any) => {
     if (wrapRef.current && !wrapRef.current.contains(event.target)) {

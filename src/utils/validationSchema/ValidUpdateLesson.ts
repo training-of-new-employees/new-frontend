@@ -2,7 +2,7 @@ import z from 'zod';
 import { regexNameCourse } from './ValidRegex';
 
 export const UpdateLessonSchema = z.object({
-  name: z
+  nameUpdateLesson: z
     .string({
       required_error: 'Заполните это поле',
     })
@@ -10,7 +10,7 @@ export const UpdateLessonSchema = z.object({
     .min(1, 'Заполните это поле')
     .max(256, 'Поле должно содержать не более 256 символов')
     .regex(regexNameCourse, 'Символы *, # не допускаются'),
-  description: z
+  descriptionUpdateLesson: z
     .string()
     .min(10, 'Поле должно содержать не менее 10 символов')
     .max(1024, 'Поле должно содержать не более 1024 символов')

@@ -1,10 +1,10 @@
 import { AddImageSchema } from '../../../utils/validationSchema/ValidAddImage.ts';
-import FormikContainer from '../../UI/FormikContainer/FormikContainer.tsx';
-import FormikControl from '../../UI/FormikControl/FormikControl.tsx';
+import FormikContainer from '../../UI/FormElements/FormikContainer/FormikContainer.tsx';
+import FormikControl from '../../UI/FormElements/FormikControl/FormikControl.tsx';
 
 function AddImageForm() {
   const InitialValues = {
-    link: '',
+    linkAdd: '',
   };
 
   const onSubmit = (values: object) => console.log('Form data', values);
@@ -13,11 +13,11 @@ function AddImageForm() {
       InitialValues={InitialValues}
       Schema={AddImageSchema}
       onSubmit={onSubmit}
-      buttonText="Загрузить изображение"
+      formName="addImageForm"
     >
       <FormikControl
         control="input"
-        type="link"
+        type="linkAdd"
         inputName="link"
         placeholder="https://"
         options={[]}

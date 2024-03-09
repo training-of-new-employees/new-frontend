@@ -7,6 +7,10 @@ export const paths = {
   positions: '/position',
   login: '/login',
   registration: '/registration',
+  firstenter: '/first-enter',
+  recovery: '/recovery',
+  newpass: 'new-password',
+  otp: '/otp',
   admin: '/admin',
   employeeReg: '/first-login?',
 };

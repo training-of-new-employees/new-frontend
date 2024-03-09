@@ -1,8 +1,10 @@
+// import { useState } from 'react';
 import { AddLessonSchema } from '../../../utils/validationSchema/ValidAddLesson.ts';
-import FormikContainer from '../../UI/FormikContainer/FormikContainer.tsx';
-import FormikControl from '../../UI/FormikControl/FormikControl.tsx';
+import FormikContainer from '../../UI/FormElements/FormikContainer/FormikContainer.tsx';
+import FormikControl from '../../UI/FormElements/FormikControl/FormikControl.tsx';
 
 function AddLessonForm() {
+  // const [serverError, setServerError] = useState('sample of server error');
   const InitialValues = {
     name: '',
     description: '',
@@ -14,10 +16,10 @@ function AddLessonForm() {
       InitialValues={InitialValues}
       Schema={AddLessonSchema}
       onSubmit={onSubmit}
-      buttonText="Добавить урок"
+      formName="addLesson"
     >
       <FormikControl
-        control="input"
+        control="inputClassic"
         type="text"
         inputName="name"
         placeholder="Название урока"
@@ -32,6 +34,7 @@ function AddLessonForm() {
         label="Текст"
         options={[]}
       />
+      {/*<p className="text-error mx-auto">{serverError}</p>*/}
     </FormikContainer>
   );
 }

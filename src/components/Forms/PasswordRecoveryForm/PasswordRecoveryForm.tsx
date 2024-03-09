@@ -4,7 +4,7 @@ import FormikControl from '../../UI/FormikControl/FormikControl.tsx';
 
 function PasswordRecoveryForm() {
   const InitialValues = {
-    email: '',
+    emailRecovery: '',
   };
 
   const onSubmit = (values: object) => console.log('Form data', values);
@@ -18,7 +18,7 @@ function PasswordRecoveryForm() {
       <FormikControl
         control="input"
         type="email"
-        inputName="email"
+        inputName="emailRecovery"
         placeholder="E-mail"
         options={[]}
       />

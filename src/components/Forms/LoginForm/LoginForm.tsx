@@ -1,38 +1,46 @@
-import { LoginSchema } from '../../../utils/validationSchema/ValidLoginSchemta.ts';
+// import { useState } from 'react';
+import { LoginSchema } from '../../../utils/validationSchema/ValidLogin.ts';
 import RememberMe from '../../RememberMe/RememberMe.tsx';
-import FormikContainer from '../../UI/FormikContainer/FormikContainer.tsx';
-import FormikControl from '../../UI/FormikControl/FormikControl.tsx';
+import FormikContainer from '../../UI/FormElements/FormikContainer/FormikContainer.tsx';
+import FormikControl from '../../UI/FormElements/FormikControl/FormikControl.tsx';
+import LinkComp from '../../UI/LinkComp/LinkComp.tsx';
 
 function LoginForm() {
+  // const [serverError, setServerError] = useState('sample of server error');
+
   const InitialValues = {
-    email: '',
-    password: '',
+    emailLogin: '',
+    passwordLogin: '',
     rememberMe: '',
   };
-
   const onSubmit = (values: object) => console.log('Form data', values);
   return (
     <FormikContainer
       InitialValues={InitialValues}
       onSubmit={onSubmit}
-      buttonText="Войти"
+      formName="PasswordRecovery"
       Schema={LoginSchema}
     >
       <FormikControl
         control="input"
         type="email"
-        inputName="email"
+        inputName="emailLogin"
         placeholder="E-mail"
         options={[]}
       />
       <FormikControl
         control="input"
-        type="password"
-        inputName="password"
+        type="passwordLogin"
+        inputName="passwordLogin"
         placeholder="Пароль"
+        isPassword
         options={[]}
       />
-      <RememberMe />
+      {/*<p className="text-error mx-auto">{serverError}</p>*/}
+      <div className="w-[100%] flex flex-row justify-between my-[16px] pr-[20px]">
+        <RememberMe />
+        <LinkComp direction="/recovery">Забыли пароль?</LinkComp>
+      </div>
     </FormikContainer>
   );
 }

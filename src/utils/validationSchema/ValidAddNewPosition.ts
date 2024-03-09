@@ -11,4 +11,4 @@ export const AddNewPositionSchema = z
       .regex(regexName, 'Символы *, # не допускаются')
       .max(256, 'Поле должно содержать не более 256 символов'),
   })
-  .required({ name: true, surname: true, email: true, position: true });
+  .required({ position: true });

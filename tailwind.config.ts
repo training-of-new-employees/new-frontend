@@ -4,7 +4,8 @@ const config: Config = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     fontFamily: {
-      sans: ['Rubik', 'Arial', 'sans-serif'],
+      rubik: ['Rubik', 'Arial', 'Helvetica', 'sans-serif'],
+      exo: ['Exo', 'Arial', 'Helvetica', 'sans-serif'],
     },
     fontSize: {
       h1: ['40px', '150%'],
@@ -39,6 +40,8 @@ const config: Config = {
         'profile-avatar': "url('./src/images/UI/Profile-logo.svg')",
         'exit-icon': "url('./src/images/UI/exit-icon.svg')",
         'profile-exitbtn': "url('./src/images/UI/ProfileExitBtn.svg')",
+        'close-pass': "url('./src/images/UI/closePass.svg')",
+        'open-pass': "url('./src/images/UI/openPass.svg')",
       },
     },
   },

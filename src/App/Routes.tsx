@@ -1,14 +1,18 @@
 import { createBrowserRouter } from 'react-router-dom';
 import { paths } from './paths';
+import { LayoutAuth } from '../components/UI/FormElements/LayoutAuth/LayoutAuth.tsx';
 import { Layout } from '../components/UI/Layout/Layout';
-import { LayoutAuth } from '../components/UI/LayoutAuth/LayoutAuth.tsx';
+import ConfirmationCode from '../pages/ConfirmationCode/ConfirmationCode.tsx';
 import Courses from '../pages/Courses/Courses';
+import FirstEnter from '../pages/FirstEnter/FirstEnter.tsx';
 import Login from '../pages/Login/Login';
 import Main from '../pages/Main/Main';
+import NewPassword from '../pages/NewPassword/NewPassword.tsx';
 import { NotFound } from '../pages/NotFound/NotFound.tsx';
+import PasswordRecovery from '../pages/PasswordRecovery/PasswordRecovery.tsx';
 import Positions from '../pages/Positions/Positions';
 import { Profile } from '../pages/Profile/Profile';
-import Regestration from '../pages/Registration/Regestration';
+import Registration from '../pages/Registration/Regestration';
 import Test from '../pages/Test/Test.tsx';
 import { Users } from '../pages/Users/Users';
 
@@ -43,11 +47,27 @@ const router = createBrowserRouter([
     children: [
       {
         path: paths.registration,
-        element: <Regestration />,
+        element: <Registration />,
       },
       {
         path: paths.login,
         element: <Login />,
+      },
+      {
+        path: paths.firstenter,
+        element: <FirstEnter />,
+      },
+      {
+        path: paths.recovery,
+        element: <PasswordRecovery />,
+      },
+      {
+        path: paths.newpass,
+        element: <NewPassword />,
+      },
+      {
+        path: paths.otp,
+        element: <ConfirmationCode />,
       },
     ],
   },

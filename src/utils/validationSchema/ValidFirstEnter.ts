@@ -3,7 +3,7 @@ import { regexEmail, regexPassword } from './ValidRegex';
 
 export const FirstEnterSchema = z
   .object({
-    email: z
+    emailFirstEnter: z
       .string({
         required_error: 'Это поле обязательно',
       })
@@ -13,24 +13,24 @@ export const FirstEnterSchema = z
       .regex(regexEmail, 'Это поле тип почты: you@email.ru')
       .max(50, 'E-mail должен содержать не более 50 символов')
       .min(7, { message: 'E-mail должен содержать не менее 7 символов' }),
-    password: z
+    passwordFirstEnter: z
       .string({ required_error: 'Это поле обязательно' })
       .trim()
       .max(30, 'Пароль должен содержать не более 30 символов')
-      .min(6, 'Длина пароля не менее 6 см')
+      .min(6, 'Длина пароля не менее 6 символов')
       .regex(
         regexPassword,
-        'Пароль должен содержать большую букву, маленькую букву, цифру и спец-символ'
+        'Пароль должен содержать большую букву, маленькую букву, цифру и спецсимвол'
       ),
-    repeatPassword: z
+    repeatPasswordFirstEnter: z
       .string({
         required_error: 'Это поле обязательно',
       })
       .trim(),
     rememberMe: z.boolean().optional(),
   })
-  .required({ email: true, password: true, repeatPassword: true })
-  .refine((data) => data.password === data.repeatPassword, {
+  .required({ emailFirstEnter: true, passwordFirstEnter: true, repeatPasswordFirstEnter: true })
+  .refine((data) => data.passwordFirstEnter === data.repeatPasswordFirstEnter, {
     message: 'Пароли не совпадают',
     path: ['repeatPassword'],
   });

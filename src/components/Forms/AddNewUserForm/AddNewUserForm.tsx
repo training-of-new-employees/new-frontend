@@ -1,14 +1,16 @@
+// import { useState } from 'react';
 import { AddNewUserSchema } from '../../../utils/validationSchema/ValidAddNewUser.ts';
-import FormikContainer from '../../UI/FormikContainer/FormikContainer.tsx';
-import FormikControl from '../../UI/FormikControl/FormikControl.tsx';
+import FormikContainer from '../../UI/FormElements/FormikContainer/FormikContainer.tsx';
+import FormikControl from '../../UI/FormElements/FormikControl/FormikControl.tsx';
 
 function AddNewUserForm() {
+  // const [serverError, setServerError] = useState('sample of server error');
   const InitialValues = {
-    name: '',
-    surname: '',
-    patronymic: '',
-    position: '',
-    email: '',
+    nameUser: '',
+    surnameUser: '',
+    patronymicUser: '',
+    positionUser: '',
+    emailUser: '',
   };
 
   const options = [
@@ -36,47 +38,52 @@ function AddNewUserForm() {
       InitialValues={InitialValues}
       Schema={AddNewUserSchema}
       onSubmit={onSubmit}
-      buttonText="Добавить пользователя"
+      formName="addNewUser"
     >
       <FormikControl
-        control="input"
+        control="inputClassic"
         type="text"
-        inputName="surname"
+        inputName="surnameUser"
         label="Фамилия"
         placeholder="Введите фамилию"
+        width="w-[254px]"
         options={[]}
       />
       <FormikControl
-        control="input"
+        control="inputClassic"
         type="text"
-        inputName="name"
+        inputName="nameUser"
         label="Имя"
         placeholder="Введите имя"
+        width="w-[254px]"
         options={[]}
       />
       <FormikControl
-        control="input"
+        control="inputClassic"
         type="text"
-        inputName="patronymic"
+        inputName="patronymicUser"
         label="Отчество"
         placeholder="Введите отчество"
+        width="w-[254px]"
         options={[]}
       />
       <FormikControl
         control="select"
         type="select"
-        inputName="position"
+        inputName="positionUser"
+        label="Должность"
         placeholder="Должность"
         options={options}
       />
       <FormikControl
-        control="input"
-        type="email"
+        control="inputClassic"
+        type="emailUser"
         inputName="email"
         label="E-mail"
         placeholder="Введите email"
         options={[]}
       />
+      {/*<p className="text-error mx-auto">{serverError}</p>*/}
     </FormikContainer>
   );
 }

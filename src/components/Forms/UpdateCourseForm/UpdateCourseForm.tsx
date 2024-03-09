@@ -1,12 +1,15 @@
 // @TODO прокинуть значения в initial values при клике на конкретный урок
+// import { useState } from 'react';
+
 import { AddCourseSchema } from '../../../utils/validationSchema/ValidAddCourse.ts';
-import FormikContainer from '../../UI/FormikContainer/FormikContainer.tsx';
-import FormikControl from '../../UI/FormikControl/FormikControl.tsx';
+import FormikContainer from '../../UI/FormElements/FormikContainer/FormikContainer.tsx';
+import FormikControl from '../../UI/FormElements/FormikControl/FormikControl.tsx';
 
 function UpdateCourseForm() {
+  // const [serverError, setServerError] = useState('sample of server error');
   const InitialValues = {
-    name: 'Some name',
-    description: 'Some text',
+    nameCourse: 'Some name',
+    descriptionCourse: 'Some text',
   };
 
   const onSubmit = (values: object) => console.log('Form data', values);
@@ -15,24 +18,25 @@ function UpdateCourseForm() {
       InitialValues={InitialValues}
       Schema={AddCourseSchema}
       onSubmit={onSubmit}
-      buttonText="Сохранить изменения"
+      formName="updateCourse"
     >
       <FormikControl
-        control="input"
+        control="inputClassic"
         type="text"
-        inputName="name"
-        placeholder="Добавьте название"
+        inputName="nameCourse"
         label="Название*"
+        placeholder="Добавьте название"
         options={[]}
       />
       <FormikControl
         control="textarea"
         type="text"
-        inputName="description"
-        placeholder="Добавьте описание"
+        inputName="descriptionCourse"
         label="Описание"
+        placeholder="Добавьте описание"
         options={[]}
       />
+      {/*<p className="text-error mx-auto">{serverError}</p>*/}
     </FormikContainer>
   );
 }
