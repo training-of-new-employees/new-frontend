@@ -7,7 +7,7 @@ export default function Courses() {
   return (
     <>
       <div className=" pl-[20px] pt-[20px] flex flex-col w-full">
-        <div className="w-full flex pb-[20px]">
+        <div className="w-[260px] flex pb-[20px]">
           <Button variant="primary" icon="white" onClick={() => navigate('/courses/new-course')}>
             Новый курс
           </Button>

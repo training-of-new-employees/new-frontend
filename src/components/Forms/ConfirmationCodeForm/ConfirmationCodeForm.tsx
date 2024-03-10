@@ -21,7 +21,7 @@ function ConfirmationCodeForm() {
   });
 
   const handleOTPChange = (event: React.ChangeEvent<HTMLInputElement>, element: string) => {
-    if (event.target.value === '') {
+    if (!event.target.value.match(/[0-9]/)) {
       return;
     }
     formik.setFieldValue(element, event.target.value);
@@ -65,6 +65,7 @@ function ConfirmationCodeForm() {
                 key={item + '' + index}
                 className={`w-[60px] h-[60px] px-[23px] border-solid ${serverError && 'border-error'} outline-none rounded-[12px] border-2 placeholder-addFontColor`}
                 type="text"
+                inputMode="numeric"
                 {...formik.getFieldProps(`otp.${index}.digit`)}
                 onChange={(event) => handleOTPChange(event, `otp.${index}.digit`)}
                 onKeyDown={(event) => inputOnKeyDown(event, `otp.${index}.digit`)}
