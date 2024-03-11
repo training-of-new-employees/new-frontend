@@ -1,5 +1,6 @@
 // import { useState } from 'react';
 import { AddNewUserSchema } from '../../../utils/validationSchema/ValidAddNewUser.ts';
+import FinalSelect from '../../UI/FormElements/FinalSelect/FinalSelect.tsx';
 import FormikContainer from '../../UI/FormElements/FormikContainer/FormikContainer.tsx';
 import FormikControl from '../../UI/FormElements/FormikControl/FormikControl.tsx';
 
@@ -14,10 +15,6 @@ function AddNewUserForm() {
   };
 
   const options = [
-    {
-      key: 'Выберите подходящую должность',
-      value: '',
-    },
     {
       key: 'Position 1',
       value: 'position1',
@@ -67,18 +64,24 @@ function AddNewUserForm() {
         width="w-[254px]"
         options={[]}
       />
-      <FormikControl
-        control="select"
-        type="select"
+      {/*<FormikControl*/}
+      {/*  control="select"*/}
+      {/*  type="select"*/}
+      {/*  inputName="positionUser"*/}
+      {/*  label="Должность"*/}
+      {/*  placeholder="Должность"*/}
+      {/*  options={options}*/}
+      {/*/>*/}
+      <FinalSelect
         inputName="positionUser"
-        label="Должность"
-        placeholder="Должность"
         options={options}
+        label="Должность"
+        placeholderText="Выберите подходящую должность"
       />
       <FormikControl
         control="inputClassic"
-        type="emailUser"
-        inputName="email"
+        type="email"
+        inputName="emailUser"
         label="E-mail"
         placeholder="Введите email"
         options={[]}
