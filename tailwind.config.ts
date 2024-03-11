@@ -43,6 +43,9 @@ const config: Config = {
         'close-pass': "url('./src/images/UI/closePass.svg')",
         'open-pass': "url('./src/images/UI/openPass.svg')",
       },
+      gridTemplateColumns: {
+        'auto-fit': 'repeat(auto-fit, minmax(316px, 1fr))',
+      },
     },
   },
   plugins: [],

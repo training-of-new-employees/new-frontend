@@ -1,5 +1,8 @@
 export interface ICard {
-  mode: 'role' | 'course';
-  isValid?: boolean;
-  onClick?: () => void;
+  mode: 'course' | 'role';
+  name: string;
+  courses?: number;
+  personal?: number;
+  lesson?: number;
+  status?: string;
 }

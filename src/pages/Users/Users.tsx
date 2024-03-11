@@ -5,9 +5,11 @@ import { Table } from '../../components/UI/Table/Table';
 export const Users: FC = () => {
   return (
     <section className="pt-[20px] px-[20px] w-[100%]">
-      <Button type="button" variant="primary" icon="white">
-        Новый пользователь
-      </Button>
+      <div className="max-w-[260px]">
+        <Button type="button" variant="primary" icon="white">
+          Новый пользователь
+        </Button>
+      </div>
       <div className="pt-[20px]">
         <Table mode="personal" />
       </div>

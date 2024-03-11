@@ -1,19 +1,20 @@
 import { useNavigate } from 'react-router-dom';
+import { CardGrid } from '../../components/CardGrid/CardGrid';
 import Button from '../../components/UI/Button/Button';
-import { Card } from '../../components/UI/Card/Card';
 
 export default function Courses() {
   const navigate = useNavigate();
   return (
     <>
-      <div className=" pl-[20px] pt-[20px] flex flex-col w-full">
-        <div className="w-full flex pb-[20px]">
+      <div className="pt-[20px] px-[20px] w-[100%]">
+        <div className="max-w-[260px]">
           <Button variant="primary" icon="white" onClick={() => navigate('/courses/new-course')}>
             Новый курс
           </Button>
         </div>
-
-        <Card mode="course" />
+        <div className="pt-[20px]">
+          <CardGrid mode="course" />
+        </div>
       </div>
     </>
   );
