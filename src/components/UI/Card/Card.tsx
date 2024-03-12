@@ -4,6 +4,7 @@ import { CardMenu } from '../../../utils/constants';
 import { DropDown } from '../FormElements/DropDown/DropDown';
 
 export const Card: FC<ICard> = ({ name, status, lesson, courses, personal, mode }) => {
+  const isAdmin = localStorage.getItem('role') === 'ADMIN';
   const [isMenuOpened, setMenuOpened] = useState(false);
   return (
     <div className="bg-white w-[100%] rounded-[16px] p-[20px]">
@@ -18,8 +19,14 @@ export const Card: FC<ICard> = ({ name, status, lesson, courses, personal, mode 
       {mode === 'course' ? (
         <>
           <p className="text-bodyMedium text-addFontColor pb-[10px]">{lesson} урок</p>
-          <p className="text-fontColor text-h4 font-[1000] pb-[6px]">{status}</p>
-          <div className="h-[6px] bg-fontColor rounded-full w-[25px]" />
+          {!isAdmin ? (
+            <>
+              <p className="text-fontColor text-h4 font-[500] pb-[6px]">{status}</p>
+              <div className="h-[6px] bg-fontColor rounded-full w-[25px]" />
+            </>
+          ) : (
+            ''
+          )}
         </>
       ) : (
         <div className="flex pb-[10px]">
