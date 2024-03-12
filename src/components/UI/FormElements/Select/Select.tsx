@@ -51,16 +51,16 @@ function Select({ label, inputName, options, placeholder, errors, touched }: Inp
               </span>
             )}
             <div
-              className={` ${isOpen && 'border-t-0 border-r-0 border-l-0'} border-2 rounded-lg w-full h-14 px-4 py-4 relative z-20 ${(touched ? touched[inputName] : null) && (errors ? errors[inputName] : null) && 'border-error'}`}
+              className={` ${isOpen && 'border-t-0 border-r-0 border-l-0'} border-2 rounded-[12px] w-full h-[60px] px-4 py-4 relative z-20 ${(touched ? touched[inputName] : null) && (errors ? errors[inputName] : null) && 'border-error'}`}
               onClick={() => setIsOpen(!isOpen)}
             />
             {isOpen && (
-              <div className="absolute pt-[51px] top-0 left-0 right-0 border-[3px]  rounded-md bg-transparent shadow-lg select-none z-10 border-borderDisabledInput">
-                <div className="border border-white rounded-md bg-white shadow-lg select-none z-0">
+              <div className="absolute pt-[60px] top-0 left-0 right-0 border-[2px]  rounded-[12px] bg-transparent shadow-lg select-none z-10 border-fontColor">
+                <div className="border border-white rounded-[12px] bg-white shadow-lg select-none z-0">
                   {options.map((option) => (
                     <div
                       key={option.value}
-                      className={`p-2 cursor-pointer hover:bg-sidebarHoveredBtn`}
+                      className={`p-2 cursor-pointer hover:bg-sidebarHoveredBtn mb-[3px]`}
                       onClick={() => handleOptionClick(option.value)}
                     >
                       {option.key}
@@ -70,7 +70,7 @@ function Select({ label, inputName, options, placeholder, errors, touched }: Inp
               </div>
             )}
             <svg
-              className={`${isOpen && 'rotate-180 duration-300 transition-all'} z-30 duration-300 transition-all pointer-events-none row-start-1 col-start-1 absolute top-[25px] right-[10px]`}
+              className={`${isOpen && 'rotate-180 duration-300 transition-all'} z-30 duration-300 transition-all pointer-events-none row-start-1 col-start-1 absolute top-[25px] right-[20px]`}
               width="12"
               height="8"
               viewBox="0 0 12 8"

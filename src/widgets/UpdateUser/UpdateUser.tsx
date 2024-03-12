@@ -4,7 +4,7 @@ import Button from '../../components/UI/Button/Button.tsx';
 const UpdateUser = () => {
   return (
     <>
-      <h1 className="text-start exo text-[32px] font-semibold leading-[130%] mb-[32px]">
+      <h1 className="text-start exo text-[32px] font-semibold leading-[130%] mb-[28px]">
         Редактировать данные пользователя
       </h1>
       <UpdateUserForm />
