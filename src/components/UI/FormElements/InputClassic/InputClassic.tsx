@@ -54,13 +54,13 @@ function InputClassic({
           {...rest}
         />
         {isCopyLink && (
-          <div className="z-30 absolute top-[12px] right-[20px] flex flex-row gap-[2px]">
+          <div className="z-30 absolute top-[12px] right-[20px] flex flex-row gap-[28px]">
             <span className="relative group">
               <button
                 aria-label="button"
                 type="button"
                 onClick={() => console.log('test')}
-                className={`w-[40px] h-[40px] bg-no-repeat cursor-pointer bg-center bg-generate-link hover:bg-generate-link-green active:bg-generate-link border-none border-r-[12px]`}
+                className={`w-[20px] h-[35px] bg-no-repeat cursor-pointer bg-center bg-generate-link hover:bg-generate-link-green active:bg-generate-link border-none border-r-[12px]`}
               />
               <span className="hidden group-hover:block border-[1px] bg-white absolute top-[40px] right-[0px] z-40 w-[366px] h-[40px] rounded-[8px] p-[8px] shadow-md">
                 Сгенерировать новую ссылку-приглашение
@@ -71,7 +71,7 @@ function InputClassic({
                 aria-label="button"
                 type="button"
                 onClick={copyToClipboard}
-                className={`w-[40px] h-[40px] bg-no-repeat cursor-pointer bg-center bg-copy-link hover:bg-copy-link-green active:bg-copy-link border-none border-r-[12px]`}
+                className={`w-[20px] h-[35px] bg-no-repeat cursor-pointer bg-center bg-copy-link hover:bg-copy-link-green active:bg-copy-link border-none border-r-[12px]`}
               />
               <span className="hidden group-hover:block border-[1px] bg-white absolute top-[40px] right-[0px] z-40 w-[296px] h-[40px] rounded-[8px] p-[8px] shadow-md">
                 Скопировать ссылку-приглашение
@@ -82,9 +82,9 @@ function InputClassic({
                 aria-label="button"
                 type="button"
                 onClick={() => console.log('test')}
-                className={`w-[40px] h-[40px] bg-no-repeat cursor-pointer bg-center bg-send-link hover:bg-send-link-green active:bg-send-link border-none border-r-[12px]`}
+                className={`w-[20px] h-[35px] bg-no-repeat cursor-pointer bg-center bg-send-link hover:bg-send-link-green active:bg-send-link border-none border-r-[12px]`}
               />
-              <span className="hidden group-hover:block border-[1px] bg-white absolute top-[40px] right-[0px] z-40 w-[277px] h-[40px] rounded-[8px] p-[8px] shadow-md">
+              <span className="hidden group-hover:block border-[1px] bg-white absolute top-[38px] right-[-10px] z-40 w-[277px] h-[40px] rounded-[8px] p-[8px] shadow-md">
                 Отправить ссылку-приглашение
               </span>
             </span>

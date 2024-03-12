@@ -16,10 +16,6 @@ function UpdateUserForm() {
 
   const options = [
     {
-      key: 'Выберите подходящую должность',
-      value: '',
-    },
-    {
       key: 'Position 1',
       value: 'position1',
     },
@@ -70,11 +66,10 @@ function UpdateUserForm() {
       />
       <FormikControl
         control="select"
-        type="select"
         inputName="positionUserUpdate"
-        label="Должность"
-        placeholder="Должность"
         options={options}
+        label="Должность"
+        placeholder="Выберите подходящую должность"
       />
       <FormikControl
         control="inputClassic"
