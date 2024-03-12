@@ -7,7 +7,10 @@
 // import SetCoursesForm from '../../components/Forms/SetCoursesForm/SetCoursesForm.tsx';
 // import UpdateCourseForm from '../../components/Forms/UpdateCourseForm/UpdateCourseForm.tsx';
 // import UpdateLessonForm from '../../components/Forms/UpdateLessonForm/UpdateLessonForm.tsx';
-import { PreloaderProfile } from '../../components/PreloaderProfile/PreloaderProfile.tsx';
+// import { PreloaderProfile } from '../../components/PreloaderProfile/PreloaderProfile.tsx';
+// import CustomDropdown from '../../components/UI/FormElements/CustomDropdown/CustomDropdown.tsx';
+// import FormikCustomDropdown from '../../components/UI/FormElements/FormikCustomDropdown/FormikCustomDropdown.tsx';
+// import TestFormikSelect from '../../components/UI/FormElements/TestFormikSelect/TestFormikSelect..tsx';
 import AddCourse from '../../widgets/AddCourse/AddCourse.tsx';
 import AddLesson from '../../widgets/AddLesson/AddLesson.tsx';
 import AddNewUser from '../../widgets/AddNewUser/AddNewUser.tsx';
@@ -21,8 +24,22 @@ import UpdateUser from '../../widgets/UpdateUser/UpdateUser.tsx';
 function Test() {
   return (
     <div>
-      <PreloaderProfile />
+      {/*<PreloaderProfile />*/}
       <h1>Testing page</h1>
+      {/*<FormikCustomDropdown*/}
+      {/*  name="testSelect"*/}
+      {/*  options={[*/}
+      {/*    {*/}
+      {/*      label: 'Software Engineer',*/}
+      {/*      value: 'Software Engineer',*/}
+      {/*    },*/}
+      {/*    {*/}
+      {/*      label: 'React Developer',*/}
+      {/*      value: 'React Developer',*/}
+      {/*    },*/}
+      {/*  ]}*/}
+      {/*/>*/}
+      {/*<TestFormikSelect />*/}
       {/*<p>1) Регистрация</p>*/}
       {/*<RegisterForm />*/}
       {/*<p>2) Логин</p>*/}

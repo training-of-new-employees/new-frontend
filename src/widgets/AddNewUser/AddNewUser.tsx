@@ -4,7 +4,7 @@ import Button from '../../components/UI/Button/Button.tsx';
 const AddNewUser = () => {
   return (
     <>
-      <h1 className="text-center exo text-[32px] font-semibold leading-[130%] mb-[32px]">
+      <h1 className="text-center exo text-[32px] font-semibold leading-[130%] mb-[28px]">
         Новый пользователь
       </h1>
       <AddNewUserForm />

@@ -15,10 +15,6 @@ function AddNewUserForm() {
 
   const options = [
     {
-      key: 'Выберите подходящую должность',
-      value: '',
-    },
-    {
       key: 'Position 1',
       value: 'position1',
     },
@@ -69,16 +65,15 @@ function AddNewUserForm() {
       />
       <FormikControl
         control="select"
-        type="select"
         inputName="positionUser"
-        label="Должность"
-        placeholder="Должность"
         options={options}
+        label="Должность"
+        placeholder="Выберите подходящую должность"
       />
       <FormikControl
         control="inputClassic"
-        type="emailUser"
-        inputName="email"
+        type="email"
+        inputName="emailUser"
         label="E-mail"
         placeholder="Введите email"
         options={[]}
