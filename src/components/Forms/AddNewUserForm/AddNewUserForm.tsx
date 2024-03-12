@@ -1,6 +1,5 @@
 // import { useState } from 'react';
 import { AddNewUserSchema } from '../../../utils/validationSchema/ValidAddNewUser.ts';
-import FinalSelect from '../../UI/FormElements/FinalSelect/FinalSelect.tsx';
 import FormikContainer from '../../UI/FormElements/FormikContainer/FormikContainer.tsx';
 import FormikControl from '../../UI/FormElements/FormikControl/FormikControl.tsx';
 
@@ -64,19 +63,12 @@ function AddNewUserForm() {
         width="w-[254px]"
         options={[]}
       />
-      {/*<FormikControl*/}
-      {/*  control="select"*/}
-      {/*  type="select"*/}
-      {/*  inputName="positionUser"*/}
-      {/*  label="Должность"*/}
-      {/*  placeholder="Должность"*/}
-      {/*  options={options}*/}
-      {/*/>*/}
-      <FinalSelect
+      <FormikControl
+        control="select"
         inputName="positionUser"
         options={options}
         label="Должность"
-        placeholderText="Выберите подходящую должность"
+        placeholder="Выберите подходящую должность"
       />
       <FormikControl
         control="inputClassic"

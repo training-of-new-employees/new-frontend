@@ -74,9 +74,19 @@ function FormikControl({
         />
       );
     case 'textarea':
-      return <Textarea label={label} inputName={inputName} placeholder={placeholder} {...rest} />;
+      return <Textarea label={label} inputName={inputName} {...rest} />;
     case 'select':
-      return <Select label={label} inputName={inputName} options={options} {...rest} />;
+      return (
+        <Select
+          label={label}
+          inputName={inputName}
+          options={options}
+          placeholder={placeholder}
+          errors={errors}
+          touched={touched}
+          {...rest}
+        />
+      );
     default:
       return null;
   }
