@@ -29,7 +29,7 @@ function FormikContainer({
       onSubmit={onSubmit}
       validationSchema={toFormikValidationSchema(Schema)}
     >
-      {({ errors, touched }) => (
+      {({ errors, touched, values }) => (
         <Form
           id={formName}
           className="w-[100%] flex flex-row flex-wrap gap-y-[12px] justify-between mb-[20px]"
@@ -40,6 +40,7 @@ function FormikContainer({
                 ...child.props,
                 errors,
                 touched,
+                values,
               });
             }
           })}
