@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
+import { CardGrid } from '../../components/CardGrid/CardGrid';
 import Button from '../../components/UI/Button/Button';
-import { Card } from '../../components/UI/Card/Card';
 
 export default function Courses() {
   const navigate = useNavigate();
@@ -12,8 +12,9 @@ export default function Courses() {
             Новый курс
           </Button>
         </div>
-
-        <Card mode="course" />
+        <div className="pt-[20px]">
+          <CardGrid mode="course" />
+        </div>
       </div>
     </>
   );

@@ -49,6 +49,9 @@ const config: Config = {
         'send-link': "url('./src/images/UI/SendLink.svg')",
         'send-link-green': "url('./src/images/UI/SendLinkGreen.svg')",
       },
+      gridTemplateColumns: {
+        'auto-fit': 'repeat(auto-fit, minmax(316px, 1fr))',
+      },
     },
   },
   plugins: [],
