@@ -147,3 +147,73 @@ export const SIDEBAR_MENU_PERSONAL: {
     link: '/courses',
   },
 ];
+
+export const POSITIONS_DATA: {
+  id: number;
+  name: string;
+  courses: number;
+  personal: number;
+}[] = [
+  {
+    id: 1,
+    name: 'Специалист управления механихации',
+    courses: 0,
+    personal: 0,
+  },
+  {
+    id: 2,
+    name: 'Специалист управления механихации Специалист управления механихации Специалист управления механихации',
+    courses: 0,
+    personal: 0,
+  },
+  {
+    id: 3,
+    name: 'Специалист управления механихации',
+    courses: 0,
+    personal: 0,
+  },
+  {
+    id: 4,
+    name: 'Специалист управления механихации',
+    courses: 0,
+    personal: 0,
+  },
+  {
+    id: 5,
+    name: 'Специалист управления механихации',
+    courses: 0,
+    personal: 0,
+  },
+  {
+    id: 6,
+    name: 'Специалист управления механихации',
+    courses: 0,
+    personal: 0,
+  },
+  {
+    id: 7,
+    name: 'Специалист управления механихации',
+    courses: 0,
+    personal: 0,
+  },
+  {
+    id: 8,
+    name: 'Специалист управления механихации',
+    courses: 0,
+    personal: 0,
+  },
+];
+
+export const COURSE_DATA: {
+  id: number;
+  name: string;
+  lesson: number;
+  status: string;
+}[] = [
+  { id: 1, name: 'Культура и ценности компании', lesson: 1, status: 'Не начат' },
+  { id: 2, name: 'Культура и ценности компании', lesson: 1, status: 'Не начат' },
+  { id: 3, name: 'Культура и ценности компании', lesson: 1, status: 'Не начат' },
+  { id: 4, name: 'Культура и ценности компании', lesson: 1, status: 'Не начат' },
+  { id: 5, name: 'Культура и ценности компании', lesson: 1, status: 'Не начат' },
+  { id: 6, name: 'Культура и ценности компании', lesson: 1, status: 'Не начат' },
+];

@@ -3,13 +3,13 @@ import { ICard } from './CardTypes';
 import { CardMenu } from '../../../utils/constants';
 import { DropDown } from '../FormElements/DropDown/DropDown';
 
-export const Card: FC<ICard> = ({ mode }) => {
+export const Card: FC<ICard> = ({ name, status, lesson, courses, personal, mode }) => {
   const [isMenuOpened, setMenuOpened] = useState(false);
   return (
-    <div className="bg-sidebarHoveredBtn max-w-[383px] min-w-[316px] rounded-[16px] p-[20px]">
+    <div className="bg-white w-[100%] rounded-[16px] p-[20px]">
       <div className="flex gap-[10px] relative">
         {isMenuOpened ? <DropDown menu={CardMenu} /> : ''}
-        <h3 className="text-h3 pb-[12px]">Культура и ценности компании</h3>
+        <h3 className="text-h3 mb-[12px] line-clamp-2">{name}</h3>
         <button
           onClick={() => setMenuOpened((prev) => !prev)}
           className="min-w-[40px] h-[40px] bg-card-menu bg-[length:20px_20px] bg-center bg-no-repeat"
@@ -17,15 +17,15 @@ export const Card: FC<ICard> = ({ mode }) => {
       </div>
       {mode === 'course' ? (
         <>
-          <p className="text-bodyMedium text-addFontColor pb-[10px]">1 урок</p>
-          <p className="text-fontColor text-h4 font-[1000] pb-[6px]">Не начат</p>
+          <p className="text-bodyMedium text-addFontColor pb-[10px]">{lesson} урок</p>
+          <p className="text-fontColor text-h4 font-[1000] pb-[6px]">{status}</p>
           <div className="h-[6px] bg-fontColor rounded-full w-[25px]" />
         </>
       ) : (
         <div className="flex pb-[10px]">
-          <p className="text-bodyMedium text-addFontColor">0 курсов</p>
+          <p className="text-bodyMedium text-addFontColor">{courses} курсов</p>
           <span className="text-bodyMedium text-addFontColor px-[12px]">&#9679;</span>
-          <p className="text-bodyMedium text-addFontColor">0 сотрудников</p>
+          <p className="text-bodyMedium text-addFontColor">{personal} сотрудников</p>
         </div>
       )}
     </div>
