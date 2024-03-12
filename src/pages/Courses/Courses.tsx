@@ -6,8 +6,8 @@ export default function Courses() {
   const navigate = useNavigate();
   return (
     <>
-      <div className="pt-[20px] px-[20px] w-[100%]">
-        <div className="max-w-[260px]">
+      <div className=" pl-[20px] pt-[20px] flex flex-col w-full">
+        <div className="w-[260px] flex pb-[20px]">
           <Button variant="primary" icon="white" onClick={() => navigate('/courses/new-course')}>
             Новый курс
           </Button>
