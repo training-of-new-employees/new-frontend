@@ -66,7 +66,7 @@ function UpdateUserForm() {
       />
       <FormikControl
         control="select"
-        inputName="positionUser"
+        inputName="positionUserUpdate"
         options={options}
         label="Должность"
         placeholder="Выберите подходящую должность"
