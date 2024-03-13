@@ -9,7 +9,7 @@ export default function Courses() {
     <>
       <div className="py-[20px] px-[20px] w-[100%]">
         {isAdmin ? (
-          <div className="max-w-[260px]">
+          <div className="max-w-[260px] mb-[20px]">
             <Button variant="primary" icon="white" onClick={() => navigate('/courses/new-course')}>
               Новый курс
             </Button>

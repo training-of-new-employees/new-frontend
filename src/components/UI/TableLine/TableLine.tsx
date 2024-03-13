@@ -3,7 +3,7 @@ import { ITableLine } from './TableLineTypes';
 import { PERSONAL_MENU } from '../../../utils/constants';
 import { DropDown } from '../FormElements/DropDown/DropDown';
 
-export const TableLine: FC<ITableLine> = ({ name, job, status }) => {
+export const TableLine: FC<ITableLine> = ({ name, job, status, id }) => {
   const wrapRef = useRef<HTMLInputElement>(null);
   const handleClick = (event: any) => {
     if (wrapRef.current && !wrapRef.current.contains(event.target)) {
@@ -17,13 +17,17 @@ export const TableLine: FC<ITableLine> = ({ name, job, status }) => {
     };
   }, []);
   const [isMenuOpened, setMenuOpened] = useState(false);
-
+  function addTableLineToArchive() {}
   return (
     <div
       ref={wrapRef}
       className="flex w-[100%] text-fontColor bg-white border-b-[1px] border-borderDisabledInput border-solid relative"
     >
-      {isMenuOpened ? <DropDown menu={PERSONAL_MENU} /> : ''}
+      {isMenuOpened ? (
+        <DropDown addToArchive={addTableLineToArchive} id={id} menu={PERSONAL_MENU} />
+      ) : (
+        ''
+      )}
       <h4 className="truncate text-h4 pt-[7px] pb-[8px] inline-block w-[calc(100%-32%-32%-40px)] pl-[10px] border-r-[1px] border-borderDisabledInput border-solid">
         {name}
       </h4>

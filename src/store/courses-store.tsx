@@ -8,6 +8,7 @@ import { getCoursesForEmployee } from '../utils/axios/employee/getCoursesForUser
 import { ICourses } from '../utils/axios/types/coursesType';
 
 class CoursesStore {
+  archiveCourses: Array<number> = [];
   courses?: IPromiseBasedObservable<ICourses[]>;
   course?: IPromiseBasedObservable<ICourses>;
   courseId?: IPromiseBasedObservable<ICourses>;
@@ -15,7 +16,9 @@ class CoursesStore {
   constructor() {
     makeAutoObservable(this);
   }
-
+  addToArchiveCourses = (id: number) => {
+    this.archiveCourses.push(id);
+  };
   getCoursesAdminAction = () => {
     this.courses = fromPromise(getCoursesForAdmin());
   };
