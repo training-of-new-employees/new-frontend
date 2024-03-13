@@ -15,7 +15,7 @@ const paths = {
 // login: sir.jul@yandex.ru
 
 export const urlByEnvVar = {
-  development: 'https://quickon.acceleratorpracticum.ru',
+  development: 'https://quick-on.ru',
 };
 
 const baseUrl = `${urlByEnvVar.development}/api/v1`;

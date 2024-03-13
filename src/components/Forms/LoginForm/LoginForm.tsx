@@ -5,15 +5,16 @@ import FormikContainer from '../../UI/FormElements/FormikContainer/FormikContain
 import FormikControl from '../../UI/FormElements/FormikControl/FormikControl.tsx';
 import LinkComp from '../../UI/LinkComp/LinkComp.tsx';
 
-function LoginForm() {
+const LoginForm = () => {
   // const [serverError, setServerError] = useState('sample of server error');
-
   const InitialValues = {
     emailLogin: '',
     passwordLogin: '',
     rememberMe: '',
   };
-  const onSubmit = (values: object) => console.log('Form data', values);
+  const onSubmit = (values: any) => {
+    console.log('Form data', values);
+  };
   return (
     <FormikContainer
       InitialValues={InitialValues}
@@ -43,6 +44,6 @@ function LoginForm() {
       </div>
     </FormikContainer>
   );
-}
+};
 
 export default LoginForm;
