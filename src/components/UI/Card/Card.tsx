@@ -37,7 +37,16 @@ export const Card: FC<ICard> = observer(({ name, status, lesson, courses, person
     >
       <div className="flex gap-[10px] relative">
         {isMenuOpened ? <DropDown id={id} menu={CardMenu} setMenuOpened={setMenuOpened} /> : ''}
-        <h3 className="text-h3 mb-[12px] line-clamp-2">{name}</h3>
+        <h3
+          className={
+            (location === '/position' && archivePositions.includes(id)) ||
+            (location === '/courses' && archiveCourses.includes(id))
+              ? 'text-h3 mb-[12px] line-clamp-2 text-addFontColor'
+              : 'text-h3 mb-[12px] line-clamp-2'
+          }
+        >
+          {name}
+        </h3>
         <button
           onClick={() => setMenuOpened((prev) => !prev)}
           className={

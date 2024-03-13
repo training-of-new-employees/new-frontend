@@ -8,6 +8,7 @@ import { getEmployeeById } from '../utils/axios/Admin/getEmployeeById/getEmploye
 import { IEditEmployee, IUser } from '../utils/axios/types/IUser';
 
 class EmployeeStore {
+  archiveEmployee: Array<number> = [];
   employees?: IPromiseBasedObservable<IUser[]>;
   employee?: IPromiseBasedObservable<IUser>;
   employeeById?: IPromiseBasedObservable<IUser>;
@@ -15,7 +16,9 @@ class EmployeeStore {
   constructor() {
     makeAutoObservable(this);
   }
-
+  addEmployeeToArchive = (id: number) => {
+    this.archiveEmployee.push(id);
+  };
   getEmployeeAdminAction = () => {
     this.employees = fromPromise(getEmployee());
   };
