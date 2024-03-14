@@ -7,10 +7,10 @@ import { verifyEmail } from '../utils/axios/apiAuth/verifyEmail';
 import { IAuth } from '../utils/axios/types/typeAuth';
 
 class AuthStore {
-  registerInfo?: IPromiseBasedObservable<any>;
-  verifyEmailInfo?: IPromiseBasedObservable<any>;
-  resetPasswordInfo?: IPromiseBasedObservable<any>;
-  loginInfo?: IPromiseBasedObservable<any>;
+  registerInfo?: IPromiseBasedObservable<any> = undefined;
+  verifyEmailInfo?: IPromiseBasedObservable<any> = undefined;
+  resetPasswordInfo?: IPromiseBasedObservable<any> = undefined;
+  loginInfo?: IPromiseBasedObservable<any> = undefined;
 
   constructor() {
     makeAutoObservable(this);
@@ -18,6 +18,7 @@ class AuthStore {
 
   loginAction = ({ email, password }: IAuth) => {
     this.loginInfo = fromPromise(login({ email, password }));
+    return this.loginInfo;
   };
 
   registrationAction = ({ email, password, company_name }: IAuth) => {
