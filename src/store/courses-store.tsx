@@ -19,6 +19,9 @@ class CoursesStore {
   addToArchiveCourses = (id: number) => {
     this.archiveCourses.push(id);
   };
+  rearchiveCourse = (id: number) => {
+    this.archiveCourses.splice(this.archiveCourses.indexOf(id), 1);
+  };
   getCoursesAdminAction = () => {
     this.courses = fromPromise(getCoursesForAdmin());
   };

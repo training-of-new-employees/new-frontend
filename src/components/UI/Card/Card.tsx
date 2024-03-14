@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { ICard } from './CardTypes';
 import coursesStore from '../../../store/courses-store';
 import PositionStore from '../../../store/position-store';
-import { CardMenu } from '../../../utils/constants';
+import { CardMenu, REARCHIVE_DDMENU } from '../../../utils/constants';
 import { DropDown } from '../FormElements/DropDown/DropDown';
 
 export const Card: FC<ICard> = observer(({ name, status, lesson, courses, personal, mode, id }) => {
@@ -36,7 +36,21 @@ export const Card: FC<ICard> = observer(({ name, status, lesson, courses, person
       }
     >
       <div className="flex gap-[10px] relative">
-        {isMenuOpened ? <DropDown id={id} menu={CardMenu} setMenuOpened={setMenuOpened} /> : ''}
+        {location === '/position' ? (
+          isMenuOpened && !archivePositions.includes(id) ? (
+            <DropDown id={id} menu={CardMenu} setMenuOpened={setMenuOpened} />
+          ) : isMenuOpened && archivePositions.includes(id) ? (
+            <DropDown id={id} menu={REARCHIVE_DDMENU} setMenuOpened={setMenuOpened} />
+          ) : (
+            ''
+          )
+        ) : isMenuOpened && !archiveCourses.includes(id) ? (
+          <DropDown id={id} menu={CardMenu} setMenuOpened={setMenuOpened} />
+        ) : isMenuOpened && archiveCourses.includes(id) ? (
+          <DropDown id={id} menu={REARCHIVE_DDMENU} setMenuOpened={setMenuOpened} />
+        ) : (
+          ''
+        )}
         <h3
           className={
             (location === '/position' && archivePositions.includes(id)) ||
@@ -52,14 +66,14 @@ export const Card: FC<ICard> = observer(({ name, status, lesson, courses, person
           className={
             (location === '/position' && archivePositions.includes(id)) ||
             (location === '/courses' && archiveCourses.includes(id))
-              ? 'min-w-[20px] h-[40px] bg-archive-green bg-[length:20px_20px] bg-center bg-no-repeat cursor-default'
+              ? 'min-w-[20px] h-[40px] bg-archive-green bg-[length:20px_20px] bg-center bg-no-repeat'
               : 'min-w-[20px] h-[40px] bg-card-menu bg-[length:20px_20px] bg-center bg-no-repeat'
           }
         />
       </div>
       {mode === 'course' ? (
         <>
-          <p className="text-bodyMedium text-addFontColor pb-[15px]">{lesson} урок</p>
+          <p className="text-bodyMedium text-addFontColor">{lesson} урок</p>
           {!isAdmin ? (
             <>
               <p className="text-fontColor text-h4 font-[500] pb-[6px]">{status}</p>

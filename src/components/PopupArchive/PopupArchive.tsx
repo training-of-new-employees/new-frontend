@@ -26,9 +26,18 @@ export const PopupArchive: FC<IPopupArchive> = observer(
     }
     return (
       <Popup isOpened={isOpened} setIsOpened={setIsOpened}>
-        <h2 className="text-h2 font-semibold pt-[40px]">Перенос должности в архив</h2>
-        <p className="text-h4 pt-[30px] block max-w-[85%]">
-          При переносе в архив пользователи в должности утратят доступ к&nbsp;системе
+        <h2 className="text-h2 font-semibold pt-[40px]">
+          Перенос{' '}
+          {location === '/courses' ? 'курса' : location === '/users' ? 'пользователя' : 'должности'}{' '}
+          в архив
+        </h2>
+        <p className="text-h4 pt-[30px] block max-w-[85%] text-center">
+          При переносе
+          {location === '/courses'
+            ? ' курса в архив, курс станет не доступен для прохождения'
+            : location === '/users'
+              ? ' в архив пользователь утратит доступ к системе'
+              : ' в архив пользователи в должности утратят доступ к системе'}
         </p>
         <div className="pt-[35px] flex gap-[25px] pb-[60px] w-[89%]">
           <div className="min-w-[260px]">

@@ -21,6 +21,9 @@ class PositionStore {
   addPositionToArchive = (id: number) => {
     this.archivePositions.push(id);
   };
+  rearchivePosition = (id: number) => {
+    this.archivePositions.splice(this.archivePositions.indexOf(id), 1);
+  };
   getPositionAction = () => {
     this.positions = fromPromise(getPositions());
   };

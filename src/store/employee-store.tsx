@@ -19,6 +19,9 @@ class EmployeeStore {
   addEmployeeToArchive = (id: number) => {
     this.archiveEmployee.push(id);
   };
+  rearchiveEmployee = (id: number) => {
+    this.archiveEmployee.splice(this.archiveEmployee.indexOf(id), 1);
+  };
   getEmployeeAdminAction = () => {
     this.employees = fromPromise(getEmployee());
   };

@@ -2,7 +2,7 @@ import { FC, useEffect, useRef, useState } from 'react';
 import { observer } from 'mobx-react-lite';
 import { ITableLine } from './TableLineTypes';
 import employeeStore from '../../../store/employee-store';
-import { PERSONAL_MENU } from '../../../utils/constants';
+import { PERSONAL_MENU, REARCHIVE_DDMENU } from '../../../utils/constants';
 import { DropDown } from '../FormElements/DropDown/DropDown';
 
 export const TableLine: FC<ITableLine> = observer(({ name, job, status, id }) => {
@@ -29,7 +29,13 @@ export const TableLine: FC<ITableLine> = observer(({ name, job, status, id }) =>
           : 'flex w-[100%] text-fontColor bg-white border-b-[1px] border-borderDisabledInput border-solid relative'
       }
     >
-      {isMenuOpened ? <DropDown setMenuOpened={setMenuOpened} id={id} menu={PERSONAL_MENU} /> : ''}
+      {isMenuOpened && !archiveEmployee.includes(id) ? (
+        <DropDown setMenuOpened={setMenuOpened} id={id} menu={PERSONAL_MENU} />
+      ) : isMenuOpened ? (
+        <DropDown setMenuOpened={setMenuOpened} id={id} menu={REARCHIVE_DDMENU} />
+      ) : (
+        ''
+      )}
       <h4 className="truncate text-h4 pt-[7px] pb-[8px] inline-block w-[calc(100%-32%-32%-40px)] pl-[10px] border-r-[1px] border-borderDisabledInput border-solid">
         {name}
       </h4>
