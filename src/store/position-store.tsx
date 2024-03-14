@@ -9,6 +9,7 @@ import { getPositions } from '../utils/axios/Admin/positions/getPositions';
 import { IEditEmployee } from '../utils/axios/types/IUser';
 
 class PositionStore {
+  archivePositions: Array<number> = [];
   positions?: IPromiseBasedObservable<any>;
   position?: IPromiseBasedObservable<any>;
   positionById?: IPromiseBasedObservable<any>;
@@ -17,7 +18,12 @@ class PositionStore {
   constructor() {
     makeAutoObservable(this);
   }
-
+  addPositionToArchive = (id: number) => {
+    this.archivePositions.push(id);
+  };
+  rearchivePosition = (id: number) => {
+    this.archivePositions.splice(this.archivePositions.indexOf(id), 1);
+  };
   getPositionAction = () => {
     this.positions = fromPromise(getPositions());
   };
