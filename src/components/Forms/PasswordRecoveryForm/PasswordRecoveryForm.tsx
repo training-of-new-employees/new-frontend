@@ -1,6 +1,6 @@
 import { RecoveryPasswordSchema } from '../../../utils/validationSchema/ValidRecoveryPassword.ts';
-import FormikContainer from '../../UI/FormikContainer/FormikContainer.tsx';
-import FormikControl from '../../UI/FormikControl/FormikControl.tsx';
+import FormikContainer from '../../UI/FormElements/FormikContainer/FormikContainer.tsx';
+import FormikControl from '../../UI/FormElements/FormikControl/FormikControl.tsx';
 
 function PasswordRecoveryForm() {
   const InitialValues = {
@@ -12,8 +12,8 @@ function PasswordRecoveryForm() {
     <FormikContainer
       InitialValues={InitialValues}
       onSubmit={onSubmit}
-      buttonText="Отправить новый пароль"
       Schema={RecoveryPasswordSchema}
+      formName="otp"
     >
       <FormikControl
         control="input"

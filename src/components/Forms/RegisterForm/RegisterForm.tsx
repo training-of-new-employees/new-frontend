@@ -1,12 +1,15 @@
 // import { useState } from 'react';
+import { observer } from 'mobx-react-lite';
+import { useStores } from '../../../utils/context/root-context-store.ts';
 import { RegisterSchema } from '../../../utils/validationSchema/ValidRegister.ts';
 import RememberMe from '../../RememberMe/RememberMe.tsx';
 import FormikContainer from '../../UI/FormElements/FormikContainer/FormikContainer.tsx';
 import FormikControl from '../../UI/FormElements/FormikControl/FormikControl.tsx';
 import LinkComp from '../../UI/LinkComp/LinkComp.tsx';
 
-function RegisterForm() {
+const RegisterForm = observer(() => {
   // const [serverError, setServerError] = useState('sample of server error');
+  const { authState } = useStores();
   const InitialValues = {
     company: '',
     email: '',
@@ -15,7 +18,15 @@ function RegisterForm() {
     rememberMe: '',
   };
 
-  const onSubmit = (values: object) => console.log('Form data', values);
+  const onSubmit = (values: any) => {
+    authState.registrationAction({
+      email: values.email,
+      password: values.password,
+      company_name: values.company,
+    });
+    console.log(authState.registerInfo);
+    console.log('Form data', values);
+  };
 
   return (
     <FormikContainer
@@ -61,6 +72,6 @@ function RegisterForm() {
       </div>
     </FormikContainer>
   );
-}
+});
 
 export default RegisterForm;
