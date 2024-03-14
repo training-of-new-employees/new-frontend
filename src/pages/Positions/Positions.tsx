@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { CardGrid } from '../../components/CardGrid/CardGrid';
 import Button from '../../components/UI/Button/Button';
+import { POSITIONS_DATA } from '../../utils/constants';
 
 export const Positions: FC = () => {
   return (
@@ -11,7 +12,7 @@ export const Positions: FC = () => {
         </Button>
       </div>
       <div className="pt-[20px]">
-        <CardGrid mode="role" />
+        <CardGrid data={POSITIONS_DATA} mode="role" />
       </div>
     </section>
   );
