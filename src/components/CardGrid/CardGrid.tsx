@@ -5,7 +5,7 @@ import { Card } from '../UI/Card/Card';
 
 export const CardGrid: FC<ICardGrid> = ({ mode }) => {
   return (
-    <div className="grid gap-[15px] grid-cols-auto-fit">
+    <div className="grid gap-[15px] grid-cols-auto-fit pb-[20px]">
       {mode === 'course'
         ? COURSE_DATA.map((i) => {
             return (

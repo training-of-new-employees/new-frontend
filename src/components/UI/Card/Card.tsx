@@ -31,8 +31,8 @@ export const Card: FC<ICard> = observer(({ name, status, lesson, courses, person
       className={
         (location === '/position' && archivePositions.includes(id)) ||
         (location === '/courses' && archiveCourses.includes(id))
-          ? 'bg-[#f3f3f3] w-[100%] rounded-[16px] p-[20px]'
-          : 'bg-white w-[100%] rounded-[16px] p-[20px]'
+          ? 'bg-[#f3f3f3] w-[100%] rounded-[16px] p-[20px] relative'
+          : 'bg-white w-[100%] rounded-[16px] p-[20px] relative'
       }
     >
       <div className="flex gap-[10px] relative">

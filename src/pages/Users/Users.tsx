@@ -4,7 +4,7 @@ import { Table } from '../../components/UI/Table/Table';
 
 export const Users: FC = () => {
   return (
-    <section className="pt-[20px] px-[20px] w-[100%]">
+    <section className="pt-[20px] px-[20px] w-[100%] pt-[92px]">
       <div className="max-w-[260px]">
         <Button type="button" variant="primary" icon="white">
           Новый пользователь

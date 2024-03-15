@@ -7,7 +7,7 @@ export default function Courses() {
   const navigate = useNavigate();
   return (
     <>
-      <div className="py-[20px] px-[20px] w-[100%]">
+      <div className="py-[20px] px-[20px] w-[100%] pt-[92px]">
         {isAdmin ? (
           <div className="max-w-[260px] mb-[20px]">
             <Button variant="primary" icon="white" onClick={() => navigate('/courses/new-course')}>
