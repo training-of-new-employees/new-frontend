@@ -9,6 +9,7 @@ interface IProfileInfoProps {
 export const ProfileInfo = observer((props: IProfileInfoProps) => {
   const { isRole, onEditProfileClick } = props;
   const { profile } = useStores((state) => state.profileState);
+  console.log(profile);
 
   return (
     <div className="w-[900px] h-[290px] box-border bg-white flex justify-center rounded-[0_0_24px_24px]">
@@ -47,13 +48,17 @@ export const ProfileInfo = observer((props: IProfileInfoProps) => {
                 <h3 className="text-addFontColor rubik16">Email:</h3>
               </div>
               <div className="flex flex-col  gap-[12px] w-[300px]">
-                <h3 className="text-fontColor text-[16px] rubik16">{profile?.value?.name}</h3>
+                <h3 className="text-fontColor text-[16px] rubik16">
+                  {profile?.value?.name} {profile?.value?.patronymic} {profile?.value?.surname}
+                </h3>
                 <h3 className="text-fontColor text-[16px] rubik16">{profile?.value?.email}</h3>
               </div>
               <div className="flex flex-col gap-[12px]">
                 <div className="flex flex-row gap-[12px]">
                   <h3 className="text-addFontColor rubik16">Компания:</h3>
-                  <h3 className="text-fontColor text-[16px] rubik16">Компания</h3>
+                  <h3 className="text-fontColor text-[16px] rubik16">
+                    {profile?.value?.company_name}
+                  </h3>
                 </div>
                 {isRole === 'USER' && (
                   <div className="flex flex-row gap-[12px]">
