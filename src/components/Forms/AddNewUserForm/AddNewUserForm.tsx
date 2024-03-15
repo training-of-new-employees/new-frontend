@@ -1,9 +1,12 @@
 // import { useState } from 'react';
+import { observer } from 'mobx-react-lite';
+import employeeStore from '../../../store/employee-store.tsx';
 import { AddNewUserSchema } from '../../../utils/validationSchema/ValidAddNewUser.ts';
 import FormikContainer from '../../UI/FormElements/FormikContainer/FormikContainer.tsx';
 import FormikControl from '../../UI/FormElements/FormikControl/FormikControl.tsx';
 
-function AddNewUserForm() {
+const AddNewUserForm = observer(() => {
+  const { addNewEmployee } = employeeStore;
   // const [serverError, setServerError] = useState('sample of server error');
   const InitialValues = {
     nameUser: '',
@@ -28,7 +31,15 @@ function AddNewUserForm() {
     },
   ];
 
-  const onSubmit = (values: object) => console.log('Form data', values);
+  const onSubmit = (values: object) => {
+    addNewEmployee({
+      name: `${values.surnameUser} ${values.nameUser} ${values.patronymicUser}`,
+      job: values.positionUser,
+      status: 'Авторизован',
+      id: Math.floor(Math.random() * 101),
+    });
+    console.log('Form data', values);
+  };
   return (
     <FormikContainer
       InitialValues={InitialValues}
@@ -81,6 +92,6 @@ function AddNewUserForm() {
       {/*<p className="text-error mx-auto">{serverError}</p>*/}
     </FormikContainer>
   );
-}
+});
 
 export default AddNewUserForm;
