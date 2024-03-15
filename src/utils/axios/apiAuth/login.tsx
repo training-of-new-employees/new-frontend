@@ -7,6 +7,7 @@ import { IAuth } from '../types/typeAuth';
 //       email,
 //       password,
 //     });
+//     localStorage.setItem('token', res.data);
 //     return res.data;
 //   } catch (error) {
 //     console.error(error);

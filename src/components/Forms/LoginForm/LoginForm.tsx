@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import { observer } from 'mobx-react-lite';
 import { useStores } from '../../../utils/context/root-context-store.ts';
 import { LoginSchema } from '../../../utils/validationSchema/ValidLogin.ts';
@@ -8,27 +7,13 @@ import FormikControl from '../../UI/FormElements/FormikControl/FormikControl.tsx
 import LinkComp from '../../UI/LinkComp/LinkComp.tsx';
 
 const LoginForm = observer(() => {
-  const [serverError, setServerError] = useState(null);
   const { authState } = useStores();
+  const { loginInfo, serverError } = useStores((state) => state.authState);
   const InitialValues = {
     emailLogin: '',
     passwordLogin: '',
     rememberMe: '',
   };
-
-  useEffect(() => {
-    authState.loginInfo?.case({
-      pending: () => console.log('Loading'),
-      rejected: (error) => {
-        console.log(error.message);
-        setServerError(error.message);
-        setTimeout(() => {
-          setServerError(null);
-        }, 8000);
-      },
-      fulfilled: (value) => console.log(value),
-    });
-  }, [authState.loginInfo?.state]);
 
   const onSubmit = (values: any) => {
     authState
@@ -58,7 +43,15 @@ const LoginForm = observer(() => {
         isPassword
         options={[]}
       />
-      <p className="text-error mx-auto">{serverError}</p>
+      {/* 1 вариант: выводим по статусу подготовленный тест ошибки из стора*/}
+      <p className="text-error mx-auto">{loginInfo?.state == 'rejected' && serverError}</p>
+      {/* 2 вариант: получаем ошибку с сервера и готовый тест выводим*/}
+      {loginInfo?.case({
+        pending: () => <div>Loading...</div>,
+        rejected: (error) => <p className="text-error mx-auto">{error.response.data.message}</p>,
+        fulfilled: () => <div>Успех...</div>,
+      })}
+
       <div className="w-[100%] flex flex-row justify-between my-[16px] pr-[20px]">
         <RememberMe />
         <LinkComp direction="/recovery">Забыли пароль?</LinkComp>
