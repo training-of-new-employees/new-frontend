@@ -6,7 +6,7 @@ import { IUser } from '../utils/axios/types/IUser';
 
 class ProfileStore {
   //TODO: Написать типизацию для профиля
-  profile?: IPromiseBasedObservable<IUser>;
+  profile?: IPromiseBasedObservable<any>;
   isLoading = false;
   constructor() {
     makeAutoObservable(this);
@@ -15,6 +15,7 @@ class ProfileStore {
   getProfileAction = () => {
     //TODO: Внутри fromPromise Тот же самый try/catch
     this.profile = fromPromise(getProfileMe());
+
     //     try {
     //       this.isLoading = true;
     //       const res = await getProfileMe();

@@ -8,11 +8,11 @@ import { spy } from 'mobx';
 import RootStories from './store/RootStores';
 import { RootStoriesContext } from './utils/context/root-context-store';
 
-spy((event) => {
-  if (event.type == 'action') {
-    console.log(event);
-  }
-});
+// spy((event) => {
+//   if (event.type == 'action') {
+//     console.log(event);
+//   }
+// });
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
