@@ -1,13 +1,12 @@
 import { FC } from 'react';
 import { ICardGrid } from './CardGridTypes';
-import { POSITIONS_DATA, COURSE_DATA } from '../../utils/constants';
 import { Card } from '../UI/Card/Card';
 
-export const CardGrid: FC<ICardGrid> = ({ mode }) => {
+export const CardGrid: FC<ICardGrid> = ({ mode, data }) => {
   return (
     <div className="grid gap-[15px] grid-cols-auto-fit">
       {mode === 'course'
-        ? COURSE_DATA.map((i) => {
+        ? data.map((i) => {
             return (
               <Card
                 id={i.id}
@@ -19,7 +18,7 @@ export const CardGrid: FC<ICardGrid> = ({ mode }) => {
               />
             );
           })
-        : POSITIONS_DATA.map((i) => {
+        : data.map((i) => {
             return (
               <Card
                 id={i.id}
