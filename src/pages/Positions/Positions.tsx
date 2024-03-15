@@ -1,12 +1,19 @@
 import { FC } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { CardGrid } from '../../components/CardGrid/CardGrid';
 import Button from '../../components/UI/Button/Button';
 
 export const Positions: FC = () => {
+  const navigate = useNavigate();
   return (
     <section className="pt-[20px] px-[20px] w-[100%] pt-[92px] min-h-screen relative">
       <div className="max-w-[260px]">
-        <Button type="button" variant="primary" icon="white">
+        <Button
+          type="button"
+          variant="primary"
+          icon="white"
+          onClick={() => navigate('/new-position')}
+        >
           Новая должность
         </Button>
       </div>

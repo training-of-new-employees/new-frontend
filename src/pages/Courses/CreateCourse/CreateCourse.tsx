@@ -1,13 +1,16 @@
-import AddCourseForm from '../../../components/Forms/AddCourseForm/AddCourseForm';
+import { WrapperForAddForm } from '../../../components/UI/WrapperForAddForm/WrapperForAddForm';
+import AddCourse from '../../../widgets/AddCourse/AddCourse';
 
 export default function CreateCourse() {
   return (
     <section className="w-full flex flex-col items-center">
-      <div className="w-[900px] justify-center h-[493px] bg-white pt-[40px] pb-[60px] px-[40px] rounded-br-[24px] rounded-bl-[24px]">
-        <h1 className="m-[8px] font-[600] text-[32px] exo2">Новый курс</h1>
-        <h2 className="m-[14px] font-[600] text-[24px] exo2">Основная информация</h2>
-        <AddCourseForm />
-      </div>
+      <WrapperForAddForm>
+        <div className="min-w-[79%] px-[40px] bg-white pt-[38px] pb-[60px] rounded-b-[24px]">
+          <h1 className="font-[600] text-[32px] pb-[20px]">Новый курс</h1>
+          <h2 className="font-[600] text-[24px] pb-[15px]">Основная информация</h2>
+          <AddCourse />
+        </div>
+      </WrapperForAddForm>
     </section>
   );
 }
