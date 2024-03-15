@@ -1,5 +1,3 @@
-// import { useState } from 'react';
-import profileStore from '../../../store/profile-store.tsx';
 import { useStores } from '../../../utils/context/root-context-store.ts';
 import { UpdatePersonalSchema } from '../../../utils/validationSchema/ValidUpdatePersonalInfo.ts';
 import Button from '../../UI/Button/Button.tsx';
