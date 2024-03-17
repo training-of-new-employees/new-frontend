@@ -15,19 +15,19 @@ export default function Steps() {
   return (
     <section
       id="start"
-      className="flex flex-col items-center pt-[120px] px-[140px] rounded-t-[200px] bg-[#2F302E] relative"
+      className="lg:flex flex-col items-center pt-[32px] lg:pt-[120px] lg:px-[140px] lg:rounded-t-[200px] rounded-t-[32px] bg-[#2F302E] relative hidden"
     >
-      <img src={planet} alt="планета" className="absolute w-[330px] top-[60px] right-[35px]" />
+      {/* <img src={planet} alt="планета" className="absolute w-[330px] top-[60px] right-[35px]" />
       <img src={star1} alt="звезда" className="absolute top-[463px] left-[54px]" />
       <img src={star1} alt="звезда" className="absolute top-[1800px] left-[544px]" />
       <img src={star2} alt="звезда" className="absolute bottom-[1190px] right-[80px]" />
       <img src={star2} alt="звезда" className="absolute bottom-[697px] left-[206px]" />
       <img src={vector1} alt="стрелочка" className="absolute top-[561px] left-[76px]" />
-      <img src={vector2} alt="стрелочка" className="absolute top-[1280px] right-[368px]" />
-      <h2 className="exo text-[40px] leading-[130%] font-medium text-white pb-[100px]">
+      <img src={vector2} alt="стрелочка" className="absolute top-[1280px] right-[368px]" /> */}
+      <h2 className="exo text-[32px] lg:text-[40px] leading-[130%] font-semibold lg:font-medium text-white pb-6 lg:pb-[100px] text-center">
         Простые шаги, чтобы начать
       </h2>
-      <div className="flex gap-[120px] pb-[240px]">
+      <div className="lg:flex gap-[120px] pb-[240px] hidden">
         <div className="flex flex-col gap-3">
           <h3 className="exo text-[32px] font-semibold leading-[130%] text-white">
             Создайте курсы
@@ -52,14 +52,10 @@ export default function Steps() {
             </ul>
           </div>
         </div>
-        <img src={desktop1} alt="монитор" className="w-[616px] z-10" />
+        <img src={desktop1} alt="монитор" className="w-[544px] z-10" />
       </div>
-      <div className="flex flex-row-reverse gap-[120px] pb-[240px] relative">
-        <img
-          src={card1}
-          alt="карточка курса"
-          className="absolute left-[-47px] bottom-[240px] z-10"
-        />
+      <div className="lg:flex flex-row-reverse gap-[120px] pb-[240px] relative hidden">
+        <img src={card1} alt="карточка курса" className="absolute left-[0px] bottom-[240px] z-10" />
         <div className="flex flex-col gap-3">
           <h3 className="exo text-[32px] font-semibold leading-[130%] text-white">
             Зарегистрируйтесь
@@ -70,13 +66,13 @@ export default function Steps() {
             даже если никогда этим не занимались.
           </p>
         </div>
-        <img src={desktop2} alt="монитор" className="w-[616px]" />
+        <img src={desktop2} alt="монитор" className="xl:w-[544px] w-[456px]" />
       </div>
-      <div className="flex gap-[120px] pb-[140px] relative">
+      <div className="lg:flex gap-[120px] pb-[140px] relative hidden">
         <img
           src={card2}
           alt="карточка должности"
-          className="absolute right-[310px] bottom-[132px] z-10"
+          className="absolute right-[150px] bottom-[132px] z-10"
         />
         <div className="flex flex-col gap-3">
           <h3 className="exo text-[32px] font-semibold leading-[130%] text-white">
@@ -87,7 +83,7 @@ export default function Steps() {
             назначать курсы вручную каждому сотруднику.
           </p>
         </div>
-        <img src={desktop3} alt="монитор" className="w-[616px]" />
+        <img src={desktop3} alt="монитор" className="w-[544px]" />
       </div>
       <div className="flex flex-row-reverse gap-[120px] pt-[55px] pb-[120px]">
         <div className="flex flex-col pt-[92px]">

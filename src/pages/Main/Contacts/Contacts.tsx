@@ -5,10 +5,13 @@ import star2 from '../../../images/Landing/star2.png';
 export default function Contacts() {
   return (
     <>
-      <section id="contacts" className="flex px-[140px] pt-[120px] pb-[14px] bg-[#2F302E] relative">
-        <img src={star1} alt="звездочка" className="absolute top-[31px] right-[41px]" />
+      <section
+        id="contacts"
+        className="lg:flex px-[140px] pt-[120px] pb-[14px] bg-[#2F302E] relative hidden"
+      >
+        {/* <img src={star1} alt="звездочка" className="absolute top-[31px] right-[41px]" />
         <img src={star1} alt="звездочка" className="absolute top-[187px] right-[142px]" />
-        <img src={star2} alt="звездочка" className="absolute left-[87px] bottom-0" />
+        <img src={star2} alt="звездочка" className="absolute left-[87px] bottom-0" /> */}
         <div className="flex gap-[124px]">
           <div className="flex flex-col gap-3 max-w-[421px]">
             <h3 className="exo text-[48px] font-medium leading-[110%] text-white">Нужна помощь?</h3>
@@ -17,7 +20,7 @@ export default function Contacts() {
               возникшие проблемы. Команда QuickOn всегда на связи!
             </p>
           </div>
-          <div className="flex flex-col items-center px-10 pb-10 pt-5 gap-5 bg-white rounded-3xl">
+          <div className="lg:flex flex-col items-center px-10 pb-10 pt-5 gap-5 bg-white rounded-3xl hidden">
             <h3 className="exo text-[40px] font-semibold leading-[110%] text-[#2F302E]">
               Свяжитесь с нами
             </h3>
@@ -53,7 +56,7 @@ export default function Contacts() {
           </div>
         </div>
       </section>
-      <div className="bg-[#2F302E] flex justify-end items-end relative w-full">
+      <div className="bg-[#2F302E] lg:flex justify-end items-end relative w-full hidden">
         <img src={star2} alt="звездочка" className="absolute left-[168px] top-0" />
         <div className="flex justify-center items-center mb-[60px] mr-[73px] bg-[#53772F] rounded-full w-[60px] h-[60px]">
           <a href="/#top" className="text-white">
