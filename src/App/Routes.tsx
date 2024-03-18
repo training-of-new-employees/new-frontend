@@ -12,11 +12,13 @@ import Main from '../pages/Main/Main';
 import NewPassword from '../pages/NewPassword/NewPassword.tsx';
 import { NotFound } from '../pages/NotFound/NotFound.tsx';
 import PasswordRecovery from '../pages/PasswordRecovery/PasswordRecovery.tsx';
+import { CreatePosition } from '../pages/Positions/CreatePosition/CreatePosition.tsx';
 import { EditPosition } from '../pages/Positions/EditPosition/EditPosition.tsx';
 import { Positions } from '../pages/Positions/Positions';
 import { Profile } from '../pages/Profile/Profile';
 import Registration from '../pages/Registration/Regestration';
 import Test from '../pages/Test/Test.tsx';
+import { CreateUser } from '../pages/Users/CreateUser/CreateUser.tsx';
 import { Users } from '../pages/Users/Users';
 
 const router = createBrowserRouter([
@@ -50,6 +52,18 @@ const router = createBrowserRouter([
       {
         path: paths.positions,
         element: <Positions />,
+      },
+      {
+        path: paths.newposition,
+        element: <CreatePosition />,
+      },
+      {
+        path: paths.newcourse,
+        element: <CreateCourse />,
+      },
+      {
+        path: paths.newuser,
+        element: <CreateUser />,
       },
       {
         path: paths.editposition,

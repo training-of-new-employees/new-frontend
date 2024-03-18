@@ -9,12 +9,12 @@ export default function Courses() {
   const navigate = useNavigate();
   return (
     <>
-      <div className="py-[20px] px-[20px] w-[100%]">
+      <div className="py-[20px] px-[20px] w-[100%] pt-[92px]">
         {isAdmin && COURSE_DATA.length === 0 ? (
           <NoCourses />
         ) : isAdmin ? (
           <div className="max-w-[260px] mb-[20px]">
-            <Button variant="primary" icon="white" onClick={() => navigate('/courses/new-course')}>
+            <Button variant="primary" icon="white" onClick={() => navigate('/new-course')}>
               Новый курс
             </Button>
           </div>
