@@ -7,6 +7,7 @@ export const paths = {
   users: '/users',
   newuser: '/users/new',
   positions: '/position',
+  editposition: '/position/:id',
   login: '/login',
   registration: '/registration',
   firstenter: '/first-enter',
