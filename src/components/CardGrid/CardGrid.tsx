@@ -33,7 +33,6 @@ export const CardGrid: FC<ICardGrid> = ({ mode, data }) => {
               />
             );
           })}
-
     </div>
   );
 };
