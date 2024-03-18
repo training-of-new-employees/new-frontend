@@ -1,11 +1,14 @@
 import { FC, useState } from 'react';
+import { observer } from 'mobx-react-lite';
 import { NavLink } from 'react-router-dom';
 import ProfileLogo from '../../../images/UI/Profile-logo.svg';
 import { SIDEBAR_MENU_ADMIN, SIDEBAR_MENU_PERSONAL } from '../../../utils/constants';
+import { useStores } from '../../../utils/context/root-context-store.ts';
 
-export const SideBar: FC = () => {
+export const SideBar: FC = observer(() => {
   const [activeMenu, setActiveMenu] = useState(0);
-  const isAdmin = localStorage.getItem('role') === 'ADMIN';
+  const { storage } = useStores((state) => state.authState);
+  const isAdmin = storage.getItem('role') === 'ADMIN';
   const SideBarMenu = isAdmin ? SIDEBAR_MENU_ADMIN : SIDEBAR_MENU_PERSONAL;
   return (
     <div className=" bg-white min-w-[300px] h-[calc(100vh-72px)] border-borderDisabledInput">
@@ -60,4 +63,4 @@ export const SideBar: FC = () => {
       </ul>
     </div>
   );
-};
+});

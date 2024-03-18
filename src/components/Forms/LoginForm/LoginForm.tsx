@@ -9,7 +9,9 @@ import FormikControl from '../../UI/FormElements/FormikControl/FormikControl.tsx
 import LinkComp from '../../UI/LinkComp/LinkComp.tsx';
 
 const LoginForm = observer(() => {
-  const { loginAction, loginInfo, serverError } = useStores((state) => state.authState);
+  const { loginAction, serverErrorAction, storageAction, loginInfo, serverError } = useStores(
+    (state) => state.authState
+  );
   const navigate = useNavigate();
   const InitialValues = {
     emailLogin: '',
@@ -20,13 +22,14 @@ const LoginForm = observer(() => {
   useEffect(() => {
     loginInfo?.case({
       pending: () => console.log('loading'),
-      rejected: () => console.log('error'),
+      rejected: () => serverErrorAction(loginInfo?.value.message),
       fulfilled: () => navigate('/profile'),
     });
   }, [loginInfo?.state]);
 
   const onSubmit = (values: any) => {
     loginAction({ email: values.emailLogin, password: values.passwordLogin });
+    storageAction(values.rememberMe);
   };
   return (
     <FormikContainer

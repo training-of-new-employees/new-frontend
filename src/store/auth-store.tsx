@@ -12,10 +12,10 @@ class AuthStore {
   resetPasswordInfo?: IPromiseBasedObservable<any> = undefined;
   loginInfo?: IPromiseBasedObservable<any> = undefined;
   serverError: string = '';
+  storage: Storage = sessionStorage;
 
   constructor() {
     makeAutoObservable(this);
-    this.serverError = 'Неправильная почта или пароль';
   }
 
   loginAction = ({ email, password }: IAuth) => {
@@ -25,14 +25,26 @@ class AuthStore {
 
   registrationAction = ({ email, password, company_name }: IAuth) => {
     this.registerInfo = fromPromise(registration({ email, password, company_name }));
+    console.log('test');
+    return this.registerInfo;
   };
 
   verifyEmailAction = (code: string) => {
     this.verifyEmailInfo = fromPromise(verifyEmail(code));
+    return this.verifyEmailInfo;
   };
 
   resetPasswordAction = ({ email }: { email: string }) => {
     this.resetPasswordInfo = fromPromise(resetPassword({ email }));
+    return this.resetPasswordInfo;
+  };
+
+  serverErrorAction = (error: string) => {
+    this.serverError = error;
+  };
+
+  storageAction = (tick: string) => {
+    this.storage = tick ? localStorage : sessionStorage;
   };
 }
 

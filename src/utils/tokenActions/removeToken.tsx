@@ -1,3 +1,7 @@
+import { useStores } from '../context/root-context-store.ts';
+
 export const removeToken = (): void => {
-  localStorage.removeItem('tokenKey');
+  const { storage } = useStores((state) => state.authState);
+
+  storage.removeItem('tokenKey');
 };

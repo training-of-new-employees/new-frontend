@@ -1,10 +1,12 @@
 import { useNavigate } from 'react-router-dom';
 import image from '../../../images/image/NoCourses.png';
+import { useStores } from '../../../utils/context/root-context-store.ts';
 import Button from '../../UI/Button/Button';
 
 export default function NoCourses() {
   const navigate = useNavigate();
-  const isAdmin = localStorage.getItem('role') === 'ADMIN';
+  const { storage } = useStores((state) => state.authState);
+  const isAdmin = storage.getItem('role') === 'ADMIN';
   return (
     <section className="bg-backgrnd flex items-center justify-center">
       <div className="flex items-center justify-center flex-col">
