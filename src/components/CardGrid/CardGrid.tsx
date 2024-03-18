@@ -6,7 +6,7 @@ import { Card } from '../UI/Card/Card';
 export const CardGrid: FC<ICardGrid> = ({ mode, data }) => {
   const navigate = useNavigate();
   return (
-    <div className="grid gap-[15px] grid-cols-auto-fit">
+    <div className="grid gap-[15px] grid-cols-auto-fit pb-[20px]">
       {mode === 'course'
         ? data.map((i) => {
             return (
@@ -33,6 +33,7 @@ export const CardGrid: FC<ICardGrid> = ({ mode, data }) => {
               />
             );
           })}
+
     </div>
   );
 };
