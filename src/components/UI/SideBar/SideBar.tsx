@@ -8,7 +8,7 @@ export const SideBar: FC = () => {
   const isAdmin = localStorage.getItem('role') === 'ADMIN';
   const SideBarMenu = isAdmin ? SIDEBAR_MENU_ADMIN : SIDEBAR_MENU_PERSONAL;
   return (
-    <div className=" bg-white min-w-[300px] h-[calc(100vh-72px)] border-borderDisabledInput">
+    <div className=" bg-white min-w-[300px] min-h-screen border-borderDisabledInput pt-[72px]">
       <NavLink
         to="/profile"
         className={

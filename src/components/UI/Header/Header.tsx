@@ -5,7 +5,7 @@ import { PopupExitAccount } from '../../PopupExitAccount/PopupExitAccount';
 export const Header: FC = () => {
   const [isPopupOpened, setPopupOpened] = useState(false);
   return (
-    <header className="w-[100%] relative bg-fontColor flex justify-between border-b-[4px] border-defaultBtn p-[10px]">
+    <header className="w-[100%] z-10 fixed bg-fontColor flex justify-between border-b-[4px] border-defaultBtn p-[10px]">
       <NavLink
         to="/"
         className="bg-logo-header  min-h-[48px] min-w-[134px] bg-center bg-no-repeat ml-[10px]"

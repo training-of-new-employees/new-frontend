@@ -3,7 +3,7 @@ import { regexName } from './ValidRegex';
 
 export const AddNewPositionSchema = z
   .object({
-    position: z
+    positionNew: z
       .string({
         required_error: 'Это поле обязательно',
       })
@@ -11,4 +11,4 @@ export const AddNewPositionSchema = z
       .regex(regexName, 'Символы *, # не допускаются')
       .max(256, 'Поле должно содержать не более 256 символов'),
   })
-  .required({ position: true });
+  .required({ positionNew: true });

@@ -16,7 +16,7 @@ export default function NoPositions() {
         <div
           role="none"
           onClick={() => {
-            navigate('/position/new-positions');
+            navigate('/new-position');
           }}
         >
           {isAdmin && (
