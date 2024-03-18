@@ -1,13 +1,12 @@
+import React from 'react';
+import { observer } from 'mobx-react-lite';
 import { useNavigate } from 'react-router-dom';
 import { CardGrid } from '../../components/CardGrid/CardGrid';
 import { NoCourses } from '../../components/NoContent';
 import Button from '../../components/UI/Button/Button';
-import { COURSE_DATA } from '../../utils/constants';
 import authStore from '../../store/auth-store';
-import React from 'react';
 import coursesStore from '../../store/courses-store';
 import { useStores } from '../../utils/context/root-context-store';
-import { observer } from 'mobx-react-lite';
 
 export const Courses = observer(() => {
   const isAdmin = localStorage.getItem('role') === 'ADMIN';

@@ -1,10 +1,10 @@
 import React from 'react';
+import { observer } from 'mobx-react-lite';
+import { useParams } from 'react-router-dom';
 import UpdateCourseForm from '../../../components/Forms/UpdateCourseForm/UpdateCourseForm';
 import { Popup } from '../../../components/UI/Popup/Popup';
-import { useParams } from 'react-router-dom';
 import coursesStore from '../../../store/courses-store';
 import { useStores } from '../../../utils/context/root-context-store';
-import { observer } from 'mobx-react-lite';
 
 export const EditCourse = observer(() => {
   const [isOpen, setOpen] = React.useState(false);
@@ -20,17 +20,6 @@ export const EditCourse = observer(() => {
   function handleOpenPopup() {
     setOpen(true);
   }
-
-  function handleClickClosePopup() {
-    setOpen(false);
-  }
-
-  const coursesEdit = {
-    name: 'MokName',
-    description: 'MokInfo',
-  };
-
-  console.log(courseId);
 
   return (
     <>

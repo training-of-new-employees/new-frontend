@@ -1,7 +1,7 @@
 import { FC } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ICardGrid } from './CardGridTypes';
 import { Card } from '../UI/Card/Card';
-import { useNavigate } from 'react-router-dom';
 
 export const CardGrid: FC<ICardGrid> = ({ mode, data }) => {
   const navigate = useNavigate();
