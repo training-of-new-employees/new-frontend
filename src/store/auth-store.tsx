@@ -11,9 +11,11 @@ class AuthStore {
   verifyEmailInfo?: IPromiseBasedObservable<any> = undefined;
   resetPasswordInfo?: IPromiseBasedObservable<any> = undefined;
   loginInfo?: IPromiseBasedObservable<any> = undefined;
+  serverError: string = '';
 
   constructor() {
     makeAutoObservable(this);
+    this.serverError = 'Неправильная почта или пароль';
   }
 
   loginAction = ({ email, password }: IAuth) => {

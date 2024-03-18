@@ -6,7 +6,7 @@ import FormikControl from '../../UI/FormElements/FormikControl/FormikControl.tsx
 function AddNewPositionForm() {
   // const [serverError, setServerError] = useState('sample of server error');
   const InitialValues = {
-    positionNew: '',
+    positionNew: 'lalala',
   };
 
   const onSubmit = (values: object) => console.log('Form data', values);
@@ -20,7 +20,7 @@ function AddNewPositionForm() {
       <FormikControl
         control="inputClassic"
         type="text"
-        inputName="position"
+        inputName="positionNew"
         label="Название должности"
         placeholder="Введите название должности"
         options={[]}
