@@ -1,8 +1,10 @@
 import { FC } from 'react';
 import { ICardGrid } from './CardGridTypes';
 import { Card } from '../UI/Card/Card';
+import { useNavigate } from 'react-router-dom';
 
 export const CardGrid: FC<ICardGrid> = ({ mode, data }) => {
+  const navigate = useNavigate();
   return (
     <div className="grid gap-[15px] grid-cols-auto-fit">
       {mode === 'course'
@@ -13,8 +15,9 @@ export const CardGrid: FC<ICardGrid> = ({ mode, data }) => {
                 key={i.id}
                 name={i.name}
                 mode={mode}
-                lesson={i.lesson}
-                status={i.status}
+                lesson={1}
+                status={'Не начат'}
+                onClick={() => navigate(`/courses/${i.id}`)}
               />
             );
           })
