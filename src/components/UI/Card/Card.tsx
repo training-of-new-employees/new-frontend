@@ -7,38 +7,49 @@ import PositionStore from '../../../store/position-store';
 import { CardMenu, REARCHIVE_DDMENU } from '../../../utils/constants';
 import { DropDown } from '../FormElements/DropDown/DropDown';
 
-export const Card: FC<ICard> = observer(({ name, status, lesson, courses, personal, mode, id, onClick }) => {
-  const { archivePositions } = PositionStore;
-  const { archiveCourses } = coursesStore;
-  const location = useLocation().pathname;
-  const isAdmin = localStorage.getItem('role') === 'ADMIN';
-  const [isMenuOpened, setMenuOpened] = useState(false);
-  const wrapRef = useRef<HTMLInputElement>(null);
-  const handleClick = (event: any) => {
-    if (wrapRef.current && !wrapRef.current.contains(event.target)) {
-      setMenuOpened(false);
-    }
-  };
-  useEffect(() => {
-    document.addEventListener('mousedown', handleClick);
-    return () => {
-      document.addEventListener('mousedown', handleClick);
-    };
-  }, []);
-  return (
-    <div
-      ref={wrapRef}
-        onClick={onClick}
-      className={
-        (location === '/position' && archivePositions.includes(id)) ||
-        (location === '/courses' && archiveCourses.includes(id))
-          ? 'bg-[#f3f3f3] w-[100%] rounded-[16px] p-[20px] relative'
-          : 'bg-white w-[100%] rounded-[16px] p-[20px] relative'
+export const Card: FC<ICard> = observer(
+  ({ name, status, lesson, courses, personal, mode, id, onClick }) => {
+    const { archivePositions } = PositionStore;
+    const { archiveCourses } = coursesStore;
+    const location = useLocation().pathname;
+    const isAdmin = localStorage.getItem('role') === 'ADMIN';
+    const [isMenuOpened, setMenuOpened] = useState(false);
+    const wrapRef = useRef<HTMLInputElement>(null);
+    const handleClick = (event: any) => {
+      if (wrapRef.current && !wrapRef.current.contains(event.target)) {
+        setMenuOpened(false);
       }
-    >
-      <div className="flex gap-[10px] relative justify-between">
-        {location === '/position' ? (
-          isMenuOpened && !archivePositions.includes(id) ? (
+    };
+    useEffect(() => {
+      document.addEventListener('mousedown', handleClick);
+      return () => {
+        document.addEventListener('mousedown', handleClick);
+      };
+    }, []);
+    return (
+      <div
+        ref={wrapRef}
+        onClick={onClick}
+        className={
+          (location === '/position' && archivePositions.includes(id)) ||
+          (location === '/courses' && archiveCourses.includes(id))
+            ? 'bg-[#f3f3f3] w-[100%] rounded-[16px] p-[20px] relative'
+            : 'bg-white w-[100%] rounded-[16px] p-[20px] relative'
+        }
+      >
+        <div
+          className="flex gap-[10px] relative justify-between"
+          onClick={(event) => event.stopPropagation()}
+        >
+          {location === '/position' ? (
+            isMenuOpened && !archivePositions.includes(id) ? (
+              <DropDown id={id} menu={CardMenu} setMenuOpened={setMenuOpened} />
+            ) : isMenuOpened && archivePositions.includes(id) ? (
+              <DropDown id={id} menu={REARCHIVE_DDMENU} setMenuOpened={setMenuOpened} />
+            ) : (
+              ''
+            )
+          ) : isMenuOpened && !archiveCourses.includes(id) ? (
             <DropDown id={id} menu={CardMenu} setMenuOpened={setMenuOpened} />
           ) : isMenuOpened && archiveCourses.includes(id) ? (
             <DropDown id={id} menu={REARCHIVE_DDMENU} setMenuOpened={setMenuOpened} />
