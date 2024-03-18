@@ -37,7 +37,12 @@ export const Card: FC<ICard> = observer(
             : 'bg-white w-[100%] rounded-[16px] p-[20px]'
         }
       >
-        <div className="flex gap-[10px] relative justify-between">
+        <div
+          className="flex gap-[10px] relative justify-between"
+          onClick={(e) => {
+            e.stopPropagation();
+          }}
+        >
           {location === '/position' ? (
             isMenuOpened && !archivePositions.includes(id) ? (
               <DropDown id={id} menu={CardMenu} setMenuOpened={setMenuOpened} />
