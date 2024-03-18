@@ -18,6 +18,8 @@ class CoursesStore {
   }
   addToArchiveCourses = (id: number) => {
     this.archiveCourses.push(id);
+    const isArchived = true;
+    this.postCoursesEditAction({ archived: isArchived, id });
   };
   rearchiveCourse = (id: number) => {
     this.archiveCourses.splice(this.archiveCourses.indexOf(id), 1);

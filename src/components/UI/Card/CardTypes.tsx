@@ -6,5 +6,6 @@ export interface ICard {
   personal?: number;
   lesson?: number;
   status?: string;
+  archived?: boolean;
   onClick?: () => void;
 }

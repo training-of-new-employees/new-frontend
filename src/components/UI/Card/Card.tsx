@@ -8,7 +8,7 @@ import { CardMenu, REARCHIVE_DDMENU } from '../../../utils/constants';
 import { DropDown } from '../FormElements/DropDown/DropDown';
 
 export const Card: FC<ICard> = observer(
-  ({ name, status, lesson, courses, personal, mode, id, onClick }) => {
+  ({ name, status, lesson, courses, personal, mode, archived, id, onClick }) => {
     const { archivePositions } = PositionStore;
     const { archiveCourses } = coursesStore;
     const location = useLocation().pathname;
