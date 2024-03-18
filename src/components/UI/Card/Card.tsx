@@ -31,11 +31,11 @@ export const Card: FC<ICard> = observer(({ name, status, lesson, courses, person
       className={
         (location === '/position' && archivePositions.includes(id)) ||
         (location === '/courses' && archiveCourses.includes(id))
-          ? 'bg-[#f3f3f3] w-[100%] rounded-[16px] p-[20px]'
-          : 'bg-white w-[100%] rounded-[16px] p-[20px]'
+          ? 'bg-[#f3f3f3] w-[100%] rounded-[16px] p-[20px] relative'
+          : 'bg-white w-[100%] rounded-[16px] p-[20px] relative'
       }
     >
-      <div className="flex gap-[10px] relative">
+      <div className="flex gap-[10px] relative justify-between">
         {location === '/position' ? (
           isMenuOpened && !archivePositions.includes(id) ? (
             <DropDown id={id} menu={CardMenu} setMenuOpened={setMenuOpened} />
@@ -55,8 +55,8 @@ export const Card: FC<ICard> = observer(({ name, status, lesson, courses, person
           className={
             (location === '/position' && archivePositions.includes(id)) ||
             (location === '/courses' && archiveCourses.includes(id))
-              ? 'text-h3 mb-[12px] line-clamp-2 text-addFontColor'
-              : 'text-h3 mb-[12px] line-clamp-2'
+              ? 'text-h3 mb-[12px] line-clamp-2 text-addFontColor min-h-[62px]'
+              : 'text-h3 mb-[12px] line-clamp-2 min-h-[63px]'
           }
         >
           {name}

@@ -12,7 +12,7 @@ export default function NoCourses() {
         <p className="text-center mt-0 mb-5 mx-0 max-w-[330px]">
           Пока у вас нет созданных курсов. Добавьте свой первый курс прямо сейчас!
         </p>
-        <div role="none" onClick={() => navigate('/courses/new-courses')}>
+        <div role="none" onClick={() => navigate('/new-course')}>
           {isAdmin && (
             <div className="min-w-[260px]">
               <Button type="button" variant="primary" icon="white">
