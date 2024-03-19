@@ -22,9 +22,9 @@ export const SideBarAllLessons: FC = () => {
     { id: 15, text: 'Урок 01' },
   ];
   return (
-    <div className=" bg-white min-w-[340px] h-screen border-borderDisabledInput pt-[72px] fixed pr-[10px]">
-      <div className="scrollbar scrollbar-thumb-defaultBtn scrollbar-track-backgrnd h-screen overflow-y-scroll  scrollbar-auto scrollbar-w-[8px]">
-        <div className="mt-[20px] max-w-[87%] mx-auto">
+    <div className=" bg-white min-w-[340px] h-screen border-borderDisabledInput pt-[92px] fixed pr-[15px]">
+      <div className="scrollbar scrollbar-thumb-defaultBtn scrollbar-track-backgrnd h-screen overflow-y-scroll scrollbar-auto">
+        <div className="max-w-[87%] mx-auto pr-[23px]">
           <Button
             type="button"
             variant="emptyBorder"
@@ -34,10 +34,10 @@ export const SideBarAllLessons: FC = () => {
             К курсу
           </Button>
         </div>
-        <ul className="w-[100%] text-fontColor">
+        <ul className="w-[100%] text-fontColor mt-[20px]">
           {lessons.map((i) => {
             return (
-              <li key={i.id} className="flex ">
+              <li key={i.id} className="flex mr-[23px]">
                 <NavLink
                   to=""
                   className={
