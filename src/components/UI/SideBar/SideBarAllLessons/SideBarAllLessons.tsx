@@ -22,7 +22,7 @@ export const SideBarAllLessons: FC = () => {
     { id: 15, text: 'Урок 01' },
   ];
   return (
-    <div className=" bg-white min-w-[340px] h-screen border-borderDisabledInput pt-[92px] fixed pr-[15px]">
+    <div className=" bg-white min-w-[300px] h-screen border-borderDisabledInput pt-[92px] fixed pr-[15px]">
       <div className="scrollbar scrollbar-thumb-defaultBtn scrollbar-track-backgrnd h-screen overflow-y-scroll scrollbar-auto">
         <div className="max-w-[87%] mx-auto pr-[23px]">
           <Button
