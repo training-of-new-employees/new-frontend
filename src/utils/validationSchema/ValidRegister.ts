@@ -5,13 +5,13 @@ export const RegisterSchema = z
   .object({
     company: z
       .string({
-        required_error: 'Это поле обязательно',
+        required_error: 'Заполните это поле',
       })
       .trim()
       .regex(regexCompany, 'Не принимает символы: *,#.'),
     email: z
       .string({
-        required_error: 'Это поле обязательно',
+        required_error: 'Заполните это поле',
       })
       .email({
         message: 'Это поле тип почты: you@email.ru',
@@ -20,7 +20,7 @@ export const RegisterSchema = z
       .max(50, 'E-mail должен содержать не более 50 символов')
       .min(7, { message: 'E-mail должен содержать не менее 7 символов' }),
     password: z
-      .string({ required_error: 'Это поле обязательно' })
+      .string({ required_error: 'Заполните это поле' })
       .trim()
       .max(30, 'Пароль должен содержать не более 30 символов')
       .min(6, 'Длина пароля не менее 6 символов')
@@ -30,7 +30,7 @@ export const RegisterSchema = z
       ),
     repeatPassword: z
       .string({
-        required_error: 'Это поле обязательно',
+        required_error: 'Заполните это поле',
       })
       .trim(),
     rememberMe: z.boolean().optional(),

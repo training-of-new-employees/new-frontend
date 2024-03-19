@@ -5,7 +5,7 @@ export const FirstEnterSchema = z
   .object({
     emailFirstEnter: z
       .string({
-        required_error: 'Это поле обязательно',
+        required_error: 'Заполните это поле',
       })
       .email({
         message: 'Это поле тип почты: you@email.ru',
@@ -14,7 +14,7 @@ export const FirstEnterSchema = z
       .max(50, 'E-mail должен содержать не более 50 символов')
       .min(7, { message: 'E-mail должен содержать не менее 7 символов' }),
     passwordFirstEnter: z
-      .string({ required_error: 'Это поле обязательно' })
+      .string({ required_error: 'Заполните это поле' })
       .trim()
       .max(30, 'Пароль должен содержать не более 30 символов')
       .min(6, 'Длина пароля не менее 6 символов')
@@ -24,7 +24,7 @@ export const FirstEnterSchema = z
       ),
     repeatPasswordFirstEnter: z
       .string({
-        required_error: 'Это поле обязательно',
+        required_error: 'Заполните это поле',
       })
       .trim(),
     rememberMe: z.boolean().optional(),
