@@ -21,6 +21,9 @@ export const DropDown: FC<IDropDown> = observer(({ menu, id, setMenuOpened }) =>
         if (location === '/position') {
           navigate(`/position/${id}`);
         }
+        if (location === '/users') {
+          navigate(`/users/${id}`);
+        }
         break;
       case 'Перенести в архив':
         setIsPopupOpened(true);

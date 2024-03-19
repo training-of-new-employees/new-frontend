@@ -19,6 +19,7 @@ import { Profile } from '../pages/Profile/Profile';
 import Registration from '../pages/Registration/Regestration';
 import Test from '../pages/Test/Test.tsx';
 import { CreateUser } from '../pages/Users/CreateUser/CreateUser.tsx';
+import { EditUser } from '../pages/Users/EditUser/EditUser.tsx';
 import { Users } from '../pages/Users/Users';
 
 const router = createBrowserRouter([
@@ -64,6 +65,10 @@ const router = createBrowserRouter([
       {
         path: paths.newuser,
         element: <CreateUser />,
+      },
+      {
+        path: paths.edituser,
+        element: <EditUser />,
       },
       {
         path: paths.editposition,

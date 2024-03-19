@@ -5,6 +5,7 @@ export const paths = {
   newcourse: '/new-course',
   editcourse: '/courses/:id',
   users: '/users',
+  edituser: '/users/:id',
   newuser: '/new-user',
   positions: '/position',
   newposition: '/new-position',

@@ -1,19 +1,22 @@
 import { FC } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import ProfileLogo from '../../../images/UI/Profile-logo.svg';
 import { SIDEBAR_MENU_ADMIN, SIDEBAR_MENU_PERSONAL } from '../../../utils/constants';
 import Button from '../Button/Button';
 
 export const SideBar: FC = () => {
   const location = useLocation().pathname;
+  const navigate = useNavigate();
   const isAdmin = localStorage.getItem('role') === 'ADMIN';
   const SideBarMenu = isAdmin ? SIDEBAR_MENU_ADMIN : SIDEBAR_MENU_PERSONAL;
   return (
     <div className=" bg-white min-w-[300px] min-h-screen border-borderDisabledInput pt-[72px]">
-      {location.match(/\/position\/\w/) ? (
-        <Button type="button" variant="emptyBorder">
-          Назад
-        </Button>
+      {location.match(/\/position\/\w/) || location.match(/\/users\/\w/) ? (
+        <div className="w-[87%] mx-auto mt-[18px]">
+          <Button type="button" variant="emptyBorder" icon="back" onClick={() => navigate(-1)}>
+            Вернуться назад
+          </Button>
+        </div>
       ) : (
         <>
           <NavLink
