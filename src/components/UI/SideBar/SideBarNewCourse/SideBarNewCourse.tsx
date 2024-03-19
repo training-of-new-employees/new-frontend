@@ -7,7 +7,7 @@ export const SideBarNewCourse: FC = () => {
   const navigate = useNavigate();
   const location = useLocation().pathname;
   return (
-    <div className=" bg-white min-w-[300px] h-[calc(100vh-72px)] border-borderDisabledInput">
+    <div className=" bg-white min-w-[300px] h-screen border-borderDisabledInput fixed overflow-scroll">
       <div className="mt-[20px] max-w-[87%] mx-auto">
         <Button
           type="button"
