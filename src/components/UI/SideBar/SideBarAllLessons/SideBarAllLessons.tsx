@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { useNavigate, NavLink, useLocation } from 'react-router-dom';
+import { useNavigate, NavLink } from 'react-router-dom';
 import Button from '../../Button/Button';
 
 export const SideBarAllLessons: FC = () => {
