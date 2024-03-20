@@ -33,8 +33,6 @@ const RegisterForm = observer(() => {
       company_name: values.company,
     });
     storageAction(values.rememberMe);
-    console.log('Form data', values);
-    console.log(registerInfo);
   };
 
   return (

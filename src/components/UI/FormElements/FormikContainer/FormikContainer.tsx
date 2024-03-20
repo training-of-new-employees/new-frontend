@@ -1,5 +1,3 @@
-// @TODO заменить свойство validate на ValidationSchema при использовании YUP
-
 import { Children, cloneElement, ReactNode, isValidElement } from 'react';
 import { Formik, Form } from 'formik';
 import { toFormikValidationSchema } from 'zod-formik-adapter';
