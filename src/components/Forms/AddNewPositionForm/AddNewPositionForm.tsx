@@ -6,7 +6,7 @@ import FormikControl from '../../UI/FormElements/FormikControl/FormikControl.tsx
 function AddNewPositionForm() {
   // const [serverError, setServerError] = useState('sample of server error');
   const InitialValues = {
-    positionNew: 'lalala',
+    positionNew: '',
   };
 
   const onSubmit = (values: object) => console.log('Form data', values);
