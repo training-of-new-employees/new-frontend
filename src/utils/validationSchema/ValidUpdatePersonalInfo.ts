@@ -37,7 +37,7 @@ export const UpdatePersonalSchema = z
       .regex(regexCompany, 'Не принимает символы: *,#.'),
     email: z
       .string({
-        required_error: 'Это поле обязательно',
+        required_error: 'Заполните это поле',
       })
       .email({
         message: 'Это поле тип почты: you@email.ru',
