@@ -8,7 +8,7 @@ export const SideBar: FC = () => {
   const isAdmin = localStorage.getItem('role') === 'ADMIN';
   const SideBarMenu = isAdmin ? SIDEBAR_MENU_ADMIN : SIDEBAR_MENU_PERSONAL;
   return (
-    <div className=" bg-white min-w-[300px] min-h-screen border-borderDisabledInput pt-[72px]">
+    <div className=" bg-white min-w-[300px] h-screen border-borderDisabledInput pt-[72px] fixed overflow-scroll">
       <NavLink
         to="/profile"
         className={
@@ -29,7 +29,7 @@ export const SideBar: FC = () => {
           </p>
         </div>
       </NavLink>
-      <ul className="w-[100%]">
+      <ul className="w-[100%] text-fontColor">
         {SideBarMenu.map((i) => {
           return (
             <li key={i.id} className="flex">

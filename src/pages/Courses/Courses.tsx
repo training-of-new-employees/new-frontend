@@ -9,7 +9,7 @@ export default function Courses() {
   const navigate = useNavigate();
   return (
     <>
-      <div className="py-[20px] px-[20px] w-[100%] pt-[92px]">
+      <div className="py-[20px] px-[20px] w-[100%] pt-[92px] min-h-screen ml-[300px]">
         {isAdmin && COURSE_DATA.length === 0 ? (
           <NoCourses />
         ) : isAdmin ? (
