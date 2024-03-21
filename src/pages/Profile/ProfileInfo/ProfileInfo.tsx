@@ -73,7 +73,7 @@ export const ProfileInfo = observer((props: IProfileInfoProps) => {
           </div>
           <div>
             {isRole === 'ADMIN' && (
-              <div className="w-[120px] h-[120px] object-cover rounded-[50%] bg-image bg-contain bg-no-repeat" />
+              <div className="w-[140px] h-[140px] object-cover rounded-[50%] bg-image bg-contain bg-no-repeat" />
             )}
           </div>
         </div>
