@@ -1,5 +1,5 @@
 import { FC } from 'react';
 
 export const Profile: FC = () => {
-  return <>какой-то текст</>;
+  return <div className="h-screen">какой-то текст</div>;
 };

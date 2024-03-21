@@ -10,7 +10,7 @@ export const Users: FC = observer(() => {
   const navigate = useNavigate();
   const { allEmployee } = employeeStore;
   return (
-    <section className="pt-[20px] px-[20px] w-[100%] pt-[92px]">
+    <section className="pt-[20px] px-[20px] w-[100%] pt-[92px] min-h-screen ml-[300px]">
       {allEmployee.length === 0 ? (
         <NoUser />
       ) : (
