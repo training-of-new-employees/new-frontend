@@ -10,7 +10,7 @@ export const SideBar: FC = () => {
   const isAdmin = localStorage.getItem('role') === 'ADMIN';
   const SideBarMenu = isAdmin ? SIDEBAR_MENU_ADMIN : SIDEBAR_MENU_PERSONAL;
   return (
-    <div className=" bg-white min-w-[300px] min-h-screen border-borderDisabledInput pt-[72px] fixed overflow-scroll">
+    <div className=" bg-white min-w-[300px] h-screen border-borderDisabledInput pt-[72px] fixed overflow-scroll">
       {location.match(/\/position\/\w/) || location.match(/\/users\/\w/) ? (
         <div className="w-[87%] mx-auto mt-[18px]">
           <Button type="button" variant="emptyBorder" icon="back" onClick={() => navigate(-1)}>
