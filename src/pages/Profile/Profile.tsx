@@ -24,7 +24,7 @@ export const Profile: React.FC = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center w-full">
+    <div className="flex flex-col items-center w-full pt-[72px] ml-[300px] min-h-screen">
       <ProfileInfo isRole={isRole} onEditProfileClick={handleClickPopupEdit} />
       <PopupIsEditProfile isOpened={open} setIsOpened={setOpen} />
     </div>

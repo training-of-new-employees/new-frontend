@@ -23,6 +23,7 @@ function UpdatePositionForm() {
         inputName="position"
         placeholder="Введите название должности"
         options={[]}
+        label="Название должности"
       />
       {/*<p className="text-error mx-auto">{serverError}</p>*/}
     </FormikContainer>
