@@ -1,13 +1,16 @@
 import { FC } from 'react';
+import { observer } from 'mobx-react-lite';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import ProfileLogo from '../../../images/UI/Profile-logo.svg';
 import { SIDEBAR_MENU_ADMIN, SIDEBAR_MENU_PERSONAL } from '../../../utils/constants';
+import { useStores } from '../../../utils/context/root-context-store.ts';
 import Button from '../Button/Button';
 
-export const SideBar: FC = () => {
+export const SideBar: FC = observer(() => {
   const location = useLocation().pathname;
   const navigate = useNavigate();
-  const isAdmin = localStorage.getItem('role') === 'ADMIN';
+  const { storage } = useStores((state) => state.authState);
+  const isAdmin = storage.getItem('role') === 'ADMIN';
   const SideBarMenu = isAdmin ? SIDEBAR_MENU_ADMIN : SIDEBAR_MENU_PERSONAL;
   return (
     <div className=" bg-white min-w-[300px] h-screen border-borderDisabledInput pt-[72px] fixed overflow-scroll">
@@ -70,4 +73,4 @@ export const SideBar: FC = () => {
       )}
     </div>
   );
-};
+});

@@ -1,3 +1,5 @@
 export const setToken = (access_token: string): void => {
-  localStorage.setItem('tokenKey', JSON.stringify(access_token));
+  localStorage.getItem('tick') === 'true'
+    ? localStorage.setItem('token', JSON.stringify(access_token))
+    : sessionStorage.setItem('token', JSON.stringify(access_token));
 };

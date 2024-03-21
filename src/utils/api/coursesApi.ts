@@ -1,10 +1,12 @@
 import { baseUrl } from '../constantsUrl';
+import { useStores } from '../context/root-context-store.ts';
 import { request } from '../request';
 
 const pathPosition = `${baseUrl}/admin/courses`;
 
 export const fetchCourses = () => {
-  const token = localStorage.getItem('token');
+  const { storage } = useStores((state) => state.authState);
+  const token = storage.getItem('token');
   return request(pathPosition, {
     headers: {
       Accept: 'application/json',
@@ -14,7 +16,8 @@ export const fetchCourses = () => {
 };
 
 export const fetchCoursesById = (id: number) => {
-  const token = localStorage.getItem('token');
+  const { storage } = useStores((state) => state.authState);
+  const token = storage.getItem('token');
   return request(`${pathPosition}/${id}`, {
     headers: {
       Accept: 'application/json',
@@ -24,7 +27,8 @@ export const fetchCoursesById = (id: number) => {
 };
 
 export const setCourses = (data: any) => {
-  const token = localStorage.getItem('token');
+  const { storage } = useStores((state) => state.authState);
+  const token = storage.getItem('token');
   return request(pathPosition, {
     method: 'POST',
     headers: {
@@ -36,7 +40,8 @@ export const setCourses = (data: any) => {
 };
 
 export const editCourses = (data: any) => {
-  const token = localStorage.getItem('token');
+  const { storage } = useStores((state) => state.authState);
+  const token = storage.getItem('token');
   return request(`${pathPosition}/${data.id}`, {
     method: 'PATCH',
     headers: {
@@ -48,7 +53,8 @@ export const editCourses = (data: any) => {
 };
 
 export const getCoursById = (id: number) => {
-  const token = localStorage.getItem('token');
+  const { storage } = useStores((state) => state.authState);
+  const token = storage.getItem('token');
   return request(`${pathPosition}/${id}`, {
     headers: {
       Authorization: `Bearer ${token}`,

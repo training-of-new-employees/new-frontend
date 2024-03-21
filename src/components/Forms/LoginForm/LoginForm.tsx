@@ -1,19 +1,35 @@
-// import { useState } from 'react';
+import { useEffect } from 'react';
+import { observer } from 'mobx-react-lite';
+import { useNavigate } from 'react-router-dom';
+import { useStores } from '../../../utils/context/root-context-store.ts';
 import { LoginSchema } from '../../../utils/validationSchema/ValidLogin.ts';
 import RememberMe from '../../RememberMe/RememberMe.tsx';
 import FormikContainer from '../../UI/FormElements/FormikContainer/FormikContainer.tsx';
 import FormikControl from '../../UI/FormElements/FormikControl/FormikControl.tsx';
 import LinkComp from '../../UI/LinkComp/LinkComp.tsx';
 
-const LoginForm = () => {
-  // const [serverError, setServerError] = useState('sample of server error');
+const LoginForm = observer(() => {
+  const { loginAction, serverErrorAction, storageAction, loginInfo, serverError } = useStores(
+    (state) => state.authState
+  );
+  const navigate = useNavigate();
   const InitialValues = {
     emailLogin: '',
     passwordLogin: '',
     rememberMe: '',
   };
+
+  useEffect(() => {
+    loginInfo?.case({
+      pending: () => console.log('loading'),
+      rejected: () => serverErrorAction(loginInfo?.value.message),
+      fulfilled: () => navigate('/profile'),
+    });
+  }, [loginInfo?.state]);
+
   const onSubmit = (values: any) => {
-    console.log('Form data', values);
+    loginAction({ email: values.emailLogin, password: values.passwordLogin });
+    storageAction(values.rememberMe);
   };
   return (
     <FormikContainer
@@ -37,13 +53,13 @@ const LoginForm = () => {
         isPassword
         options={[]}
       />
-      {/*<p className="text-error mx-auto">{serverError}</p>*/}
+      <p className="text-error mx-auto">{loginInfo?.state == 'rejected' && serverError}</p>
       <div className="w-[100%] flex flex-row justify-between my-[16px] pr-[20px]">
         <RememberMe />
         <LinkComp direction="/recovery">Забыли пароль?</LinkComp>
       </div>
     </FormikContainer>
   );
-};
+});
 
 export default LoginForm;

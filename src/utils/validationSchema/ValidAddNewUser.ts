@@ -32,7 +32,7 @@ export const AddNewUserSchema = z
 
     emailUser: z
       .string({
-        required_error: 'Это поле обязательно',
+        required_error: 'Заполните это поле',
       })
       .email({
         message: 'Это поле тип почты: you@email.ru',
@@ -43,7 +43,7 @@ export const AddNewUserSchema = z
       .min(7, 'E-mail должен содержать не менее 7 символов'),
     positionUser: z
       .string({
-        required_error: 'Это поле обязательно',
+        required_error: 'Заполните это поле',
       })
       .trim()
       .regex(regexName, 'Символы *, # не допускаются')

@@ -12,10 +12,9 @@ export const paths = {
   editposition: '/position/:id',
   login: '/login',
   registration: '/registration',
-  firstenter: '/first-enter',
+  firstenter: '/first-enter?',
   recovery: '/recovery',
   newpass: 'new-password',
   otp: '/otp',
   admin: '/admin',
-  employeeReg: '/first-login?',
 };
