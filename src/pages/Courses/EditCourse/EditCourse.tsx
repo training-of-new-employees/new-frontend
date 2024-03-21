@@ -23,7 +23,7 @@ export const EditCourse = observer(() => {
 
   return (
     <>
-      <section className="w-full flex flex-col items-center">
+      <section className="w-full flex flex-col items-center pt-[72px]">
         <div className="flex justify-center w-full">
           <div className="text-black w-[900px] flex flex-col gap-[20px] h-[300px] bg-[white] px-10 py-[40px] rounded-b-[24px]">
             <h1 className="text-[32px] font-semibold leading-[41px] pb-[12px]">
@@ -34,7 +34,7 @@ export const EditCourse = observer(() => {
                 Основная информация
               </h3>
               <button
-                className=" bg-card-menu bg-no-repeat bg-center w-10 h-10 cursor-pointer rounded-xl border-none border-[1px]"
+                className="bg-card-menu bg-no-repeat bg-center w-10 h-10 cursor-pointer rounded-xl border-none border-[1px]"
                 type="button"
                 aria-label="Редактировать профиль"
                 onClick={handleOpenPopup}
