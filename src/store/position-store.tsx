@@ -7,8 +7,11 @@ import { getCoursesByPositionId } from '../utils/axios/Admin/positions/getCourse
 import { getPositionById } from '../utils/axios/Admin/positions/getPositionById';
 import { getPositions } from '../utils/axios/Admin/positions/getPositions';
 import { IEditEmployee } from '../utils/axios/types/IUser';
+import { POSITIONS_DATA } from '../utils/constants';
 
 class PositionStore {
+  archivePositions: Array<number> = [];
+  allPositions = POSITIONS_DATA;
   positions?: IPromiseBasedObservable<any>;
   position?: IPromiseBasedObservable<any>;
   positionById?: IPromiseBasedObservable<any>;
@@ -17,7 +20,15 @@ class PositionStore {
   constructor() {
     makeAutoObservable(this);
   }
-
+  addPositionToArchive = (id: number) => {
+    this.archivePositions.push(id);
+  };
+  addNewPosition = (position: { id: number; name: string; courses: number; personal: number }) => {
+    this.allPositions.push(position);
+  };
+  rearchivePosition = (id: number) => {
+    this.archivePositions.splice(this.archivePositions.indexOf(id), 1);
+  };
   getPositionAction = () => {
     this.positions = fromPromise(getPositions());
   };

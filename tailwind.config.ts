@@ -32,10 +32,14 @@ const config: Config = {
         colorWhite: '#fff',
       },
       backgroundImage: {
+        'icon-edit': 'url(./src/assets/iconEdit.svg)',
+        'admin-pic': 'url(./src/assets/adminIcon.svg)',
+        image: 'url(./src/assets/admin-image.svg)',
         whiteIconButton: "url('./src/assets/icon/Icon.svg')",
         greenIconButton: "url('./src/assets/icon/Icon-green.svg')",
         backIconButton: "url('./src/assets/icon/Back-Icon.svg')",
         'card-menu': "url('./src/images/UI/CardMenu.svg')",
+        'archive-green': "url('./src/images/UI/archive-green.svg')",
         'logo-header': "url('./src/images/Landing/logo.svg')",
         'profile-avatar': "url('./src/images/UI/Profile-logo.svg')",
         'exit-icon': "url('./src/images/UI/exit-icon.svg')",
@@ -54,6 +58,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [require('tailwind-scrollbar')],
 };
 export default config;

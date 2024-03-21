@@ -1,9 +1,12 @@
 import Archive from '../images/UI/archive.svg';
 import Copy from '../images/UI/copy-icon.svg';
 import Pencil from '../images/UI/pencil.svg';
+import ReArchive from '../images/UI/rearchive-icon.svg';
 import Send from '../images/UI/send-icon.svg';
 import Courses from '../images/UI/SideBar/Courses.svg';
+import Materials from '../images/UI/SideBar/create-course-maininfo.svg';
 import Users from '../images/UI/SideBar/Employees.svg';
+import MainInfoCourse from '../images/UI/SideBar/main-info-course.svg';
 import Work from '../images/UI/SideBar/Work.svg';
 
 export const CardMenu: {
@@ -25,6 +28,11 @@ export const PERSONAL_MENU: {
   { id: 3, image: Send, text: 'Отправить приглашение повторно' },
   { id: 4, image: Archive, text: 'Перенести в архив' },
 ];
+export const REARCHIVE_DDMENU: {
+  id: number;
+  image: string;
+  text: string;
+}[] = [{ id: 1, image: ReArchive, text: 'Вернуть из архива' }];
 
 export const COURSE_TABLE: {
   id: number;
@@ -132,6 +140,16 @@ export const SIDEBAR_MENU_ADMIN: {
     image: Work,
     link: '/position',
   },
+];
+
+export const SIDEBAR_MENU_CREATECOURSE: {
+  id: number;
+  text: string;
+  image: string;
+  link: string;
+}[] = [
+  { id: 1, text: 'Основная информация', image: MainInfoCourse, link: '/new-course/main-info' },
+  { id: 2, text: 'Материалы', image: Materials, link: '/new-course/lessons' },
 ];
 
 export const SIDEBAR_MENU_PERSONAL: {

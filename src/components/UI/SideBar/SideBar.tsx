@@ -1,25 +1,24 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import { observer } from 'mobx-react-lite';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import ProfileLogo from '../../../images/UI/Profile-logo.svg';
 import { SIDEBAR_MENU_ADMIN, SIDEBAR_MENU_PERSONAL } from '../../../utils/constants';
 import { useStores } from '../../../utils/context/root-context-store.ts';
 
 export const SideBar: FC = observer(() => {
-  const [activeMenu, setActiveMenu] = useState(0);
+  const location = useLocation().pathname;
   const { storage } = useStores((state) => state.authState);
   const isAdmin = storage.getItem('role') === 'ADMIN';
   const SideBarMenu = isAdmin ? SIDEBAR_MENU_ADMIN : SIDEBAR_MENU_PERSONAL;
   return (
-    <div className=" bg-white min-w-[300px] h-[calc(100vh-72px)] border-borderDisabledInput">
+    <div className=" bg-white min-w-[300px] h-screen border-borderDisabledInput pt-[72px] fixed overflow-scroll">
       <NavLink
         to="/profile"
         className={
-          activeMenu === 0
+          location === '/profile'
             ? 'flex gap-[10px] p-[19px] border-b-[1px] border-borderDisabledInput bg-sidebarEnableBtn'
             : 'flex gap-[10px] p-[19px] border-b-[1px] border-borderDisabledInput hover:bg-sidebarHoveredBtn'
         }
-        onClick={() => setActiveMenu(0)}
       >
         <img
           alt="Аватар"
@@ -33,22 +32,21 @@ export const SideBar: FC = observer(() => {
           </p>
         </div>
       </NavLink>
-      <ul className="w-[100%]">
+      <ul className="w-[100%] text-fontColor">
         {SideBarMenu.map((i) => {
           return (
             <li key={i.id} className="flex">
               <NavLink
                 to={i.link}
                 className={
-                  activeMenu === i.id
+                  location === i.link
                     ? 'w-[100%] bg-sidebarEnableBtn'
                     : 'w-[100%] hover:bg-sidebarHoveredBtn '
                 }
-                onClick={() => setActiveMenu(i.id)}
               >
                 <div
                   className={
-                    activeMenu === i.id
+                    location === i.link
                       ? 'flex gap-[10px] rounded-[4px] py-[18px] pl-[10px] border-l-[8px] border-defaultBtn ml-[3px] '
                       : 'flex gap-[10px] hover:rounded-[4px] py-[18px] pl-[10px] border-white border-l-[8px] hover:border-defaultBtn ml-[3px] '
                   }

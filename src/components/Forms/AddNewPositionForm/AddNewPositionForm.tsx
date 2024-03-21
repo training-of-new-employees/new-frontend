@@ -1,15 +1,26 @@
 // import { useState } from 'react';
+import { observer } from 'mobx-react-lite';
+import positionStore from '../../../store/position-store.tsx';
 import { AddNewPositionSchema } from '../../../utils/validationSchema/ValidAddNewPosition.ts';
 import FormikContainer from '../../UI/FormElements/FormikContainer/FormikContainer.tsx';
 import FormikControl from '../../UI/FormElements/FormikControl/FormikControl.tsx';
 
-function AddNewPositionForm() {
+const AddNewPositionForm = observer(() => {
   // const [serverError, setServerError] = useState('sample of server error');
+  const { addNewPosition } = positionStore;
   const InitialValues = {
     positionNew: '',
   };
 
-  const onSubmit = (values: object) => console.log('Form data', values);
+  const onSubmit = (values: object) => {
+    addNewPosition({
+      name: values.positionNew,
+      id: Math.floor(Math.random() * 101),
+      courses: 0,
+      personal: 0,
+    });
+    console.log('Form data', values);
+  };
   return (
     <FormikContainer
       InitialValues={InitialValues}
@@ -28,6 +39,6 @@ function AddNewPositionForm() {
       {/*<p className="text-error mx-auto">{serverError}</p>*/}
     </FormikContainer>
   );
-}
+});
 
 export default AddNewPositionForm;

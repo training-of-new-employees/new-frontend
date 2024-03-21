@@ -9,8 +9,8 @@ const NoUser = observer(() => {
   const { storage } = useStores((state) => state.authState);
   const isAdmin = storage.getItem('role') === 'ADMIN';
   return (
-    <section className="bg-backgrnd flex items-center justify-center">
-      <div className="flex items-center justify-center w-[1200px] flex-col">
+    <section className="bg-backgrnd flex items-center justify-center h-[calc(100vh-112px)] pb-[180px]">
+      <div className="flex items-center justify-center flex-col">
         <img className="mt-0 mb-5 mx-0" src={image} alt="Картинка гриба" />
         <p className="text-base mt-0 mb-5 mx-0">
           Пока у вас нет сотрудников. Добавьте свою команду для обучения новому!
@@ -18,7 +18,7 @@ const NoUser = observer(() => {
         <div
           role="none"
           onClick={() => {
-            navigate('/users/new-user');
+            navigate('/new-user');
           }}
         >
           {isAdmin && (

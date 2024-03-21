@@ -1,19 +1,25 @@
-// import { useState } from 'react';
+import { useStores } from '../../../utils/context/root-context-store.ts';
 import { UpdatePersonalSchema } from '../../../utils/validationSchema/ValidUpdatePersonalInfo.ts';
+import Button from '../../UI/Button/Button.tsx';
 import FormikContainer from '../../UI/FormElements/FormikContainer/FormikContainer.tsx';
 import FormikControl from '../../UI/FormElements/FormikControl/FormikControl.tsx';
 
 function UpdatePersonalInfoForm() {
-  // const [serverError, setServerError] = useState('sample of server error');
+  const { profileState } = useStores();
+  const { profile } = useStores((state) => state.profileState);
 
   const InitialValues = {
-    name: '',
-    surname: '',
-    patronymic: '',
-    company: '',
-    email: '',
+    id: profile?.value.id,
+    name: profile?.value.name,
+    surname: profile?.value.surname,
+    patronymic: profile?.value.patronymic,
+    company: profile?.value.company_name,
+    email: profile?.value.email,
   };
-  const onSubmit = (values: object) => console.log('Form data', values);
+  const onSubmit = (values: object) => {
+    profileState.postEditProfileAction(values);
+    console.log('Form data', values);
+  };
   return (
     <FormikContainer
       InitialValues={InitialValues}
@@ -64,7 +70,17 @@ function UpdatePersonalInfoForm() {
         placeholder="Введите e-mail"
         options={[]}
       />
-      {/*<p className="text-error mx-auto">{serverError}</p>*/}
+
+      {/* <p className="text-error mx-auto">{error.response.data.message}</p> */}
+
+      <div className="flex flex-row gap-[20px] pt-[32px]">
+        <Button type="button" variant="emptyBorder">
+          Отменить
+        </Button>
+        <Button type="submit" variant="primary">
+          Сохранить изменение
+        </Button>
+      </div>
     </FormikContainer>
   );
 }

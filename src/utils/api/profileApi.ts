@@ -2,7 +2,7 @@ import { baseUrl } from '../constantsUrl';
 import { request } from '../request';
 
 export function getProfileMe() {
-  const token = localStorage.getItem('token');
+  const token = localStorage.getItem('tokenKey');
   return request(`${baseUrl}/users/info`, {
     headers: {
       Authorization: `Bearer ${token}`,
