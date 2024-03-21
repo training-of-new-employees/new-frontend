@@ -7,6 +7,7 @@ export const login = async ({ email, password }: IAuth) => {
       email,
       password,
     });
+    localStorage.setItem('tokenKey', res.data.token);
     return res.data;
   } catch (error) {
     console.error(error);
