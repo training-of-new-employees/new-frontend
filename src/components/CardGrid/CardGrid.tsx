@@ -8,7 +8,7 @@ export const CardGrid: FC<ICardGrid> = ({ mode, data }) => {
   return (
     <div className="grid gap-[15px] grid-cols-auto-fit pb-[20px]">
       {mode === 'course'
-        ? data.map((i) => {
+        ? Array.from(data).map((i) => {
             return (
               <Card
                 id={i.id}
@@ -21,7 +21,7 @@ export const CardGrid: FC<ICardGrid> = ({ mode, data }) => {
               />
             );
           })
-        : data.map((i) => {
+        : Array.from(data).map((i) => {
             return (
               <Card
                 id={i.id}
