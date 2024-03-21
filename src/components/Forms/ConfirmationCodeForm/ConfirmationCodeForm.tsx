@@ -1,13 +1,16 @@
-// import { useState } from 'react';
+import { useEffect } from 'react';
 import { useFormik } from 'formik';
+import { observer } from 'mobx-react-lite';
+import { useNavigate } from 'react-router-dom';
+import { useStores } from '../../../utils/context/root-context-store.ts';
+import { setToken } from '../../../utils/tokenActions/setToken.tsx';
 import Button from '../../UI/Button/Button.tsx';
-// import { ConfimCodeSchema } from '../../../utils/validationSchema/ValidConfimCode.ts';
 
-function ConfirmationCodeForm() {
-  // const [serverError, setServerError] = useState('');
-  // Убрать константу, когда будет код для выставления серверной ошибки
-  const serverError = '';
-
+const ConfirmationCodeForm = observer(() => {
+  const { verifyEmailAction, serverErrorAction, verifyEmailInfo, serverError } = useStores(
+    (state) => state.authState
+  );
+  const navigate = useNavigate();
   const initialValues = {
     otp: [{ digit: '' }, { digit: '' }, { digit: '' }, { digit: '' }],
   };
@@ -15,11 +18,22 @@ function ConfirmationCodeForm() {
   const formik = useFormik({
     initialValues,
     onSubmit: async (values) => {
-      const finalOtp = values.otp.map((item) => item.digit);
-      return finalOtp;
+      const finalOtp = values.otp.map((item) => item.digit).join('');
+      verifyEmailAction(finalOtp);
     },
   });
-
+  useEffect(() => {
+    verifyEmailInfo?.case({
+      pending: () => console.log('loading'),
+      rejected: () => {
+        serverErrorAction(verifyEmailInfo?.value.message);
+      },
+      fulfilled: () => {
+        navigate('/profile');
+        setToken(verifyEmailInfo?.value);
+      },
+    });
+  }, [verifyEmailInfo?.state]);
   const handleOTPChange = (event: React.ChangeEvent<HTMLInputElement>, element: string) => {
     if (!event.target.value.match(/[0-9]/)) {
       return;
@@ -76,13 +90,13 @@ function ConfirmationCodeForm() {
             );
           })}
         </div>
-        <p className="text-error mx-auto">{serverError}</p>
+        <p className="text-error mx-auto">{verifyEmailInfo?.state == 'rejected' && serverError}</p>
       </div>
       <Button variant="primary" type="submit" formName="otp" disabled={disabledSubmit}>
         Подтвердить
       </Button>
     </form>
   );
-}
+});
 
 export default ConfirmationCodeForm;

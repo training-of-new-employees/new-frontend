@@ -5,7 +5,7 @@ export const RecoveryPasswordSchema = z
   .object({
     emailRecovery: z
       .string({
-        required_error: 'Это поле обязательно',
+        required_error: 'Заполните это поле',
       })
       .email({
         message: 'Это поле тип почты: you@email.ru',

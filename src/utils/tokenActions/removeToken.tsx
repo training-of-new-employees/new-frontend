@@ -1,3 +1,5 @@
 export const removeToken = (): void => {
-  localStorage.removeItem('tokenKey');
+  localStorage.getItem('tick') === 'true'
+    ? localStorage.removeItem('token')
+    : sessionStorage.removeItem('token');
 };

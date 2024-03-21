@@ -9,7 +9,7 @@ import EditCourse from '../pages/Courses/EditCourse/EditCourse.tsx';
 import FirstEnter from '../pages/FirstEnter/FirstEnter.tsx';
 import Login from '../pages/Login/Login';
 import Main from '../pages/Main/Main';
-import NewPassword from '../pages/NewPassword/NewPassword.tsx';
+import { NewPassword } from '../pages/NewPassword/NewPassword.tsx';
 import { NotFound } from '../pages/NotFound/NotFound.tsx';
 import PasswordRecovery from '../pages/PasswordRecovery/PasswordRecovery.tsx';
 import { CreatePosition } from '../pages/Positions/CreatePosition/CreatePosition.tsx';
