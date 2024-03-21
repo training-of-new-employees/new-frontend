@@ -34,14 +34,7 @@ export const CardGrid: FC<ICardGrid> = ({ mode, data }) => {
             })
           : Array.from(data).map((i) => {
               return (
-                <Card
-                  id={i.id}
-                  key={i.id}
-                  name={i.name}
-                  mode={mode}
-                  courses={i.courses}
-                  personal={i.personal}
-                />
+                <Card id={i.id} key={i.id} name={i.name} mode={mode} courses={1} personal={1} />
               );
             })}
       </div>
