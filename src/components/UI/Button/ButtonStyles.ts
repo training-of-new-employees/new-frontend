@@ -23,7 +23,7 @@ export const buttonStyles: ButtonStylesVariant = {
   primary:
     'text-white disabled:bg-borderDisabledInput disabled:border-borderDisabledInput disabled:color-addFontColor active:bg-pressedBtn active:border-pressedBtn bg-defaultBtn border-defaultBtn hover:bg-hoveredBtn hover:border-hoveredBtn',
   emptyBorder:
-    'border-defaultBtn text-defaultBtn disabled:color-addFontColor active:color-pressedBtn bg-colorWhite rounded-[12px] border-defaultBtn border-[2px] hover:border-hoveredBtn hover:color-hoveredBtn',
+    ' disabled:color-addFontColor border-borderDisabledInput active:color-pressedBtn border-pressedBtn bg-colorWhite rounded-[12px] border-defaultBtn border-[2px] color-defaultBtn hover:border-hoveredBtn hover:color-hoveredBtn',
   empty:
     'border-none color-defaultBtn bg-transparent hover:color-hoveredBtn active:color-pressedBtn disabled:color-addFontColor',
 };

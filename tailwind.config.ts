@@ -39,7 +39,6 @@ const config: Config = {
         greenIconButton: "url('./src/assets/icon/Icon-green.svg')",
         backIconButton: "url('./src/assets/icon/Back-Icon.svg')",
         'card-menu': "url('./src/images/UI/CardMenu.svg')",
-        'archive-green': "url('./src/images/UI/archive-green.svg')",
         'logo-header': "url('./src/images/Landing/logo.svg')",
         'profile-avatar': "url('./src/images/UI/Profile-logo.svg')",
         'exit-icon': "url('./src/images/UI/exit-icon.svg')",
@@ -58,6 +57,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [require('tailwind-scrollbar')],
+  plugins: [],
 };
 export default config;

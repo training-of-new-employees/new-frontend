@@ -10,7 +10,7 @@ export const PopupExitAccount: FC<IPopupExitAccount> = ({ isOpened, setIsOpened 
       <p className="text-h4 pt-[30px]">Вы уверены, что хотите выйти из аккаунта?</p>
       <div className="pt-[35px] flex gap-[25px] pb-[60px] w-[89%]">
         <div className="min-w-[260px]">
-          <Button onClick={() => setIsOpened(false)} type="button" variant="emptyBorder">
+          <Button type="button" variant="emptyBorder">
             Отменить
           </Button>
         </div>
