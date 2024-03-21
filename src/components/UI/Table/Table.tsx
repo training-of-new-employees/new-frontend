@@ -1,10 +1,12 @@
 import { FC } from 'react';
+import { observer } from 'mobx-react-lite';
 import { ITable } from './TableTypes';
-import { COURSE_TABLE, PERSONAL_TABLE } from '../../../utils/constants';
+import employeeStore from '../../../store/employee-store';
 import { TableLine } from '../TableLine/TableLine';
 
-export const Table: FC<ITable> = ({ mode }) => {
-  const TableData = mode === 'course' ? COURSE_TABLE : PERSONAL_TABLE;
+export const Table: FC<ITable> = observer(({ mode }) => {
+  const { allEmployee } = employeeStore;
+  const TableData = mode === 'course' ? [] : allEmployee;
   return (
     <>
       <div className="flex w-[100%] text-addFontColor bg-[#DDDDDD] rounded-t-[12px] border-[1px] border-borderDisabledInput border-solid">
@@ -26,8 +28,8 @@ export const Table: FC<ITable> = ({ mode }) => {
               <TableLine id={i.id} name={i.name} job={i.job} status={i.status} />
             </li>
           );
-        })}
+        }).reverse()}
       </ul>
     </>
   );
-};
+});

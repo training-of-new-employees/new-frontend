@@ -29,4 +29,5 @@ export const Profile: React.FC = () => {
       <PopupIsEditProfile isOpened={open} setIsOpened={setOpen} />
     </div>
   );
+
 };
