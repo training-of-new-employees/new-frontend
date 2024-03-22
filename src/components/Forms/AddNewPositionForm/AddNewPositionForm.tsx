@@ -12,7 +12,7 @@ const AddNewPositionForm = observer(() => {
     positionNew: '',
   };
 
-  const onSubmit = (values: object) => {
+  const onSubmit = (values: any) => {
     addNewPosition({
       name: values.positionNew,
       id: Math.floor(Math.random() * 101),
