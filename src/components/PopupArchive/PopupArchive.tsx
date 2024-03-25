@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { observer } from 'mobx-react-lite';
 import { useLocation } from 'react-router-dom';
 import { IPopupArchive } from './PopupArchiveTypes';
-import CoursesStore from '../../store/courses-store';
+import coursesStore from '../../store/courses-store';
 import employeeStore from '../../store/employee-store';
 import PositionStore from '../../store/position-store';
 import Button from '../UI/Button/Button';
@@ -11,9 +11,10 @@ import { Popup } from '../UI/Popup/Popup';
 export const PopupArchive: FC<IPopupArchive> = observer(
   ({ isOpened, setIsOpened, id, setMenuOpened }) => {
     const { addPositionToArchive } = PositionStore;
-    const { addToArchiveCourses } = CoursesStore;
     const { addEmployeeToArchive } = employeeStore;
     const location = useLocation().pathname;
+
+    const initCourse = coursesStore;
     function addCardToArchive() {
       setIsOpened(false);
       setMenuOpened(false);
@@ -21,7 +22,7 @@ export const PopupArchive: FC<IPopupArchive> = observer(
         addPositionToArchive(id);
       }
       if (location === '/courses') {
-        addToArchiveCourses(id);
+        initCourse.addToArchiveCourses(id);
       } else addEmployeeToArchive(id);
     }
     return (

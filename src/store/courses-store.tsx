@@ -9,15 +9,17 @@ import { ICourses } from '../utils/axios/types/coursesType';
 
 class CoursesStore {
   archiveCourses: Array<number> = [];
-  courses?: IPromiseBasedObservable<ICourses[]>;
-  course?: IPromiseBasedObservable<ICourses>;
-  courseId?: IPromiseBasedObservable<ICourses>;
+  courses?: IPromiseBasedObservable<any>;
+  course?: IPromiseBasedObservable<any>;
+  courseId?: IPromiseBasedObservable<any>;
 
   constructor() {
     makeAutoObservable(this);
   }
   addToArchiveCourses = (id: number) => {
     this.archiveCourses.push(id);
+    const isArchived = true;
+    this.postCoursesEditAction({ archived: isArchived, id });
   };
   rearchiveCourse = (id: number) => {
     this.archiveCourses.splice(this.archiveCourses.indexOf(id), 1);
@@ -36,8 +38,8 @@ class CoursesStore {
     this.courseId = fromPromise(editCourses({ name, description, archived, id }));
   };
 
-  getCoursesByIdAction = ({ id }: { id: string }) => {
-    this.courseId = fromPromise(getCourseByIdForAdmin({ id }));
+  getCoursesByIdAction = (id: string) => {
+    this.courseId = fromPromise(getCourseByIdForAdmin(id));
   };
 }
 

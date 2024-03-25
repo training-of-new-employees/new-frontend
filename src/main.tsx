@@ -4,12 +4,12 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import router from './App/Routes';
 import RootStories from './store/RootStores';
-import { RootStoriesContext } from './utils/context/root-context-store';
+import { RootStoresContext } from './utils/context/root-context-store';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <RootStoriesContext.Provider value={new RootStories()}>
+    <RootStoresContext.Provider value={new RootStories()}>
       <RouterProvider router={router} />
-    </RootStoriesContext.Provider>
+    </RootStoresContext.Provider>
   </React.StrictMode>
 );

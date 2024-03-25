@@ -6,7 +6,7 @@ import lessonsStore from './lessons-store';
 import positionStore from './position-store';
 import profileStore from './profile-store';
 
-class RootStories {
+class RootStores {
   profileState = profileStore;
   coursesState = coursesStore;
   employeeState = employeeStore;
@@ -19,4 +19,4 @@ class RootStories {
   }
 }
 
-export default RootStories;
+export default RootStores;

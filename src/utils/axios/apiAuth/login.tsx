@@ -14,8 +14,14 @@ import { IAuth } from '../types/typeAuth';
 // };
 
 export const login = async ({ email, password }: IAuth) => {
-  await apiGateway.post(`/api/v1/login`, {
-    email,
-    password,
-  });
+  try {
+    const res = await apiGateway.post(`/api/v1/login`, {
+      email,
+      password,
+    });
+    localStorage.setItem('token', res.data.token);
+    return res.data;
+  } catch (error) {
+    console.error(error);
+  }
 };
