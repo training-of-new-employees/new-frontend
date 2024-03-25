@@ -43,7 +43,7 @@ export const Courses = observer(() => {
         {courses?.case({
           pending: () => <div>Loading...</div>,
           rejected: () => <div>Ошибка на сервере...</div>,
-          fulfilled: (value) => <CardGrid data={courses?.value} mode="course" />,
+          fulfilled: () => <CardGrid data={courses?.value} mode="course" />,
         })}
       </div>
     </>
