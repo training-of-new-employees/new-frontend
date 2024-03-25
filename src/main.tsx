@@ -6,7 +6,6 @@ import router from './App/Routes';
 import RootStories from './store/RootStores';
 import { RootStoresContext } from './utils/context/root-context-store';
 
-
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <RootStoresContext.Provider value={new RootStories()}>

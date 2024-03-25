@@ -14,7 +14,6 @@ import { IAuth } from '../types/typeAuth';
 // };
 
 export const login = async ({ email, password }: IAuth) => {
-
   try {
     const res = await apiGateway.post(`/api/v1/login`, {
       email,
@@ -25,5 +24,4 @@ export const login = async ({ email, password }: IAuth) => {
   } catch (error) {
     console.error(error);
   }
-
 };

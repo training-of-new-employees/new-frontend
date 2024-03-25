@@ -30,7 +30,6 @@ export const Courses = observer(() => {
     <>
       <div className="py-[20px] px-[20px] w-[100%] pt-[92px]">
         {isAdmin && courses?.value.length === 0 ? (
-
           <NoCourses />
         ) : isAdmin ? (
           <div className="max-w-[260px] mb-[20px]">
