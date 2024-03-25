@@ -20,7 +20,7 @@ export default function PopupIsEditProfile({ isOpened, setIsOpened }: IPopupEdit
         {profile?.case({
           pending: () => <div>Loading...</div>,
           rejected: (error) => <div>{error.response.data.message}</div>,
-          fulfilled: (value) => <UpdatePersonalInfoForm />,
+          fulfilled: () => <UpdatePersonalInfoForm />,
         })}
       </div>
     </Popup>

@@ -31,7 +31,7 @@ const AddNewUserForm = observer(() => {
     },
   ];
 
-  const onSubmit = (values: object) => {
+  const onSubmit = (values: any) => {
     addNewEmployee({
       name: `${values.surnameUser} ${values.nameUser} ${values.patronymicUser}`,
       job: values.positionUser,
