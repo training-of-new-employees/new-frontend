@@ -1,10 +1,13 @@
+import { observer } from 'mobx-react-lite';
 import { useNavigate } from 'react-router-dom';
 import image from '../../../images/image/NoUser.png';
+import { useStores } from '../../../utils/context/root-context-store.ts';
 import Button from '../../UI/Button/Button';
 
-export default function NoUser() {
+const NoUser = observer(() => {
   const navigate = useNavigate();
-  const isAdmin = localStorage.getItem('role') === 'ADMIN';
+  const { storage } = useStores((state) => state.authState);
+  const isAdmin = storage.getItem('role') === 'ADMIN';
   return (
     <section className="bg-backgrnd flex items-center justify-center h-[calc(100vh-112px)] pb-[180px]">
       <div className="flex items-center justify-center flex-col">
@@ -27,4 +30,6 @@ export default function NoUser() {
       </div>
     </section>
   );
-}
+});
+
+export default NoUser;

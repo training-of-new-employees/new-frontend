@@ -36,13 +36,13 @@ npm run dev
 1) Tailwind
 2) MobX
 3) Formik
-4) LocalStorage
+4) localStorage/sessionStorage
 5) React
 6) Vite
-7) Fetch
+7) Axios
 8) Eslint, Prettier, Husky
 
-Построение запросов с помощью Fetch, для временного хранения данных используется LocalStorage/SessionStorage
+Построение запросов с помощью Axios, для временного хранения данных используется localStorage/sessionStorage
 
 
 ## @TODO добавить mindmap

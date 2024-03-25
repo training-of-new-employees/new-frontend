@@ -1,6 +1,6 @@
 import { FC, useState } from 'react';
 import { observer } from 'mobx-react-lite';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { IDropDown } from './DropDownTypes.tsx';
 import coursesStore from '../../../../store/courses-store.tsx';
 import employeeStore from '../../../../store/employee-store.tsx';
@@ -14,22 +14,33 @@ export const DropDown: FC<IDropDown> = observer(({ menu, id, setMenuOpened }) =>
   const location = useLocation().pathname;
   const [isPopupOpened, setIsPopupOpened] = useState(false);
   const [popupName, setPopupName] = useState('');
+  const navigate = useNavigate();
   function openPopup(text: string) {
-    if (text === 'Перенести в архив') {
-      setIsPopupOpened(true);
-      setPopupName('archive');
-    }
-    if (text === 'Вернуть из архива') {
-      setMenuOpened(false);
-      if (location === '/courses') {
-        rearchiveCourse(id);
-      }
-      if (location === '/position') {
-        rearchivePosition(id);
-      }
-      if (location === '/users') {
-        rearchiveEmployee(id);
-      }
+    switch (text) {
+      case 'Редактировать':
+        if (location === '/position') {
+          navigate(`/position/${id}`);
+        }
+        if (location === '/users') {
+          navigate(`/users/${id}`);
+        }
+        break;
+      case 'Перенести в архив':
+        setIsPopupOpened(true);
+        setPopupName('archive');
+        break;
+      case 'Вернуть из архива':
+        setMenuOpened(false);
+        if (location === '/courses') {
+          rearchiveCourse(id);
+        }
+        if (location === '/position') {
+          rearchivePosition(id);
+        }
+        if (location === '/users') {
+          rearchiveEmployee(id);
+        }
+        break;
     }
   }
   return (

@@ -9,15 +9,17 @@ import { EditCourse } from '../pages/Courses/EditCourse/EditCourse.tsx';
 import FirstEnter from '../pages/FirstEnter/FirstEnter.tsx';
 import Login from '../pages/Login/Login';
 import Main from '../pages/Main/Main';
-import NewPassword from '../pages/NewPassword/NewPassword.tsx';
+import { NewPassword } from '../pages/NewPassword/NewPassword.tsx';
 import { NotFound } from '../pages/NotFound/NotFound.tsx';
 import PasswordRecovery from '../pages/PasswordRecovery/PasswordRecovery.tsx';
 import { CreatePosition } from '../pages/Positions/CreatePosition/CreatePosition.tsx';
+import { EditPosition } from '../pages/Positions/EditPosition/EditPosition.tsx';
 import { Positions } from '../pages/Positions/Positions';
 import { Profile } from '../pages/Profile/Profile';
 import Registration from '../pages/Registration/Regestration';
 import Test from '../pages/Test/Test.tsx';
 import { CreateUser } from '../pages/Users/CreateUser/CreateUser.tsx';
+import { EditUser } from '../pages/Users/EditUser/EditUser.tsx';
 import { Users } from '../pages/Users/Users';
 
 const router = createBrowserRouter([
@@ -63,6 +65,14 @@ const router = createBrowserRouter([
       {
         path: paths.newuser,
         element: <CreateUser />,
+      },
+      {
+        path: paths.edituser,
+        element: <EditUser />,
+      },
+      {
+        path: paths.editposition,
+        element: <EditPosition />,
       },
     ],
   },

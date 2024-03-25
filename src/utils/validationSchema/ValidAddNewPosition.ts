@@ -5,7 +5,7 @@ export const AddNewPositionSchema = z
   .object({
     positionNew: z
       .string({
-        required_error: 'Это поле обязательно',
+        required_error: 'Заполните это поле',
       })
       .trim()
       .regex(regexName, 'Символы *, # не допускаются')

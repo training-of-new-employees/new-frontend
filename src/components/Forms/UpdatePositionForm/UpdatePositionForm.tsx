@@ -1,19 +1,19 @@
 // import { useState } from 'react';
-import { AddNewPositionSchema } from '../../../utils/validationSchema/ValidAddNewPosition.ts';
+import { UpdatePositionSchema } from '../../../utils/validationSchema/ValidUpdatePosition.ts';
 import FormikContainer from '../../UI/FormElements/FormikContainer/FormikContainer.tsx';
 import FormikControl from '../../UI/FormElements/FormikControl/FormikControl.tsx';
 
 function UpdatePositionForm() {
   // const [serverError, setServerError] = useState('sample of server error');
   const InitialValues = {
-    position: '',
+    position: 'lalala',
   };
 
   const onSubmit = (values: object) => console.log('Form data', values);
   return (
     <FormikContainer
       InitialValues={InitialValues}
-      Schema={AddNewPositionSchema}
+      Schema={UpdatePositionSchema}
       onSubmit={onSubmit}
       formName="updateRole"
     >
@@ -23,6 +23,7 @@ function UpdatePositionForm() {
         inputName="position"
         placeholder="Введите название должности"
         options={[]}
+        label="Название должности"
       />
       {/*<p className="text-error mx-auto">{serverError}</p>*/}
     </FormikContainer>

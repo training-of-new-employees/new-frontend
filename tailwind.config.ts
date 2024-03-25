@@ -32,6 +32,9 @@ const config: Config = {
         colorWhite: '#fff',
       },
       backgroundImage: {
+        'icon-edit': 'url(./src/assets/iconEdit.svg)',
+        'admin-pic': 'url(./src/assets/adminIcon.svg)',
+        image: 'url(./src/assets/admin-image.svg)',
         whiteIconButton: "url('./src/assets/icon/Icon.svg')",
         greenIconButton: "url('./src/assets/icon/Icon-green.svg')",
         backIconButton: "url('./src/assets/icon/Back-Icon.svg')",
@@ -55,6 +58,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [require('tailwind-scrollbar')],
 };
 export default config;

@@ -5,5 +5,11 @@ export const getToken = (): string | null => {
   // storedToken && (result = JSON.parse(storedToken))
   result = storedToken;
 
-  return result;
+
+export const getToken = (): string | null => {
+  const token =
+    localStorage.getItem('tick') === 'true'
+      ? localStorage?.getItem('token')
+      : sessionStorage?.getItem('token');
+  return token;
 };
