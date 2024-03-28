@@ -1,6 +1,7 @@
 import Archive from '../images/UI/archive.svg';
 import Copy from '../images/UI/copy-icon.svg';
 import Pencil from '../images/UI/pencil.svg';
+import PlusIcon from '../images/UI/PlusIcon.svg';
 import ReArchive from '../images/UI/rearchive-icon.svg';
 import Send from '../images/UI/send-icon.svg';
 import Courses from '../images/UI/SideBar/Courses.svg';
@@ -8,7 +9,6 @@ import Materials from '../images/UI/SideBar/create-course-maininfo.svg';
 import Users from '../images/UI/SideBar/Employees.svg';
 import MainInfoCourse from '../images/UI/SideBar/main-info-course.svg';
 import Work from '../images/UI/SideBar/Work.svg';
-
 export const CardMenu: {
   id: number;
   image: string;
@@ -16,6 +16,15 @@ export const CardMenu: {
 }[] = [
   { id: 1, image: Pencil, text: 'Редактировать' },
   { id: 2, image: Archive, text: 'Перенести в архив' },
+];
+export const CardPositionMenu: {
+  id: number;
+  image: string;
+  text: string;
+}[] = [
+  { id: 1, image: Pencil, text: 'Редактировать' },
+  { id: 2, image: Archive, text: 'Перенести в архив' },
+  { id: 3, image: PlusIcon, text: 'Доступ к курсам' },
 ];
 
 export const PERSONAL_MENU: {

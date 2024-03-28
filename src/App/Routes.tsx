@@ -12,6 +12,7 @@ import Main from '../pages/Main/Main';
 import { NewPassword } from '../pages/NewPassword/NewPassword.tsx';
 import { NotFound } from '../pages/NotFound/NotFound.tsx';
 import PasswordRecovery from '../pages/PasswordRecovery/PasswordRecovery.tsx';
+import { ChooseCoursesForPosition } from '../pages/Positions/ChooseCoursesForPosition/ChooseCoursesForPosition.tsx';
 import { CreatePosition } from '../pages/Positions/CreatePosition/CreatePosition.tsx';
 import { EditPosition } from '../pages/Positions/EditPosition/EditPosition.tsx';
 import { Positions } from '../pages/Positions/Positions';
@@ -57,6 +58,10 @@ const router = createBrowserRouter([
       {
         path: paths.newposition,
         element: <CreatePosition />,
+      },
+      {
+        path: paths.choosecoursesforposition,
+        element: <ChooseCoursesForPosition />,
       },
       {
         path: paths.newcourse,

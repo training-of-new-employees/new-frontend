@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { ICard } from './CardTypes';
 import coursesStore from '../../../store/courses-store';
 import PositionStore from '../../../store/position-store';
-import { CardMenu, REARCHIVE_DDMENU } from '../../../utils/constants';
+import { CardMenu, REARCHIVE_DDMENU, CardPositionMenu } from '../../../utils/constants';
 import { DropDown } from '../FormElements/DropDown/DropDown';
 
 export const Card: FC<ICard> = observer(
@@ -43,7 +43,7 @@ export const Card: FC<ICard> = observer(
         >
           {location === '/position' ? (
             isMenuOpened && !archivePositions.includes(id) ? (
-              <DropDown id={id} menu={CardMenu} setMenuOpened={setMenuOpened} />
+              <DropDown id={id} menu={CardPositionMenu} setMenuOpened={setMenuOpened} />
             ) : isMenuOpened && archivePositions.includes(id) ? (
               <DropDown id={id} menu={REARCHIVE_DDMENU} setMenuOpened={setMenuOpened} />
             ) : (

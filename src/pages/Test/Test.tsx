@@ -4,7 +4,7 @@
 // import LoginForm from '../../components/Forms/LoginForm/LoginForm.tsx';
 // import RecoveryForm from '../../components/Forms/RecoveryForm/RecoveryForm.tsx';
 // import RegisterForm from '../../components/Forms/RegisterForm/RegisterForm.tsx';
-// import SetCoursesForm from '../../components/Forms/SetCoursesForm/SetCoursesForm.tsx';
+import SetCoursesForm from '../../components/Forms/SetCoursesForm/SetCoursesForm.tsx';
 // import UpdateCourseForm from '../../components/Forms/UpdateCourseForm/UpdateCourseForm.tsx';
 // import UpdateLessonForm from '../../components/Forms/UpdateLessonForm/UpdateLessonForm.tsx';
 // import { PreloaderProfile } from '../../components/PreloaderProfile/PreloaderProfile.tsx';
@@ -85,7 +85,7 @@ function Test() {
         <AddRole />
       </div>
       {/*<p>15) Назначить курсы на роль</p>*/}
-      {/*<SetCoursesForm />*/}
+      <SetCoursesForm />
       <p>16) Обновить роль</p>
       <div className="w-[780px]">
         <UpdateRole />

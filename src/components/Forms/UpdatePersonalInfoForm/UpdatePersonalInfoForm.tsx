@@ -73,13 +73,17 @@ function UpdatePersonalInfoForm() {
 
       {/* <p className="text-error mx-auto">{error.response.data.message}</p> */}
 
-      <div className="flex flex-row gap-[20px] pt-[32px]">
-        <Button type="button" variant="emptyBorder">
-          Отменить
-        </Button>
-        <Button type="submit" variant="primary">
-          Сохранить изменение
-        </Button>
+      <div className="flex flex-row gap-[20px] pt-[32px] w-full">
+        <div className="w-[50%]">
+          <Button type="button" variant="emptyBorder">
+            Отменить
+          </Button>
+        </div>
+        <div className="w-[50%]">
+          <Button type="submit" variant="primary">
+            Сохранить изменение
+          </Button>
+        </div>
       </div>
     </FormikContainer>
   );
