@@ -6,14 +6,15 @@ import { NoCourses } from '../../components/NoContent';
 import Button from '../../components/UI/Button/Button';
 import authStore from '../../store/auth-store';
 import coursesStore from '../../store/courses-store';
-import { useStores } from '../../utils/context/root-context-store';
+import { COURSE_DATA } from '../../utils/constants';
+// import { useStores } from '../../utils/context/root-context-store';
 
 export const Courses = observer(() => {
   const isAdmin = localStorage.getItem('role') === 'ADMIN';
   const navigate = useNavigate();
-  const { courses } = useStores((state) => state.coursesState);
+  // const { courses } = useStores((state) => state.coursesState);
 
-  console.log(courses);
+  // console.log(courses);
 
   const initAuthMok = authStore;
   const initCourses = coursesStore;
@@ -28,8 +29,9 @@ export const Courses = observer(() => {
 
   return (
     <>
-      <div className="py-[20px] px-[20px] w-[100%] pt-[92px]">
-        {isAdmin && courses?.value.length === 0 ? (
+      <div className="py-[20px] px-[20px] w-[100%] pt-[92px] ml-[300px] min-h-screen">
+        {isAdmin && COURSE_DATA?.length === 0 ? (
+          // {isAdmin && courses?.value.length === 0 ? (
           <NoCourses />
         ) : isAdmin ? (
           <div className="max-w-[260px] mb-[20px]">
@@ -40,11 +42,12 @@ export const Courses = observer(() => {
         ) : (
           ''
         )}
-        {courses?.case({
+        <CardGrid data={COURSE_DATA} mode="course" />
+        {/* {courses?.case({
           pending: () => <div>Loading...</div>,
           rejected: () => <div>Ошибка на сервере...</div>,
           fulfilled: () => <CardGrid data={courses?.value} mode="course" />,
-        })}
+        })} */}
       </div>
     </>
   );

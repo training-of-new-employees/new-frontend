@@ -41,6 +41,11 @@ export const DropDown: FC<IDropDown> = observer(({ menu, id, setMenuOpened }) =>
           rearchiveEmployee(id);
         }
         break;
+      case 'Доступ к курсам':
+        if (location === '/position') {
+          navigate(`/choose-courses-for-position/${id}`);
+        }
+        break;
     }
   }
   return (

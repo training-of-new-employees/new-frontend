@@ -15,7 +15,9 @@ export const SideBar: FC = observer(() => {
   const SideBarMenu = isAdmin ? SIDEBAR_MENU_ADMIN : SIDEBAR_MENU_PERSONAL;
   return (
     <div className=" bg-white min-w-[300px] h-screen border-borderDisabledInput pt-[72px] fixed overflow-y-auto">
-      {location.match(/\/position\/\w/) || location.match(/\/users\/\w/) ? (
+      {location.match(/\/position\/\w/) ||
+      location.match(/\/users\/\w/) ||
+      location.match(/\/choose-courses-for-position\/\w/) ? (
         <div className="w-[87%] mx-auto mt-[18px]">
           <Button type="button" variant="emptyBorder" icon="back" onClick={() => navigate(-1)}>
             Вернуться назад

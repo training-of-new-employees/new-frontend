@@ -10,6 +10,7 @@ export const paths = {
   positions: '/position',
   newposition: '/new-position',
   editposition: '/position/:id',
+  choosecoursesforposition: '/choose-courses-for-position/:id',
   login: '/login',
   registration: '/registration',
   firstenter: '/first-enter?',
