@@ -1,5 +1,6 @@
 import { Children, cloneElement, ReactNode, isValidElement } from 'react';
 import { Formik, Form } from 'formik';
+import { useLocation } from 'react-router-dom';
 import { toFormikValidationSchema } from 'zod-formik-adapter';
 
 interface ValuesTypes {
@@ -21,6 +22,7 @@ function FormikContainer({
   children,
   Schema,
 }: IFormikContainer) {
+  const location = useLocation().pathname;
   return (
     <Formik
       initialValues={InitialValues}
@@ -30,7 +32,11 @@ function FormikContainer({
       {({ errors, touched, values }) => (
         <Form
           id={formName}
-          className="w-[100%] flex flex-row flex-wrap gap-y-[15px] justify-between mb-[20px]"
+          className={
+            location.match(/\/choose-courses-for-position\/\w/)
+              ? 'w-full'
+              : 'w-[100%] flex flex-row flex-wrap gap-y-[15px] justify-between mb-[20px]'
+          }
         >
           {Children?.map(children, (child) => {
             if (isValidElement(child)) {
